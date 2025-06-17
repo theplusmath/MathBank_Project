@@ -165,6 +165,8 @@ math-field {
 <form id="problemForm" action="update_problem.php" method="POST" onsubmit="return handleSubmit()">
     <input type="hidden" name="id" value="<?= htmlspecialchars($problem['id']) ?>">
     <input type="hidden" name="copyMode" id="copyMode" value="0">
+    <input type="hidden" name="return_url" id="return_url" value="">
+
 
     제목: <input type="text" name="title" value="<?= htmlspecialchars($problem['title']) ?>"><br>
 
@@ -355,95 +357,9 @@ const DEPTH_COUNT = 6;   // 필요하면 7, 8로 변경
 let questionEditor, solutionEditor;
 ClassicEditor.create(document.querySelector('textarea[name="question"]')).then(editor => questionEditor = editor);
 ClassicEditor.create(document.querySelector('textarea[name="solution"]')).then(editor => solutionEditor = editor);
-// ----------------------------
-// 경로 관련 JS (생략, 기존대로 유지)
-// ----------------------------
-// ...[생략: 기존 경로 JS 그대로]...
 
-// ================================
-// "수식 오류 검사 및 수정" 모달 로직
-// ================================
-let formulaEdits = [];
-function openFormulaModal() {
-    // 에디터에서 최신 본문 읽음
-    let text = questionEditor ? questionEditor.getData() : document.getElementById('questionArea').value;
-    // HTML 태그 제거 (순수 텍스트화)
-    let htmlTagRegex = /(<([^>]+)>)/gi;
-    text = text.replace(htmlTagRegex, '');
-    // $...$ 수식만 추출
-    let regex = /\$([^\$]+)\$/g, m, arr = [];
-    let idx = 0;
-    while ((m = regex.exec(text)) !== null) {
-        arr.push({
-            index: idx,
-            formula: m[1],
-            raw: m[0],
-            pos: m.index
-        });
-        idx++;
-    }
-    formulaEdits = arr.map(f => ({
-        ...f,
-        edited: f.formula // 최초엔 원본 그대로
-    }));
-    renderFormulaGrid();
-    // 모달 오픈 (Bootstrap)
-    let modalEl = document.getElementById('formulaModal');
-    let modal = new bootstrap.Modal(modalEl);
-    modal.show();
-}
-function renderFormulaGrid() {
-    let area = document.getElementById('formulaEditGrid');
-    area.innerHTML = '';
-    if (formulaEdits.length === 0) {
-        area.innerHTML = '<div style="color:gray;">$...$로 감싼 수식을 찾을 수 없습니다.</div>';
-        return;
-    }
-    let grid = document.createElement('div');
-    grid.className = 'math-grid';
-    formulaEdits.forEach((item, idx) => {
-        let html = `
-        <div class="math-block">
-            <span class="formula-label">수식 ${idx + 1}</span>
-            <math-field id="mf_${idx}" virtual-keyboard-mode="manual">${item.edited.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</math-field>
-            <span class="latex-label">LaTeX 코드 입력:</span>
-            <input type="text" id="latex_${idx}" class="latex-input" value="${item.edited.replace(/"/g,"&quot;")}">
-            <button type="button" class="apply-btn" onclick="applyFormulaEdit(${idx})">확인/적용</button>
-        </div>`;
-        grid.insertAdjacentHTML('beforeend', html);
-    });
-    area.appendChild(grid);
-    // 동기화: math-field <-> input
-    formulaEdits.forEach((item, idx) => {
-        let mf = document.getElementById('mf_' + idx);
-        let latex = document.getElementById('latex_' + idx);
-        mf.addEventListener('input', () => { latex.value = mf.value; });
-        latex.addEventListener('input', () => { mf.value = latex.value; });
-    });
-}
-function applyFormulaEdit(idx) {
-    // 해당 수식 수정
-    let mf = document.getElementById('mf_' + idx);
-    let latex = document.getElementById('latex_' + idx).value;
-    formulaEdits[idx].edited = latex;
-    // 입력창 닫는 건 아님 (사용자 연속 편집 지원)
-}
-function applyAllFormulaEdits() {
-    // 에디터에서 본문 최신 값 사용
-    let text = questionEditor ? questionEditor.getData() : document.getElementById('questionArea').value;
-    // HTML 태그 제거
-    let htmlTagRegex = /(<([^>]+)>)/gi;
-    let plain = text.replace(htmlTagRegex, '');
-    // 원본 $...$ → 수정된 $...$로 순차 치환
-    formulaEdits.forEach(f => {
-        plain = plain.replace(f.raw, '$' + f.edited + '$');
-    });
-    // 에디터/textarea에 반영
-    if (questionEditor) questionEditor.setData(plain);
-    document.getElementById('questionArea').value = plain;
-    // 모달 닫기
-    bootstrap.Modal.getInstance(document.getElementById('formulaModal')).hide();
-}
+
+
 // -------------------------------------------------
 // [이하 기존의 경로/이력/복원/미리보기/저장 등 JS 유지]
 // -------------------------------------------------
@@ -520,39 +436,30 @@ function toggleFormulaPanel(field) {
     grid += '</div>';
     grid += `<button type="button" class="btn btn-success" onclick="applyAllFormulaEditsPanel('${field}', ${edits.length})">모든 적용</button>`;
 
-    // 🟡 여기 바로 아래에 아래 코드를 추가!
-    edits.forEach((item, i) => {
-        let mf = document.getElementById('mf_' + field + '_' + i);
-        let latex = document.getElementById('latex_' + field + '_' + i);
-        let cleaned = mf.parentElement.querySelector('input[readonly]');
-
-        // math-field → 직접 입력란, 정리란
-        mf.addEventListener('input', () => {
-            latex.value = mf.value;
-            cleaned.value = mf.value.replace(/\s+/g, ' ').trim();
-        });
-        // 직접 입력란 → math-field, 정리란
-        latex.addEventListener('input', () => {
-            mf.value = latex.value;
-            cleaned.value = latex.value.replace(/\s+/g, ' ').trim();
-        });
-    });
-
-    // 렌더
+    // **렌더 먼저!**
     document.getElementById('formulaPanel_' + field).innerHTML = grid;
     formulaPanelOpen[field] = true;
 
-    // 이벤트 바인딩
+    // **이벤트 바인딩은 렌더 이후에!!**
     edits.forEach((item, i) => {
         let mf = document.getElementById('mf_' + field + '_' + i);
         let latex = document.getElementById('latex_' + field + '_' + i);
-        mf.addEventListener('input', () => { latex.value = mf.value; });
-        latex.addEventListener('input', () => { mf.value = latex.value; });
+        if (!mf || !latex) return;
+        let cleaned = mf.parentElement ? mf.parentElement.querySelector('input[readonly]') : null;
+        mf.addEventListener('input', () => {
+            latex.value = mf.value;
+            if (cleaned) cleaned.value = mf.value.replace(/\s+/g, ' ').trim();
+        });
+        latex.addEventListener('input', () => {
+            mf.value = latex.value;
+            if (cleaned) cleaned.value = latex.value.replace(/\s+/g, ' ').trim();
+        });
     });
 
     // 상태 전역 저장
     window['formulaEdits_' + field] = edits;
 }
+
 
 // 수식별 적용
 function applyFormulaEditPanel(field, idx) {
@@ -560,8 +467,39 @@ function applyFormulaEditPanel(field, idx) {
     let mf = document.getElementById('mf_' + field + '_' + idx);
     let latex = document.getElementById('latex_' + field + '_' + idx).value;
     edits[idx].edited = latex;
-    // 한 번만 변경 상태로
+
+    // 1. 본문 데이터 읽기
+    let text;
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        text = questionEditor.getData();
+    } else {
+        text = document.getElementById(field + 'Area') ? document.getElementById(field + 'Area').value : '';
+    }
+    // 2. 해당 수식만 원본 → 수정본으로 치환
+    let plain = text.replace(edits[idx].raw, '$' + latex + '$');
+    // 3. 본문 반영
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        questionEditor.setData(plain);
+    }
+    if (document.getElementById(field + 'Area')) {
+        document.getElementById(field + 'Area').value = plain;
+    }
+
+    // 4. 해당 math-block만 삭제
+    const block = mf.closest('.math-block');
+    if (block) block.remove();
+
+    // 5. edits 배열의 해당 인덱스는 undefined 처리
+    edits[idx] = null;
+
+    // 6. math-block이 더 이상 없으면 패널 전체 닫기
+    const remainingBlocks = document.querySelectorAll('#formulaPanel_' + field + ' .math-block');
+    if (remainingBlocks.length === 0) {
+        document.getElementById('formulaPanel_' + field).innerHTML = '';
+        formulaPanelOpen[field] = false;
+    }
 }
+
 
 // 모두 적용
 function applyAllFormulaEditsPanel(field, total) {
@@ -576,9 +514,9 @@ function applyAllFormulaEditsPanel(field, total) {
     let plain = text.replace(htmlTagRegex, '');
     // 순서대로 원본 → 수정
     edits.forEach(f => {
-        plain = plain.replace(f.raw, '$' + f.edited + '$');
-    });
-    // 적용
+    if (!f) return;
+    plain = plain.replace(f.raw, '$' + f.edited + '$');
+    });    // 적용
     if (field === 'question' && typeof questionEditor !== 'undefined') {
         questionEditor.setData(plain);
     }
@@ -690,13 +628,19 @@ function updatePathTextAndId() {
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  const initialPathId = document.getElementById('path_id').value;
-  // 숫자 형태인지 한 번 체크(0, '', NaN 등도 방지)
-  if (initialPathId && !isNaN(parseInt(initialPathId))) {
-    setPathByIdFromValue(initialPathId);
-  } else {
-    loadDepthOptions(1, null);
-  }
+        const initialPathId = document.getElementById('path_id').value;
+        // 숫자 형태인지 한 번 체크(0, '', NaN 등도 방지)
+        if (initialPathId && !isNaN(parseInt(initialPathId))) {
+          setPathByIdFromValue(initialPathId);
+        } else {
+          loadDepthOptions(1, null);
+        }
+        // [return_url 자동 설정 추가]
+        var referrer = document.referrer;
+        var returnInput = document.getElementById('return_url');
+        if (returnInput && !returnInput.value && referrer) {
+            returnInput.value = referrer;
+        }
 });
 
 
@@ -705,6 +649,8 @@ function setPathByIdFromValue(pathId) {
   document.getElementById('manual_path_id').value = pathId;
   setPathById();
 }
+
+
 
 
 

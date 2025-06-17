@@ -3048,3 +3048,391 @@
 2025-06-17T04:38:54+00:00 functions.php loaded
 2025-06-17T04:38:56+00:00 functions.php loaded
 2025-06-17T04:38:57+00:00 functions.php loaded
+2025-06-17T07:20:15+00:00 functions.php loaded
+2025-06-17T07:22:20+00:00 functions.php loaded
+2025-06-17T07:52:58+00:00 functions.php loaded
+2025-06-17T07:53:48+00:00 functions.php loaded
+2025-06-17T07:59:00+00:00 functions.php loaded
+2025-06-17T07:59:37+00:00 functions.php loaded
+2025-06-17T08:02:36+00:00 functions.php loaded
+2025-06-17T08:03:17+00:00 functions.php loaded
+2025-06-17T08:04:51+00:00 functions.php loaded
+2025-06-17T08:43:51+00:00 functions.php loaded
+2025-06-17T08:46:03+00:00 functions.php loaded
+2025-06-17T09:05:34+00:00 functions.php loaded
+2025-06-17T09:06:14+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [1] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle \int _{1 } ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => f1125ee54ebdce87becdfb5de3a0994faa64f9ce82dc75b8cdbc5bd02f94ed15
+            [keywords] => Array
+                (
+                    [0] => One
+                    [1] => Integer
+                    [2] => Symbol
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-17T10:40:59+00:00 functions.php loaded
+2025-06-17T10:41:16+00:00 functions.php loaded
+2025-06-17T10:44:23+00:00 functions.php loaded
+2025-06-17T10:44:31+00:00 functions.php loaded
+2025-06-17T10:44:31+00:00 functions.php loaded
+2025-06-17T10:44:54+00:00 functions.php loaded
+2025-06-17T10:44:54+00:00 functions.php loaded
+2025-06-17T10:44:59+00:00 functions.php loaded
+2025-06-17T10:44:59+00:00 functions.php loaded
+2025-06-17T10:45:36+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+)
+
+2025-06-17T10:46:39+00:00 functions.php loaded
+2025-06-17T10:46:55+00:00 functions.php loaded
+2025-06-17T10:47:21+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle x
+            [tree] => Symbol('x')
+            [hash] => 404f44415f237598b5a1eaa6bf7c2635860f63962472217709840cbe10d5ec14
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Symbol('x')
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 85b7175893d02d29b397274608408717c7ab776f98f1d74810c458b97ba24da6
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle g ( x)
+            [tree] => Function('g')(Symbol('x'))
+            [hash] => d7b62e80433b3f906ff5911ba9e4c441a20a63cc5ba1d894b0d1df4717237a24
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('g')(Symbol('x'))
+        )
+
+    [3] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {g ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => \displaystyle f '' ( x)+g '' ( x)+g ( x)=e ^{x}
+            [tree] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+            [hash] => ec315f6f08cf456eef0fc28bc1a7288ded03df6175e4dfde1da800e755378c12
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle f '' ( x)-f ( x)+g '' ( x)=e ^{-x}
+            [tree] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+            [hash] => fc2965ffb9c3c9af11891d122af02018294a448acfc2859d42c584ed38ad7cf4
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+        )
+
+)
+
+2025-06-17T10:48:08+00:00 functions.php loaded
+2025-06-17T10:49:06+00:00 functions.php loaded
+2025-06-17T10:49:10+00:00 functions.php loaded
+2025-06-17T10:49:14+00:00 functions.php loaded
+2025-06-17T10:49:49+00:00 functions.php loaded
+2025-06-17T11:32:44+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [2] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-17T11:43:23+00:00 functions.php loaded
+2025-06-17T11:43:58+00:00 functions.php loaded
+2025-06-17T11:46:14+00:00 functions.php loaded
+2025-06-17T11:47:12+00:00 functions.php loaded
+2025-06-17T11:49:49+00:00 functions.php loaded
+2025-06-17T11:51:13+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [1] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-17T11:52:02+00:00 functions.php loaded
+2025-06-17T11:52:16+00:00 functions.php loaded
+2025-06-17T11:52:40+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3} {5}
+            [tree] => Add(Function('f')(Symbol('x')), Mul(Integer(5), Mul(Integer(3), Pow(Integer(5), Integer(-1)))))
+            [hash] => f07638d65deeb3d559e97ab7dbe7ad60f242b5518b72f02f0159f8f8dbb4897f
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Mul(Integer(5), Mul(Integer(3), Pow(Integer(5), Integer(-1)))))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ 0} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(0), Integer(5)))
+            [hash] => 71c0c45c08bb81a690e4bf27374a26132e01363aafddb4485b3288d271a97b98
+            [keywords] => Array
+                (
+                    [0] => Zero
+                    [1] => Symbol
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(0), Integer(5)))
+        )
+
+)
+
+2025-06-17T11:52:46+00:00 functions.php loaded
+2025-06-17T11:52:51+00:00 functions.php loaded
+2025-06-17T11:53:01+00:00 functions.php loaded
+2025-06-17T11:54:53+00:00 functions.php loaded
+2025-06-17T12:37:32+00:00 functions.php loaded
+2025-06-17T12:37:40+00:00 functions.php loaded
+2025-06-17T12:37:44+00:00 functions.php loaded

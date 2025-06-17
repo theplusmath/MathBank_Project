@@ -2,25 +2,154 @@
 // mathpix_analyzer.php
 
 /**
- * HTML 엔티티를 LaTeX로 변환
- * @param string $text
+ * HTML 엔티티를 LaTeX로 변환 (실전용, 더플러스수학 강화 버전)
+ * @param string $str
  * @return string
  */
-function convertHtmlEntitiesToLatex($text) {
-    // HTML 엔티티 디코딩
-    $text = html_entity_decode($text, ENT_QUOTES | ENT_HTML5, 'UTF-8');
-    
-    // 특수 문자 처리
-    $replacements = [
-        '&nbsp;' => ' ',
-        '&lt;' => '<',
-        '&gt;' => '>',
-        '&amp;' => '&',
-        '&quot;' => '"',
-        '&#39;' => "'"
-    ];
-    
-    return str_replace(array_keys($replacements), array_values($replacements), $text);
+function convertHtmlEntitiesToLatex($str) {
+    $map = array(
+        // 기본 수학 부등호/연산자
+        '&le;'        => '\\leq ',
+        '&leq;'       => '\\leq ',
+        '&ge;'        => '\\geq ',
+        '&geq;'       => '\\geq ',
+        '&ne;'        => '\\neq ',
+        '&lt;'        => '<',
+        '&gt;'        => '>',
+        '&plusmn;'    => '\\pm ',
+        '&pm;'        => '\\pm ',
+        '&minus;'     => '-',
+        '&times;'     => '\\times ',
+        '&ast;'       => '*',
+        '&star;'      => '\\star ',
+        '&div;'       => '\\div ',
+        '&frasl;'     => '/',
+        '&sol;'       => '/',
+        '&sum;'       => '\\sum ',
+        '&prod;'      => '\\prod ',
+        '&cap;'       => '\\cap ',
+        '&cup;'       => '\\cup ',
+        '&sim;'       => '\\sim ',
+        '&asymp;'     => '\\asymp ',
+        '&approx;'    => '\\approx ',
+        '&equiv;'     => '\\equiv ',
+        '&cong;'      => '\\cong ',
+        '&simeq;'     => '\\simeq ',
+        '&nequiv;'    => '\\not\\equiv ',
+        '&ncong;'     => '\\not\\cong ',
+        '&prop;'      => '\\propto ',
+        '&infin;'     => '\\infty ',
+        '&infty;'     => '\\infty ',
+
+        // 집합, 포함
+        '&in;'        => '\\in ',
+        '&isin;'      => '\\in ',
+        '&notin;'     => '\\notin ',
+        '&ni;'        => '\\ni ',
+        '&notni;'     => '\\not\\ni ',
+        '&sub;'       => '\\subset ',
+        '&sup;'       => '\\supset ',
+        '&sube;'      => '\\subseteq ',
+        '&supe;'      => '\\supseteq ',
+        '&subset;'    => '\\subset ',
+        '&supset;'    => '\\supset ',
+        '&subseteq;'  => '\\subseteq ',
+        '&supseteq;'  => '\\supseteq ',
+
+        // 논리 기호
+        '&forall;'    => '\\forall ',
+        '&exist;'     => '\\exists ',
+        '&nexists;'   => '\\nexists ',
+        '&there4;'    => '\\therefore ',
+        '&because;'   => '\\because ',
+        '&and;'       => '\\land ',
+        '&or;'        => '\\lor ',
+        '&not;'       => '\\neg ',
+        '&implies;'   => '\\implies ',
+        '&iff;'       => '\\iff ',
+
+        // 함수/미분/적분/연산
+        '&int;'       => '\\int ',
+        '&sum;'       => '\\sum ',
+        '&prod;'      => '\\prod ',
+        '&partial;'   => '\\partial ',
+        '&nabla;'     => '\\nabla ',
+        '&darr;'      => '\\downarrow ',
+        '&uarr;'      => '\\uparrow ',
+        '&rarr;'      => '\\rightarrow ',
+        '&larr;'      => '\\leftarrow ',
+        '&harr;'      => '\\leftrightarrow ',
+
+        // 기하/도형
+        '&perp;'      => '\\perp ',
+        '&angle;'     => '\\angle ',
+        '&measuredangle;' => '\\measuredangle ',
+        '&sphericalangle;' => '\\sphericalangle ',
+        '&triangle;'  => '\\triangle ',
+
+        // 점,곱
+        '&middot;'    => '\\cdot ',
+        '&sdot;'      => '\\cdot ',
+
+        // 기호/기타
+        '&deg;'       => '^{\\circ}',
+        '&prime;'     => "'",
+        '&Prime;'     => "''",
+        '&hellip;'    => '\\ldots ',
+        '&ellipsis;'  => '\\ldots ',
+        '&bull;'      => '\\bullet ',
+
+        // 기타 유니코드/문자
+        '&nbsp;'      => ' ',
+        '&#160;'      => ' ',
+
+        // 특수 문자(조합 가능)
+        '&alpha;'     => '\\alpha ',
+        '&beta;'      => '\\beta ',
+        '&gamma;'     => '\\gamma ',
+        '&delta;'     => '\\delta ',
+        '&epsilon;'   => '\\epsilon ',
+        '&zeta;'      => '\\zeta ',
+        '&eta;'       => '\\eta ',
+        '&theta;'     => '\\theta ',
+        '&iota;'      => '\\iota ',
+        '&kappa;'     => '\\kappa ',
+        '&lambda;'    => '\\lambda ',
+        '&mu;'        => '\\mu ',
+        '&nu;'        => '\\nu ',
+        '&xi;'        => '\\xi ',
+        '&omicron;'   => 'o',
+        '&pi;'        => '\\pi ',
+        '&rho;'       => '\\rho ',
+        '&sigma;'     => '\\sigma ',
+        '&tau;'       => '\\tau ',
+        '&upsilon;'   => '\\upsilon ',
+        '&phi;'       => '\\phi ',
+        '&chi;'       => '\\chi ',
+        '&psi;'       => '\\psi ',
+        '&omega;'     => '\\omega ',
+        '&Gamma;'     => '\\Gamma ',
+        '&Delta;'     => '\\Delta ',
+        '&Theta;'     => '\\Theta ',
+        '&Lambda;'    => '\\Lambda ',
+        '&Xi;'        => '\\Xi ',
+        '&Pi;'        => '\\Pi ',
+        '&Sigma;'     => '\\Sigma ',
+        '&Upsilon;'   => '\\Upsilon ',
+        '&Phi;'       => '\\Phi ',
+        '&Psi;'       => '\\Psi ',
+        '&Omega;'     => '\\Omega ',
+    );
+    foreach ($map as $entity => $latex) {
+        $str = str_replace($entity, $latex, $str);
+    }
+    // 나머지 엔티티 일반 문자로 변환
+    $str = html_entity_decode($str, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $str = str_replace("\xC2\xA0", ' ', $str); // non-breaking space
+    $str = str_replace('&nbsp;', ' ', $str);
+    $str = strip_tags($str);
+    $str = preg_replace('/\s+/u', ' ', $str);
+    return trim($str);
 }
 
 /**
