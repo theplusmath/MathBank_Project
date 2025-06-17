@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경로 트리 탐색기</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    ul.tree {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    .indent {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 문제 경로 트리 보기</h2>
+  <div id="pathTree"></div>
+
+  <script>
+    function buildTree(data) {
+      const map = new Map();
+      data.forEach(item => {
+        item.children = [];
+        map.set(item.id, item);
+      });
+
+      const roots = [];
+      data.forEach(item => {
+        if (!item.parent_id || item.parent_id == 0) {
+          roots.push(item);
+        } else {
+          const parent = map.get(item.parent_id);
+          if (parent) parent.children.push(item);
+        }
+      });
+      return roots;
+    }
+
+    function renderTree(nodes) {
+      const ul = document.createElement('ul');
+      ul.className = 'tree';
+      nodes.forEach(node => {
+        const li = document.createElement('li');
+        li.textContent = node.name;
+        if (node.children.length > 0) {
+          li.appendChild(renderTree(node.children));
+        }
+        ul.appendChild(li);
+      });
+      return ul;
+    }
+
+    fetch('get_path_tree_flat_paths.php')
+      .then(res => res.json())
+      .then(data => {
+        const tree = buildTree(data);
+        const treeHtml = renderTree(tree);
+        document.getElementById('pathTree').appendChild(treeHtml);
+      })
+      .catch(err => {
+        document.getElementById('pathTree').innerText = '🚫 트리를 불러오지 못했습니다. 서버 연결을 확인하세요.';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!-- path_admin.html (문제 수 + 검색 기능 포함) -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 개별 등록 및 경로 관리</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 10px;
+      margin-right: 5px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .path-group select {
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-top: 50px;
+    }
+    .editable:hover {
+      background-color: #eef;
+      cursor: pointer;
+    }
+    ul.nested-sortable {
+      list-style: none;
+      padding-left: 20px;
+    }
+    .nested-sortable li {
+      margin: 4px 0;
+      padding: 4px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📌 수학 문제 개별 등록</h2>
+  <iframe src="add_problem.html" width="100%" height="700px" style="border:1px solid #ccc;"></iframe>
+
+  <div class="section">
+    <h2>➕ 새 경로 추가 및 수정</h2>
+    <label>상위 경로 선택</label>
+    <select id="parent_path">
+      <option value="0">최상위 (예: 더플러스수학)</option>
+    </select>
+
+    <label>새 경로 이름</label>
+    <input type="text" id="new_path_name" placeholder="예: 고등수학">
+    <div>
+      <button id="addPathBtn">경로 추가</button>
+      <button id="deletePathBtn" disabled>경로 삭제</button>
+    </div>
+    <p id="addPathMsg"></p>
+
+    <h3>📂 경로 이름 수정</h3>
+    <label>🔍 경로 이름 검색</label>
+    <input type="text" id="searchInput" placeholder="예: 고등수학">
+    <ul id="editablePathList"></ul>
+
+    <h3>📦 경로 드래그로 이동</h3>
+    <ul id="dragTree" class="nested-sortable"></ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <script>
+    let flatPaths = [];
+    let problemCounts = {};
+    let selectedPathId = null;
+
+    function fetchFlatPaths() {
+      Promise.all([
+        fetch('get_path_tree_flat.php').then(res => res.json()),
+        fetch('count_problems.php').then(res => res.json())
+      ]).then(([pathData, countData]) => {
+        flatPaths = pathData;
+        problemCounts = countData;
+        renderParentDropdown(pathData);
+        renderEditableList(pathData);
+        renderDragTree(pathData);
+        selectedPathId = null;
+        document.getElementById('deletePathBtn').disabled = true;
+      });
+    }
+
+    function renderParentDropdown(data) {
+      const parentSelect = document.getElementById('parent_path');
+      parentSelect.innerHTML = '<option value="0">최상위 (예: 더플랫스수학)</option>';
+      data.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.id;
+        option.textContent = ' '.repeat(p.depth * 2) + p.name;
+        parentSelect.appendChild(option);
+      });
+    }
+
+    function renderEditableList(data) {
+      const list = document.getElementById('editablePathList');
+      list.innerHTML = '';
+      data.forEach(p => {
+        const count = problemCounts[p.id] || 0;
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="editable" data-id="${p.id}">${'&nbsp;&nbsp;'.repeat(p.depth)}${p.name} (${count})</span>`;
+        list.appendChild(li);
+      });
+      attachInlineRename();
+    }
+
+    function attachInlineRename() {
+      document.querySelectorAll('.editable').forEach(span => {
+        span.addEventListener('click', () => {
+          const oldName = span.textContent.replace(/ \(\d+\)$/, '').trim();
+          selectedPathId = span.dataset.id;
+          document.getElementById("deletePathBtn").disabled = false;
+
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.value = oldName;
+          input.style.width = '200px';
+          span.replaceWith(input);
+
+          input.focus();
+          input.addEventListener('blur', () => {
+            const newName = input.value.trim();
+            if (newName && newName !== oldName) {
+              fetch('update_path.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: selectedPathId, name: newName })
+              })
+              .then(res => res.json())
+              .then(data => {
+                if (data.success) fetchFlatPaths();
+                else alert('수정 실패: ' + data.message);
+              });
+            } else {
+              fetchFlatPaths();
+            }
+          });
+        });
+      });
+    }
+
+    function renderDragTree(data) {
+      const tree = document.getElementById('dragTree');
+      tree.innerHTML = '';
+      const map = new Map();
+
+      data.forEach(item => {
+        map.set(item.id, { ...item, children: [] });
+      });
+
+      data.forEach(item => {
+        if (item.parent_id !== 0) {
+          const parent = map.get(item.parent_id);
+          if (parent) parent.children.push(map.get(item.id));
+        }
+      });
+
+      const roots = [...map.values()].filter(x => x.parent_id === 0);
+      roots.forEach(node => tree.appendChild(makeNodeElement(node)));
+
+      Sortable.create(tree, {
+        group: 'nested',
+        animation: 150,
+        onEnd: handleDragEnd
+      });
+    }
+
+    function makeNodeElement(node) {
+      const li = document.createElement('li');
+      const count = problemCounts[node.id] || 0;
+      li.textContent = `${node.name} (${count})`;
+      li.dataset.id = node.id;
+
+      const childrenUl = document.createElement('ul');
+      childrenUl.className = 'nested-sortable';
+
+      node.children.forEach(child => {
+        childrenUl.appendChild(makeNodeElement(child));
+      });
+
+      li.appendChild(childrenUl);
+      Sortable.create(childrenUl, {
+        group: 'nested',
+        animation: 150,
+        onEnd: handleDragEnd
+      });
+
+      return li;
+    }
+
+    function handleDragEnd(evt) {
+      const dragged = evt.item;
+      const newParent = dragged.parentElement.closest('li');
+      const newParentId = newParent ? parseInt(newParent.dataset.id) : 0;
+
+      const siblings = [...dragged.parentElement.children];
+      const newOrder = siblings.indexOf(dragged);
+
+      const id = parseInt(dragged.dataset.id);
+      fetch('move_path.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, new_parent_id: newParentId, new_order: newOrder })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data.success) alert('정렬 저장 실패: ' + data.message);
+        fetchFlatPaths();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchFlatPaths();
+
+      document.getElementById('addPathBtn').addEventListener('click', () => {
+        const parent_id = document.getElementById('parent_path').value;
+        const name = document.getElementById('new_path_name').value.trim();
+        const msg = document.getElementById('addPathMsg');
+
+        if (!name) {
+          msg.textContent = '경로 이름을 입력하세요';
+          msg.className = 'error';
+          return;
+        }
+
+        fetch('insert_path.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ parent_id, name })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            msg.textContent = '✅ 경로 추가 성공';
+            msg.className = 'success';
+            document.getElementById('new_path_name').value = '';
+            fetchFlatPaths();
+          } else {
+            msg.textContent = '❌ 실패: ' + data.message;
+            msg.className = 'error';
+          }
+        });
+      });
+
+      document.getElementById('deletePathBtn').addEventListener('click', () => {
+        if (!selectedPathId) return;
+
+        if (!confirm("정말로 이 경로를 삭제하시겠습니까?\n하위 경로가 있을 경우 삭제되지 않습니다.")) return;
+
+        fetch("delete_path.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "id=" + encodeURIComponent(selectedPathId),
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            alert("경로가 삭제되었습니다.");
+            fetchFlatPaths();
+          } else {
+            alert("삭제 실패: " + data.message);
+          }
+        })
+        .catch(err => {
+          alert("에러 발생: " + err);
+        });
+      });
+
+      // 🔍 검색 기능 추가
+      document.getElementById('searchInput').addEventListener('input', function () {
+        const keyword = this.value.toLowerCase();
+        document.querySelectorAll('#editablePathList .editable').forEach(el => {
+          const name = el.textContent.toLowerCase();
+          el.style.backgroundColor = name.includes(keyword) ? '#ffff99' : '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

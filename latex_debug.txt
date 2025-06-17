@@ -1,0 +1,1064 @@
+ --- 2025-05-27 13:59:29 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (str_replace 및 제어 문자 제거 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 13:59:29 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (str_replace 및 제어 문자 제거 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 13:59:29 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (str_replace 및 제어 문자 제거 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 13:59:29 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (str_replace 및 제어 문자 제거 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 13:59:29 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (str_replace 및 제어 문자 제거 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 13:59:29 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (str_replace 및 제어 문자 제거 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (str_replace 및 제어 문자 제거 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (str_replace 및 제어 문자 제거 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (str_replace 및 제어 문자 제거 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (str_replace 및 제어 문자 제거 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (str_replace 및 제어 문자 제거 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 13:59:31 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (str_replace 및 제어 문자 제거 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:02:05 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라. 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:02:06 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:03:29 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:03:30 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br />&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{rac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:03:31 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:07:17 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+<p>\(\displaystyle 0 &lt; x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:08:03 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+<p>\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:09:20 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+<p>\(\displaystyle 0   x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0   x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:09:35 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+<p>\(\displaystyle 0   x \leq rac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0   x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 x \leq rac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:09:36 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+<p>\(\displaystyle 0   x \leq \frac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0   x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:10:08 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+<p>\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:10:46 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+<p>\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:11:14 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+<p>\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq \frac{\pi}{2}\) 일 때, 무한급수$\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots$의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:11:15 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+<p>\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수</p>
+
+<p style="text-align:center">\(\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots\)</p>
+
+<p>의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.</p>
+
+<p>(1) \(\displaystyle f(x)\) 를 구하여라.</p>
+
+<p>(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라.<br>&nbsp;</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+\(\displaystyle 0  <  x \leq \frac{\pi}{2}\) 일 때, 무한급수\(\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots\)의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+[최종 정제]
+\(\displaystyle 0 < x \leq \frac{\pi}{2}\) 일 때, 무한급수\(\displaystyle (1-\cos ^4 x)+(\cos ^2 x-\cos ^6 x)+\cdots+(\cos ^{2 n-2} x-\cos ^{2 n+2} x)+\cdots\)의 합을 \(\displaystyle f(x)\) 라 하고, \(\displaystyle x=0\) 일 때 \(\displaystyle f(x)=2\) 라 정한다.(1) \(\displaystyle f(x)\) 를 구하여라.(2) \(\displaystyle \int_0^{\frac{\pi}{2}} e^{-x} f(x) d x\) 를 구하여라. 
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[정제 (제어 문자 제거 및 str_replace 후)]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+[최종 정제]
+아래 수식을 살펴보자: $$\int_0^1 x dx$$
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[정제 (제어 문자 제거 및 str_replace 후)]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+[최종 정제]
+문제: \[ \frac{a}{b} + \displaystyle x^2 \]
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+<p>복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$</p>
+[정제 (제어 문자 제거 및 str_replace 후)]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+[최종 정제]
+복잡한 수식: $\displaystyle \sum_{n=1}^{\infty} \frac{1}{n^2}$과 $g(x)$
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+공백테스트: $   x   +  y   $
+[정제 (제어 문자 제거 및 str_replace 후)]
+공백테스트: $   x   +  y   $
+[최종 정제]
+공백테스트: $ x + y $
+
+--- 2025-05-27 14:11:38 ---
+[원본]
+엔티티테스트: $&nbsp;f(0)=0$
+[정제 (제어 문자 제거 및 str_replace 후)]
+엔티티테스트: $ f(0)=0$
+[최종 정제]
+엔티티테스트: $ f(0)=0$
+

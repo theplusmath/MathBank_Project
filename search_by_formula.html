@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>수식 기반 문제 검색</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #resultContainer { margin-top: 20px; }
+    .math-preview { font-size: 20px; padding: 10px; border: 1px dashed #aaa; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>🧮 수식 기반 문제 검색</h1>
+
+<label>수식 텍스트 입력: <input type="text" id="formulaInput" placeholder="예: x^2 + y^2 = 1" size="50"></label>
+<button onclick="searchByFormula()">🔍 검색</button>
+
+<div class="math-preview" id="mathPreview">수식 미리보기: 없음</div>
+<div id="resultContainer">검색 결과가 여기에 표시됩니다</div>
+
+<script>
+function searchByFormula() {
+  const formula = document.getElementById('formulaInput').value.trim();
+  if (!formula) {
+    alert('수식을 입력하세요.');
+    return;
+  }
+
+  // 수식 렌더링
+  document.getElementById('mathPreview').innerHTML = `수식 미리보기:<br>\\( ${formula} \\)`;
+  MathJax.typeset();
+
+  // 실제 검색 요청은 다음 단계에서 구현 예정
+  document.getElementById('resultContainer').innerHTML = `🔍 "${formula}"에 대한 검색 기능은 곧 구현됩니다.`;
+}
+</script>
+
+</body>
+</html>

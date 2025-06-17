@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 목록</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin: 2px;
+    }
+#selectedCount {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<h1>문제 목록</h1>
+
+<!-- ✅ 삭제된 문제 복원 링크 추가 -->
+<div style="margin-bottom: 20px;">
+  <a href="undelete.html" style="padding: 8px 16px; background: #fff3cd; border: 1px solid #f0ad4e; border-radius: 5px; text-decoration: none; color: #856404;">
+    🌀 삭제된 문제 복원 페이지로 이동
+  </a>
+</div>
+
+
+<details open>
+  <summary><strong>🔍 문제 검색</strong></summary>
+  <div style="margin: 15px 0; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+    <label>제목 또는 본문내용: <input type="text" id="searchTitle"></label>
+    <label>OR 포함어: <input type="text" id="searchOrKeyword" placeholder="예: 확률, 함수"></label>
+      <label>제외할 단어(NOT): <input type="text" id="searchNotKeyword" placeholder="예: 삼각형"></label>
+      <label>검색 대상:
+      <select id="searchScope">
+       <option value="title">제목만</option>
+      <option value="question">본문만</option>
+      <option value="both" selected>제목 + 본문</option>
+      </select>
+</label>
+
+    <label>태그: <input type="text" id="searchTags"></label>
+    <label>출처:
+      <select id="searchSource">
+        <option value="">전체</option>
+        <option value="문제집">문제집</option>
+        <option value="중등기출">중등기출</option>
+        <option value="일반고기출">일반고기출</option>
+        <option value="과학고기출">과학고기출</option>
+        <option value="자사고기출">자사고기출</option>
+        <option value="수능모의고사기출">수능모의고사기출</option>
+        <option value="수리논술심층면접">수리논술심층면접</option>
+        <option value="AP미적분">AP미적분</option>
+      </select>
+    </label>
+    <div id="pathSelectors">
+  <label>교육과정:
+    <select id="curriculumSelect"></select>
+  </label>
+  <label>대단원:
+    <select id="mainUnitSelect"></select>
+  </label>
+  <label>중단원:
+    <select id="midUnitSelect"></select>
+  </label>
+  <label>소단원:
+    <select id="subUnitSelect"></select>
+  </label>
+</div>
+<input type="hidden" id="searchPathText">
+
+  </div>
+
+  <div style="border: 1px dashed #aaa; padding: 10px; border-radius: 5px;">
+    <label>유형:
+      <select id="searchType">
+        <option value="">전체</option>
+        <option value="선택형">선택형</option>
+        <option value="단답형">단답형</option>
+        <option value="서술형">서술형</option>
+      </select>
+    </label>
+    <label>분류:
+      <select id="searchCategory">
+        <option value="">전체</option>
+        <option value="계산능력">계산능력</option>
+        <option value="이해능력">이해능력</option>
+        <option value="추론능력">추론능력</option>
+        <option value="내적문제해결능력">내적문제해결능력</option>
+        <option value="외적문제해결능력">외적문제해결능력</option>
+      </select>
+    </label>
+    <label>난이도:
+      <select id="searchDifficulty">
+        <option value="">전체</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <label>복사한 사람: <input type="text" id="searchCopiedBy" placeholder="예: admin"></label>
+    <label><input type="checkbox" id="searchQuestion"> 문제 본문도 포함</label>
+    <label><input type="checkbox" id="searchInvalidPath"> 경로없음 문제</label>
+ 
+  </div>
+
+  <button onclick="searchProblems()">🔍 검색</button>
+  <button onclick="resetFilters()">🔁 초기화</button>
+<div id="selectedCount" style="...">
+  <span id="selectedCountText">✅ 선택된 문제: 0개</span>
+  <button onclick="copySelectedIds()">📋 ID 복사</button>
+  <button onclick="deleteSelectedProblems()">🗑 선택 문제 삭제</button>
+
+</div>
+
+
+
+
+
+</details>
+
+
+
+<div style="margin: 10px 0;">
+  <strong>📋 기본 복사 항목 (항상 포함):</strong>
+  ID, 제목, 경로, 난이도
+</div>
+
+<div style="margin: 10px 0;">
+  <strong>📌 선택 복사 항목:</strong><br>
+  <label><input type="checkbox" class="copyOption" value="type"> 유형</label>
+  <label><input type="checkbox" class="copyOption" value="source"> 출처</label>
+  <label><input type="checkbox" class="copyOption" value="tags"> 태그</label>
+  <label><input type="checkbox" class="copyOption" value="copied_by"> 복사한 사람</label>
+  <label><input type="checkbox" class="copyOption" value="category"> 분류</label>
+  <label><input type="checkbox" class="copyOption" value="created_at"> 등록일</label>
+
+</div>
+
+
+
+
+
+<div style="margin: 15px 0; border: 1px solid #aaa; padding: 10px; border-radius: 5px;">
+  <strong>🛠 선택된 문제 경로 일괄 수정:</strong>
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+    <select id="bulkCurriculumSelect"></select>
+    <select id="bulkMainUnitSelect"></select>
+    <select id="bulkMidUnitSelect"></select>
+    <select id="bulkSubUnitSelect"></select>
+    <input type="number" id="manualPathId" placeholder="path_id 입력" style="width:120px" />
+    <button onclick="bulkUpdatePath()">선택된 문제 경로 수정</button>
+    <button onclick="window.open('path_tree_view.html', '_blank')">경로 ID 검색</button>
+    
+  </div>
+</div>
+
+
+
+
+<table id="problemsTable">
+  <thead>
+    <tr>
+      <th><input type="checkbox" id="selectAll" onclick="toggleAllCheckboxes(this)"></th> <!-- ✅ 추가 -->
+      <th>ID</th>
+      <th>제목</th>
+      <th>경로</th>
+      <th>유형</th>
+      <th>난이도</th>
+      <th>분류</th>
+      <th>출처</th>
+      <th>태그</th>
+      <th>등록일</th>
+      <th>관리</th>
+      <th>복사한 사람</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 문제 목록이 여기에 표시됩니다 -->
+  </tbody>
+</table>
+
+<script>
+function loadProblems(query = '') {
+  fetch('list_problems.php' + (query ? '?' + query : ''))
+    .then(response => response.json())
+    .then(data => {
+      const tbody = document.querySelector("#problemsTable tbody");
+      tbody.innerHTML = '';
+
+      if (data.success) {
+        data.data.forEach(problem => {
+          const row = document.createElement("tr");
+
+          // ✅ 고아 문제일 경우 배경색 지정
+          if (!problem.path_text) {
+            row.style.backgroundColor = 'lightpink';
+          }
+
+          row.innerHTML = `
+            <td><input type="checkbox" class="problemCheckbox" value="${problem.id}"></td>
+            <td>${problem.id}</td>
+            <td>${problem.title}</td>
+            <td>${problem.path_text && problem.path_text.trim() !== '' ? problem.path_text : '경로없음'}</td>
+            <td>${problem.type}</td>
+            <td>${problem.difficulty}</td>
+            <td>${problem.category}</td>
+            <td>${problem.source}</td>
+            <td>${problem.tags ?? ''}</td>
+            <td>${problem.created_at}</td>
+            <td>
+              <button onclick="location.href='edit_problem.php?id=${problem.id}'">수정</button>
+              <button onclick="deleteProblem(${problem.id})">삭제</button>
+              <button onclick="location.href='view_problem.php?id=${problem.id}'">보기</button>
+              ${problem.origin_id ? `<button onclick="location.href='view_problem.php?id=${problem.origin_id}'">원본 보기</button>` : ''}
+            </td>
+            <td>${problem.copied_by ?? ''}</td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        // ✅ 체크박스 복원은 모든 행 추가 후 한 번만 실행
+        restoreCheckedProblemIds();
+      } else {
+        alert('문제 목록을 불러오지 못했습니다.');
+      }
+    })
+    .catch(error => {
+      console.error('에러 발생:', error);
+      alert('서버 오류가 발생했습니다.');
+    });
+}
+
+// 초기 목록 불러오기
+loadProblems();
+
+function searchProblems() {
+  const params = new URLSearchParams();
+  const get = id => document.getElementById(id)?.value.trim();
+  const checked = id => document.getElementById(id)?.checked;
+
+  if (get('searchTitle')) params.append('title', get('searchTitle'));
+  if (get('searchTags')) params.append('tags', get('searchTags'));
+  if (get('searchSource')) params.append('source', get('searchSource'));
+  if (get('searchPathText')) params.append('path_text', get('searchPathText'));
+  if (get('searchType')) params.append('type', get('searchType'));
+  if (get('searchCategory')) params.append('category', get('searchCategory'));
+  if (get('searchDifficulty')) params.append('difficulty', get('searchDifficulty'));
+  if (get('searchCopiedBy')) params.append('copied_by', get('searchCopiedBy'));
+  if (checked('searchQuestion')) params.append('include_question', '1');
+
+  // ✅ 여기 추가
+   if (checked('searchInvalidPath')) params.append('invalid_path', '1');  // ✅ 이 줄 추가됨
+  if (get('searchOrKeyword')) params.append('or', get('searchOrKeyword'));
+  if (get('searchNotKeyword')) params.append('not', get('searchNotKeyword'));
+  if (get('searchScope')) params.append('scope', get('searchScope'));
+
+  loadProblems(params.toString());
+}
+
+
+function resetFilters() {
+  document.querySelectorAll('input, select').forEach(el => {
+    if (el.type === 'checkbox') el.checked = false;
+    else el.value = '';
+  });
+
+  localStorage.removeItem('checkedProblemIds'); // ✅ 체크 상태 초기화도 추가
+  loadProblems();
+}
+
+function deleteProblem(id) {
+  if (confirm("정말 삭제하시겠습니까?")) {
+    fetch(`delete_problem.php?id=${id}`, { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('삭제되었습니다.');
+          loadProblems();
+        } else {
+          alert('삭제 실패: ' + data.message);
+        }
+      })
+      .catch(err => {
+        alert('서버 오류: ' + err);
+      });
+  }
+}
+
+// 경로 드롭다운 불러오기
+function loadPathDropdowns() {
+  fetch('get_path_tree_flat_paths.php')
+    .then(response => response.json())
+    .then(data => {
+      const curriculumSelect = document.getElementById('curriculumSelect');
+      const mainUnitSelect = document.getElementById('mainUnitSelect');
+      const midUnitSelect = document.getElementById('midUnitSelect');
+      const subUnitSelect = document.getElementById('subUnitSelect');
+      const hiddenPathInput = document.getElementById('searchPathText');
+
+      // 각 select 초기화
+      [curriculumSelect, mainUnitSelect, midUnitSelect, subUnitSelect].forEach(select => {
+        select.innerHTML = '<option value="">선택</option>';
+      });
+
+      // 전체 데이터 캐시
+      const pathMap = {};
+      data.forEach(item => {
+        if (!pathMap[item.depth]) pathMap[item.depth] = [];
+        pathMap[item.depth].push(item);
+      });
+
+      function populateOptions(select, items) {
+        select.innerHTML = '<option value="">선택</option>';
+        items.forEach(item => {
+          const opt = document.createElement('option');
+          opt.value = item.id;
+          opt.textContent = item.name;
+          select.appendChild(opt);
+        });
+      }
+
+      populateOptions(curriculumSelect, pathMap[1] || []);
+
+      curriculumSelect.addEventListener('change', () => {
+        const val = curriculumSelect.value;
+        const children = data.filter(p => p.parent_id == val);
+        populateOptions(mainUnitSelect, children);
+        populateOptions(midUnitSelect, []);
+        populateOptions(subUnitSelect, []);
+        updatePathText();
+      });
+
+      mainUnitSelect.addEventListener('change', () => {
+        const val = mainUnitSelect.value;
+        const children = data.filter(p => p.parent_id == val);
+        populateOptions(midUnitSelect, children);
+        populateOptions(subUnitSelect, []);
+        updatePathText();
+      });
+
+      midUnitSelect.addEventListener('change', () => {
+        const val = midUnitSelect.value;
+        const children = data.filter(p => p.parent_id == val);
+        populateOptions(subUnitSelect, children);
+        updatePathText();
+      });
+
+      subUnitSelect.addEventListener('change', () => {
+        updatePathText();
+      });
+
+      function updatePathText() {
+        const ids = [
+          curriculumSelect.value,
+          mainUnitSelect.value,
+          midUnitSelect.value,
+          subUnitSelect.value
+        ].filter(Boolean);
+
+        const names = ids.map(id => {
+          const match = data.find(p => p.id == id);
+          return match ? match.name : '';
+        }).filter(Boolean);
+
+        hiddenPathInput.value = names.join('/');
+      }
+    });
+}
+
+function getBulkSelectedPathText() {
+  const ids = [
+    'bulkCurriculumSelect',
+    'bulkMainUnitSelect',
+    'bulkMidUnitSelect',
+    'bulkSubUnitSelect'
+  ];
+
+  const names = ids.map(id => {
+    const el = document.getElementById(id);
+    if (!el) return '';
+    const selected = el.options[el.selectedIndex];
+    return selected ? selected.textContent : '';
+  }).filter(name => name && name !== '선택');
+
+  return names.join('/');
+}
+
+function getBulkSelectedPathId() {
+  const subId = document.getElementById('bulkSubUnitSelect')?.value;
+  const midId = document.getElementById('bulkMidUnitSelect')?.value;
+  const mainId = document.getElementById('bulkMainUnitSelect')?.value;
+  const curriculumId = document.getElementById('bulkCurriculumSelect')?.value;
+
+  // 가장 구체적인 경로부터 체크하여 path_id로 사용
+  return subId || midId || mainId || curriculumId || null;
+}
+
+
+function bulkUpdatePath() {
+  const manualPathIdInput = document.getElementById('manualPathId');
+  const manualPathId = manualPathIdInput?.value.trim();
+  const finalPathId = manualPathId || getBulkSelectedPathId();
+
+  const newPath = getBulkSelectedPathText(); // ← 비어 있을 수도 있음
+
+  if (!newPath && !finalPathId) {
+    alert('적용할 경로를 선택하세요.');
+    return;
+  }
+
+  const selectedCheckboxes = document.querySelectorAll('.problemCheckbox:checked');
+  const selectedIds = Array.from(selectedCheckboxes).map(cb => cb.value);
+
+  if (selectedIds.length === 0) {
+    alert('선택된 문제가 없습니다.');
+    return;
+  }
+
+  if (!confirm(`${selectedIds.length}개의 문제에 선택한 경로를 적용하시겠습니까?`)) return;
+
+  fetch('update_bulk_path.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      ids: selectedIds,
+      path_text: newPath,
+      path_id: finalPathId
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert(`총 ${data.updated}개의 문제에 경로가 적용되었습니다.`);
+
+      saveCheckedProblemIds();  // ✅ 체크 상태 저장
+      loadProblems();           // 🔄 새로고침
+    } else {
+      alert('적용 실패: ' + data.message);
+    }
+  })
+  .catch(err => {
+    alert('서버 오류: ' + err);
+  });
+}
+
+
+function toggleAllCheckboxes(masterCheckbox) {
+  const checkboxes = document.querySelectorAll('.problemCheckbox');
+  checkboxes.forEach(cb => cb.checked = masterCheckbox.checked);
+  updateSelectedCount();  // ✅ 추가
+}
+
+function loadBulkPathDropdowns() {
+  fetch('get_path_tree_flat_paths.php')
+    .then(response => response.json())
+    .then(data => {
+      const bulkCurriculum = document.getElementById('bulkCurriculumSelect');
+      const bulkMainUnit = document.getElementById('bulkMainUnitSelect');
+      const bulkMidUnit = document.getElementById('bulkMidUnitSelect');
+      const bulkSubUnit = document.getElementById('bulkSubUnitSelect');
+
+      [bulkCurriculum, bulkMainUnit, bulkMidUnit, bulkSubUnit].forEach(select => {
+        select.innerHTML = '<option value="">선택</option>';
+      });
+
+      const pathMap = {};
+      data.forEach(item => {
+        if (!pathMap[item.depth]) pathMap[item.depth] = [];
+        pathMap[item.depth].push(item);
+      });
+
+      function populateOptions(select, items) {
+        select.innerHTML = '<option value="">선택</option>';
+        items.forEach(item => {
+          const opt = document.createElement('option');
+          opt.value = item.id;
+          opt.textContent = item.name;
+          select.appendChild(opt);
+        });
+      }
+
+      populateOptions(bulkCurriculum, pathMap[1] || []);
+
+      bulkCurriculum.addEventListener('change', () => {
+        const children = data.filter(p => p.parent_id == bulkCurriculum.value);
+        populateOptions(bulkMainUnit, children);
+        populateOptions(bulkMidUnit, []);
+        populateOptions(bulkSubUnit, []);
+      });
+
+      bulkMainUnit.addEventListener('change', () => {
+        const children = data.filter(p => p.parent_id == bulkMainUnit.value);
+        populateOptions(bulkMidUnit, children);
+        populateOptions(bulkSubUnit, []);
+      });
+
+      bulkMidUnit.addEventListener('change', () => {
+        const children = data.filter(p => p.parent_id == bulkMidUnit.value);
+        populateOptions(bulkSubUnit, children);
+      });
+    })
+    .catch(err => {
+      console.error('경로 불러오기 오류:', err);
+      alert('경로 목록을 불러오지 못했습니다.');
+    });
+}
+
+
+
+
+// DOM이 로딩되면 실행
+document.addEventListener('DOMContentLoaded', () => {
+  loadPathDropdowns();
+  loadBulkPathDropdowns();
+
+  // ✅ 이벤트 위임 추가
+  document.querySelector("#problemsTable tbody").addEventListener("click", function (e) {
+    if (e.target.classList.contains("problemCheckbox")) {
+      updateSelectedCount();
+      saveCheckedProblemIds();
+    }
+  });
+});
+
+
+// ✅ 체크된 문제 ID 저장
+function saveCheckedProblemIds() {
+  const checkedIds = Array.from(document.querySelectorAll('.problemCheckbox:checked')).map(cb => cb.value);
+  localStorage.setItem('checkedProblemIds', JSON.stringify(checkedIds));
+}
+
+// ✅ 체크된 문제 ID 복원
+function restoreCheckedProblemIds() {
+  const savedIds = JSON.parse(localStorage.getItem('checkedProblemIds') || '[]');
+  const checkboxes = document.querySelectorAll('.problemCheckbox');
+  checkboxes.forEach(cb => {
+    if (savedIds.includes(cb.value)) cb.checked = true;
+  });
+  updateSelectedCount();  // ✅ 추가
+}
+
+
+function updateSelectedCount() {
+  const count = document.querySelectorAll('.problemCheckbox:checked').length;
+  document.getElementById('selectedCountText').textContent = `✅ 선택된 문제: ${count}개`;
+}
+
+function copySelectedIds() {
+  const selected = document.querySelectorAll('.problemCheckbox:checked');
+  if (selected.length === 0) {
+    alert('복사할 문제가 선택되지 않았습니다.');
+    return;
+  }
+
+  const defaultFields = ['id', 'title', 'path', 'difficulty'];
+  const optionalFields = Array.from(document.querySelectorAll('.copyOption:checked')).map(cb => cb.value);
+  const allFields = [...defaultFields, ...optionalFields];
+
+  const copiedRows = [];
+
+  selected.forEach(cb => {
+    const row = cb.closest('tr');
+    const fieldMap = {
+      id: row.children[1].textContent,
+      title: row.children[2].textContent,
+      path: row.children[3].textContent,
+      type: row.children[4].textContent,
+      difficulty: row.children[5].textContent,
+      category: row.children[6].textContent,
+      source: row.children[7].textContent,
+      tags: row.children[8].textContent,
+      created_at: row.children[9].textContent,
+      copied_by: row.children[11].textContent,
+    };
+
+    const rowData = allFields.map(field => `${field.toUpperCase()}: ${fieldMap[field]}`).join(' | ');
+    copiedRows.push(rowData);
+  });
+
+  const textToCopy = copiedRows.join('\n');
+
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      // ✅ 1. 버튼 요소 찾아서 스타일 및 텍스트 변경
+      const button = document.querySelector('button[onclick="copySelectedIds()"]');
+      button.style.backgroundColor = '#4caf50';  // 초록색
+      button.style.color = 'white';
+      button.textContent = `✅ 복사 완료 (${copiedRows.length}개)`;
+
+      // ✅ 2. 일정 시간 뒤 원래대로 되돌리기
+      setTimeout(() => {
+        button.style.backgroundColor = '';
+        button.style.color = '';
+        button.textContent = '📋 ID 복사';
+      }, 1500);
+
+      // ✅ 3. 상단 alertBox도 함께 표시
+      const alertBox = document.getElementById('copyAlert');
+      alertBox.style.display = 'block';
+      alertBox.textContent = `복사 완료 (${copiedRows.length}개 문제)`;
+      setTimeout(() => {
+        alertBox.style.display = 'none';
+      }, 2000);
+    })
+    .catch(err => {
+      console.error('클립보드 복사 실패:', err);
+      alert('복사 실패');
+    });
+}
+
+
+</script>
+
+<script>
+
+function deleteSelectedProblems() {
+  const selectedCheckboxes = document.querySelectorAll('.problemCheckbox:checked');
+  const selectedIds = Array.from(selectedCheckboxes).map(cb => cb.value);
+
+  if (selectedIds.length === 0) {
+    alert('삭제할 문제가 선택되지 않았습니다.');
+    return;
+  }
+
+  if (!confirm(`${selectedIds.length}개의 문제를 정말 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.`)) return;
+
+  fetch('delete_bulk_problems.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ ids: selectedIds })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert(`총 ${data.deleted}개의 문제가 삭제되었습니다.`);
+      localStorage.removeItem('checkedProblemIds');
+      loadProblems();
+    } else {
+      alert('삭제 실패: ' + data.message);
+    }
+  })
+  .catch(err => {
+    console.error('삭제 요청 중 오류:', err);
+    alert('서버 오류로 삭제에 실패했습니다.');
+  });
+}
+
+</script>
+
+
+<script>
+// ✅ 새로고침 전 스크롤 위치 저장
+window.addEventListener("beforeunload", function () {
+  localStorage.setItem("scrollY", window.scrollY);
+});
+
+// ✅ 페이지 로드 시 스크롤 복원
+window.addEventListener("DOMContentLoaded", function () {
+  const savedY = localStorage.getItem("scrollY");
+  if (savedY) window.scrollTo(0, parseInt(savedY));
+});
+</script>
+
+
+
+
+<div id="copyAlert" style="
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 9999;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+">
+  복사 완료!
+</div>
+
+
+
+</body>
+</html>

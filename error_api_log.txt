@@ -1,0 +1,76 @@
+[2025-05-25 01:49:04] API ���� - HTTP 422
+��û ����: ["\\displaystyle x","\\displaystyle f ( x)","\\displaystyle g ( x)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","\\displaystyle \\int   _{} ^{} {g ( x)dx}","\\displaystyle f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}","\\displaystyle f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}","f ( x)","g ( x)","","f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}","f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}"]
+����: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["\\displaystyle x","\\displaystyle f ( x)","\\displaystyle g ( x)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","\\displaystyle \\int   _{} ^{} {g ( x)dx}","\\displaystyle f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}","\\displaystyle f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}","f ( x)","g ( x)","","f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}","f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}"]}}]}
+
+[2025-05-25 01:52:47] API ���� - HTTP 422
+��û ����: ["\\displaystyle f ( x)","\\displaystyle x","\\displaystyle f ( x)=x-f ( f ( x))","\\displaystyle f ( 0)=0","\\displaystyle f '  ( 0)","\\displaystyle f ''  ( 0)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","f ( x)","f ( x)=x-f ( f ( x))","f ( 0)=0","f '  ( 0)","f ''  ( 0)",""]
+����: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["\\displaystyle f ( x)","\\displaystyle x","\\displaystyle f ( x)=x-f ( f ( x))","\\displaystyle f ( 0)=0","\\displaystyle f '  ( 0)","\\displaystyle f ''  ( 0)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","f ( x)","f ( x)=x-f ( f ( x))","f ( 0)=0","f '  ( 0)","f ''  ( 0)",""]}}]}
+
+[2025-05-25 02:04:17] API ���� - HTTP 422
+��û ����: ["\\displaystyle f ( x)","\\displaystyle x","\\displaystyle f ( x)=x-f ( f ( x))","\\displaystyle f ( 0)=0","\\displaystyle f '  ( 0)","\\displaystyle f ''  ( 0)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","f ( x)","f ( x)=x-f ( f ( x))","f ( 0)=0","f '  ( 0)","f ''  ( 0)",""]
+����: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["\\displaystyle f ( x)","\\displaystyle x","\\displaystyle f ( x)=x-f ( f ( x))","\\displaystyle f ( 0)=0","\\displaystyle f '  ( 0)","\\displaystyle f ''  ( 0)","\\displaystyle \\int   _{} ^{} {f ( x)dx}","f ( x)","f ( x)=x-f ( f ( x))","f ( 0)=0","f '  ( 0)","f ''  ( 0)",""]}}]}
+
+[2025-05-26 19:31:00] API 오류 - HTTP 422
+요청 수식: ["f ( x)","f ( x)=x-f ( f ( x))"," f ( 0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f ( x)","f ( x)=x-f ( f ( x))"," f ( 0)=0"]}}]}
+
+[2025-05-26 19:43:42] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 20:02:38] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 20:02:42] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 21:46:27] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:38:42] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:42:01] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:42:31] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:45:50] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:49:43] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:49:58] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 22:53:02] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 23:14:42] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 23:23:07] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 23:35:12] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+
+[2025-05-26 23:37:34] API 오류 - HTTP 422
+요청 수식: ["f(x)","f(x)=x-f(f(x))","f(0)=0"]
+응답: {"detail":[{"type":"missing","loc":["body","latex"],"msg":"Field required","input":{"latex_list":["f(x)","f(x)=x-f(f(x))","f(0)=0"]}}]}
+

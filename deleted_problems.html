@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>삭제된 문제 복원</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<h2>?? 삭제된 문제 목록</h2>
+
+<table id="deletedTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>제목</th>
+      <th>경로</th>
+      <th>복사한 사람</th>
+      <th>삭제일</th>
+      <th>복원</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+function loadDeletedProblems() {
+  fetch('deleted_problems.php')
+    .then(res => res.json())
+    .then(data => {
+      if (!data.success) {
+        alert('삭제된 문제 목록을 불러올 수 없습니다.');
+        return;
+      }
+
+      const tbody = document.querySelector('#deletedTable tbody');
+      tbody.innerHTML = '';
+
+      data.data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${item.id}</td>
+          <td>${item.title}</td>
+          <td>${item.path_text || ''}</td>
+          <td>${item.copied_by || ''}</td>
+          <td>${item.deleted_at || ''}</td>
+          <td><button onclick="restoreProblem(${item.id})">복원</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
+}
+
+function restoreProblem(id) {
+  if (!confirm(`문제 ID ${id}를 복원하시겠습니까?`)) return;
+
+  fetch('restore_problem.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: id })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      alert(`복원 완료! 문제 ID: ${data.new_id}`);
+      loadDeletedProblems();
+    } else {
+      alert('복원 실패: ' + data.message);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadDeletedProblems);
+</script>
+
+</body>
+</html>

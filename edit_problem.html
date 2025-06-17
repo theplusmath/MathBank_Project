@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 수정</title>
+  <style>
+    body { font-family: 'Malgun Gothic', sans-serif; padding: 30px; max-width: 800px; margin: auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea, select {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    button {
+      margin-top: 20px; padding: 10px 20px;
+      background-color: #28a745; color: white;
+      border: none; border-radius: 4px; cursor: pointer;
+    }
+    .success { color: green; font-weight: bold; }
+    .error { color: red; font-weight: bold; }
+    .path-group select { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>✏️ 문제 수정</h2>
+  <form id="editForm">
+    <input type="hidden" name="id" id="problem_id">
+
+    <label>제목</label>
+    <input type="text" name="title" id="title">
+
+    <label>경로 선택</label>
+    <div class="path-group">
+      <select id="path1"></select>
+      <select id="path2"></select>
+      <select id="path3"></select>
+      <select id="path4"></select>
+      <select id="path5"></select>
+      <select id="path6"></select>
+    </div>
+    <input type="hidden" name="path_text" id="path_text">
+
+    <label>문제</label>
+    <textarea name="question" id="question" rows="5"></textarea>
+
+    <label>해설</label>
+    <textarea name="solution" id="solution" rows="5"></textarea>
+
+    <label>정답</label>
+    <input type="text" name="answer" id="answer">
+
+    <label>난이도</label>
+    <select name="difficulty" id="difficulty">
+      <option value="">선택</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label>유형</label>
+    <select name="type" id="type">
+      <option value="">선택</option>
+      <option value="선다형">선다형</option>
+      <option value="단답형">단답형</option>
+      <option value="서술형">서술형</option>
+      <option value="OX">OX</option>
+      <option value="기타">기타</option>
+    </select>
+
+    <label>평가 항목</label>
+    <select name="category" id="category">
+      <option value="">선택</option>
+      <option value="계산능력">계산능력</option>
+      <option value="이해능력">이해능력</option>
+      <option value="추론능력">추론능력</option>
+      <option value="내적문제해결능력">내적문제해결능력</option>
+      <option value="외적문제해결능력">외적문제해결능력</option>
+    </select>
+
+    <label>대표 수식</label>
+    <input type="text" name="main_formula_latex" id="main_formula_latex">
+
+    <label>수식 키워드</label>
+    <input type="text" name="formula_keywords" id="formula_keywords">
+
+    <label>힌트</label>
+    <textarea name="hint" id="hint"></textarea>
+
+    <label>영상 링크</label>
+    <input type="text" name="video" id="video">
+
+    <label>출처</label>
+    <select name="source" id="source">
+      <option value="">선택</option>
+      <option value="문제집">문제집</option>
+      <option value="중등기출">중등기출</option>
+      <option value="일반고기출">일반고기출</option>
+      <option value="과학고기출">과학고기출</option>
+      <option value="자사고기출">자사고기출</option>
+      <option value="수능모의고사기출">수능모의고사기출</option>
+      <option value="본고사기출">본고사기출</option>
+      <option value="수리논술심층면접">수리논술심층면접</option>
+      <option value="AP미적분">AP미적분</option>
+    </select>
+
+    <button type="submit">수정 완료</button>
+    <p id="message"></p>
+  </form>
+
+  <script src="js/functions.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPathTreeFlat();
+
+      if (!id) return showMessage('❌ ID 없음', 'error');
+
+      fetch(`get_problem.php?id=${id}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data) return showMessage('❌ 문제 없음', 'error');
+          document.getElementById('problem_id').value = id;
+
+          // 폼 필드 자동 채우기
+          populateFormFields(data);
+        });
+    });
+
+    document.getElementById('editForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      fetch('update_problem.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) showMessage('✅ 수정 완료', 'success');
+        else showMessage('❌ 실패: ' + data.message, 'error');
+      })
+      .catch(err => showMessage('❌ 오류: ' + err, 'error'));
+    });
+  </script>
+</body>
+</html>

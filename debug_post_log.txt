@@ -1,0 +1,3050 @@
+2025-06-11T11:19:15+00:00 functions.php loaded
+2025-06-11T11:27:43+00:00 functions.php loaded
+2025-06-11T23:46:38+00:00 functions.php loaded
+2025-06-12T00:24:20+00:00 functions.php loaded
+2025-06-12T00:33:11+00:00 functions.php loaded
+2025-06-12T00:48:16+00:00 functions.php loaded
+2025-06-12T05:40:01+00:00 functions.php loaded
+2025-06-12T05:40:20+00:00 functions.php loaded
+2025-06-12T05:42:37+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+2025-06-12T05:54:45+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => Symbol('x')
+            [hash] => 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Symbol('x')
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-12T06:39:01+00:00 functions.php loaded
+2025-06-12T06:39:07+00:00 functions.php loaded
+2025-06-12T06:39:42+00:00 functions.php loaded
+[FORMULA_FUNC] question=<p>모든 실수 $\displaystyle x $에 대하여 다음 두 조건을 만족하는 함수 $\displaystyle f ( x) $, $\displaystyle g ( x) $를 구하고 $\displaystyle \int _{} ^{} {f ( x)dx} $, $\displaystyle \int _{} ^{} {g ( x)dx} $를 구하시오. [3점] [2019 과고2 심화수학II 1학기 중간 2]&nbsp;</p><p>&lt;조건&gt;&nbsp;</p><p>(가) $\displaystyle f '' ( x)+g '' ( x)+g ( x)=e ^{x} $</p><p>(나) $\displaystyle f '' ( x)-f ( x)+g '' ( x)=e ^{-x} $</p>
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[FORMULA_FUNC] result=
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle x
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle g ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {g ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => \displaystyle f '' ( x)+g '' ( x)+g ( x)=e ^{x}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle f '' ( x)-f ( x)+g '' ( x)=e ^{-x}
+            [tree] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+            [hash] => fc2965ffb9c3c9af11891d122af02018294a448acfc2859d42c584ed38ad7cf4
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+        )
+
+)
+
+2025-06-12T06:41:30+00:00 functions.php loaded
+2025-06-12T06:42:01+00:00 functions.php loaded
+[FORMULA_FUNC] question=<p>함수 $\displaystyle &nbsp;f ( x) +5 \frac{3}{5} $가 모든 실수 $ x $에 대하여 $ f ( x)=x-f ( f ( x)) $를 만족한다. $ &nbsp;f ( 0)=0 $일 때, 다음 물음에 답하시오. [2019 과고2 심화수학II 1학기 중간 3]&nbsp;</p><p>(1) $ f ( x) $의 이계도함수가 존재할 때, $ &nbsp;f ' ( 0) $와 $ &nbsp;f '' ( 0) $의 값을 구하시오. [2점]&nbsp;</p><p>(2) $ f ( x) $가 다항함수일 때, $\displaystyle \int _{1} ^{5} {f ( x)dx} $를 구하시오. [2점]</p>
+[FORMULA_FUNC] result=
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => Symbol('x')
+            [hash] => 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Symbol('x')
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-12T06:47:42+00:00 functions.php loaded
+[FORMULA_FUNC] question=<p>함수 $\displaystyle &nbsp;f ( x) +5 \frac{3}{5} $가 모든 실수 $ x $에 대하여 $ f ( x)=x-f ( f ( x)) $를 만족한다. $ &nbsp;f ( 0)=0 $일 때, 다음 물음에 답하시오. [2019 과고2 심화수학II 1학기 중간 3]&nbsp;</p><p>(1) $ f ( x) $의 이계도함수가 존재할 때, $ &nbsp;f ' ( 0) $와 $ &nbsp;f '' ( 0) $의 값을 구하시오. [2점]&nbsp;</p><p>(2) $ f ( x) $가 다항함수일 때, $\displaystyle \int _{1} ^{5} {f ( x)dx} $를 구하시오. [2점]</p>
+[FORMULA_FUNC] result=Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => Symbol('x')
+            [hash] => 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Symbol('x')
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => Symbol('x')
+            [hash] => 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Symbol('x')
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-12T07:22:04+00:00 functions.php loaded
+[FORMULA_FUNC] question=<p>함수 $\displaystyle &nbsp;f ( x) +5 \frac{3}{5} $가 모든 실수 $ x $에 대하여 $ f ( x)=x-f ( f ( x)) $를 만족한다. $ &nbsp;f ( 0)=0 $일 때, 다음 물음에 답하시오. [2019 과고2 심화수학II 1학기 중간 3]&nbsp;</p><p>(1) $ f ( x) $의 이계도함수가 존재할 때, $ &nbsp;f ' ( 0) $와 $ &nbsp;f '' ( 0) $의 값을 구하시오. [2점]&nbsp;</p><p>(2) $ f ( x) $가 다항함수일 때, $\displaystyle \int _{1} ^{5} {f ( x)dx} $를 구하시오. [2점]</p>
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[FORMULA_FUNC] result=Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle &nbsp;f ( x) +5 \frac{3}{5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => x
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => &nbsp;f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => &nbsp;f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => &nbsp;f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [7] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-12T07:30:42+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3}{5}
+            [tree] => Add(Function('f')(Symbol('x')), Mul(Integer(5), Mul(Integer(3), Pow(Integer(5), Integer(-1)))))
+            [hash] => 432db37e1b1756133f1993d1ed0cc7610a4eb8f45ec7c2e21e720b993d26958e
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Mul(Integer(5), Mul(Integer(3), Pow(Integer(5), Integer(-1)))))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{1} ^{5} {f ( x)dx}
+            [tree] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+            [hash] => 814a1e22f7b2b6a1c3fc0a683491d694477bac0c96be9f163943a1d534d70040
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => One
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Integral(Function('f')(Symbol('x')), Tuple(Symbol('x'), Integer(1), Integer(5)))
+        )
+
+)
+
+2025-06-12T07:34:21+00:00 functions.php loaded
+2025-06-12T07:34:33+00:00 functions.php loaded
+2025-06-12T07:34:50+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \frac{a}{2}
+            [tree] => Mul(Pow(Integer(2), Integer(-1)), Symbol('a'))
+            [hash] => cbb01885c5d417e9e8e9a90c40e645488d0d7c7a126e2cbd6814c84873ea7729
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Mul(Pow(Integer(2), Integer(-1)), Symbol('a'))
+        )
+
+    [1] => Array
+        (
+            [latex] => y = ax^2 + bx + c
+            [tree] => Equality(Symbol('y'), Add(Symbol('c'), Add(Mul(Symbol('a'), Pow(Symbol('x'), Integer(2))), Mul(Symbol('b'), Symbol('x')))))
+            [hash] => e06baed3564a9c899bbd4236d94791ec81d80e5958fc09f54b0393f88d7b50d8
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => Integer
+                )
+
+            [sympy_expr] => Equality(Symbol('y'), Add(Symbol('c'), Add(Mul(Symbol('a'), Pow(Symbol('x'), Integer(2))), Mul(Symbol('b'), Symbol('x')))))
+        )
+
+)
+
+2025-06-12T07:40:46+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \frac{a}{2}
+            [tree] => Mul(Pow(Integer(2), Integer(-1)), Symbol('a'))
+            [hash] => cbb01885c5d417e9e8e9a90c40e645488d0d7c7a126e2cbd6814c84873ea7729
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                    [2] => Integer
+                )
+
+            [sympy_expr] => Mul(Pow(Integer(2), Integer(-1)), Symbol('a'))
+        )
+
+    [1] => Array
+        (
+            [latex] => y = ax^2 + bx + c
+            [tree] => Equality(Symbol('y'), Add(Symbol('c'), Add(Mul(Symbol('a'), Pow(Symbol('x'), Integer(2))), Mul(Symbol('b'), Symbol('x')))))
+            [hash] => e06baed3564a9c899bbd4236d94791ec81d80e5958fc09f54b0393f88d7b50d8
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => Integer
+                )
+
+            [sympy_expr] => Equality(Symbol('y'), Add(Symbol('c'), Add(Mul(Symbol('a'), Pow(Symbol('x'), Integer(2))), Mul(Symbol('b'), Symbol('x')))))
+        )
+
+)
+
+2025-06-12T07:49:43+00:00 functions.php loaded
+2025-06-12T07:50:24+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle \int {\cos 2 x \cos 6x dx}
+            [tree] => Integral(Mul(cos(Mul(Integer(2), Symbol('x'))), cos(Mul(Integer(6), Symbol('x')))), Tuple(Symbol('x')))
+            [hash] => 5fb5b9e25803d25f5e4c0f11c3c86a0c566240ce4844c94cd2ead2dd1ab9e4d5
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => Integer
+                )
+
+            [sympy_expr] => Integral(Mul(cos(Mul(Integer(2), Symbol('x'))), cos(Mul(Integer(6), Symbol('x')))), Tuple(Symbol('x')))
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\cos 2x \cos 6xdx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {2x-1} {x ^{2} -2x-3}} dx
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {e ^{x} -e ^{-x}} {e ^{x} +e ^{-x}} dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {1} {3\cos ^{2} x-\sin ^{2} x} dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-12T12:40:42+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle \int {\cos 2 x \cos 6x dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\cos 2x \cos 6xdx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {2x-1} {x ^{2} -2x-3}} dx
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {e ^{x} -e ^{-x}} {e ^{x} +e ^{-x}} dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => \displaystyle \int _{} ^{} {\frac {1} {3\cos ^{2} x-\sin ^{2} x} dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-12T13:15:47+00:00 functions.php loaded
+2025-06-12T13:27:47+00:00 functions.php loaded
+2025-06-12T13:43:51+00:00 functions.php loaded
+2025-06-12T13:44:03+00:00 functions.php loaded
+2025-06-12T13:47:07+00:00 functions.php loaded
+2025-06-12T13:52:13+00:00 functions.php loaded
+2025-06-12T14:10:01+00:00 functions.php loaded
+2025-06-12T14:16:09+00:00 functions.php loaded
+2025-06-12T14:17:16+00:00 functions.php loaded
+2025-06-12T14:24:05+00:00 functions.php loaded
+2025-06-12T14:30:41+00:00 functions.php loaded
+2025-06-12T14:43:48+00:00 functions.php loaded
+2025-06-12T14:44:58+00:00 functions.php loaded
+2025-06-12T16:00:01+00:00 functions.php loaded
+2025-06-12T16:00:18+00:00 functions.php loaded
+2025-06-12T16:00:34+00:00 functions.php loaded
+2025-06-12T23:16:29+00:00 functions.php loaded
+2025-06-12T23:19:43+00:00 functions.php loaded
+2025-06-12T23:24:39+00:00 functions.php loaded
+2025-06-12T23:31:05+00:00 functions.php loaded
+2025-06-12T23:31:07+00:00 functions.php loaded
+2025-06-12T23:33:31+00:00 functions.php loaded
+2025-06-12T23:58:24+00:00 functions.php loaded
+2025-06-13T00:00:45+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-13T03:36:21+00:00 functions.php loaded
+2025-06-13T03:36:25+00:00 functions.php loaded
+2025-06-13T03:44:11+00:00 functions.php loaded
+2025-06-13T03:49:38+00:00 functions.php loaded
+2025-06-13T03:49:43+00:00 functions.php loaded
+2025-06-13T03:51:34+00:00 functions.php loaded
+2025-06-13T03:51:35+00:00 functions.php loaded
+2025-06-13T03:52:20+00:00 functions.php loaded
+2025-06-13T03:52:31+00:00 functions.php loaded
+2025-06-13T03:53:18+00:00 functions.php loaded
+2025-06-13T03:53:20+00:00 functions.php loaded
+2025-06-13T03:53:20+00:00 functions.php loaded
+2025-06-13T04:11:28+00:00 functions.php loaded
+2025-06-13T04:19:46+00:00 functions.php loaded
+2025-06-13T04:20:31+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+2025-06-13T04:20:39+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-13T04:48:22+00:00 functions.php loaded
+2025-06-13T05:33:43+00:00 functions.php loaded
+2025-06-13T05:49:59+00:00 functions.php loaded
+2025-06-13T07:55:07+00:00 functions.php loaded
+2025-06-13T07:55:48+00:00 functions.php loaded
+2025-06-13T07:59:53+00:00 functions.php loaded
+2025-06-13T13:10:22+00:00 functions.php loaded
+2025-06-13T15:59:54+00:00 functions.php loaded
+2025-06-13T15:59:54+00:00 functions.php loaded
+2025-06-13T16:13:04+00:00 functions.php loaded
+2025-06-13T16:23:44+00:00 functions.php loaded
+2025-06-15T01:38:46+00:00 functions.php loaded
+2025-06-15T01:38:56+00:00 functions.php loaded
+2025-06-15T01:50:55+00:00 functions.php loaded
+2025-06-15T01:56:46+00:00 functions.php loaded
+2025-06-15T02:02:54+00:00 functions.php loaded
+2025-06-15T02:11:14+00:00 functions.php loaded
+2025-06-15T02:13:41+00:00 functions.php loaded
+2025-06-15T02:25:20+00:00 functions.php loaded
+2025-06-15T02:27:36+00:00 functions.php loaded
+2025-06-15T02:30:11+00:00 functions.php loaded
+2025-06-15T02:30:19+00:00 functions.php loaded
+2025-06-15T02:31:35+00:00 functions.php loaded
+2025-06-15T03:45:46+00:00 functions.php loaded
+2025-06-15T03:45:51+00:00 functions.php loaded
+2025-06-15T03:50:32+00:00 functions.php loaded
+2025-06-15T03:51:03+00:00 functions.php loaded
+2025-06-15T05:11:38+00:00 functions.php loaded
+2025-06-15T05:27:15+00:00 functions.php loaded
+2025-06-15T05:44:55+00:00 functions.php loaded
+2025-06-15T05:44:57+00:00 functions.php loaded
+2025-06-15T05:58:34+00:00 functions.php loaded
+2025-06-15T05:58:39+00:00 functions.php loaded
+2025-06-15T07:27:35+00:00 functions.php loaded
+2025-06-15T07:27:37+00:00 functions.php loaded
+2025-06-15T07:27:58+00:00 functions.php loaded
+2025-06-15T07:28:16+00:00 functions.php loaded
+2025-06-15T07:32:41+00:00 functions.php loaded
+2025-06-15T07:32:43+00:00 functions.php loaded
+2025-06-15T07:34:21+00:00 functions.php loaded
+2025-06-15T07:34:23+00:00 functions.php loaded
+2025-06-15T07:34:46+00:00 functions.php loaded
+2025-06-15T07:35:10+00:00 functions.php loaded
+2025-06-15T07:41:11+00:00 functions.php loaded
+2025-06-15T07:41:13+00:00 functions.php loaded
+2025-06-15T10:35:21+00:00 functions.php loaded
+2025-06-15T10:35:26+00:00 functions.php loaded
+2025-06-15T10:39:33+00:00 functions.php loaded
+2025-06-15T10:39:35+00:00 functions.php loaded
+2025-06-15T10:39:36+00:00 functions.php loaded
+2025-06-15T13:59:12+00:00 functions.php loaded
+2025-06-15T14:14:34+00:00 functions.php loaded
+2025-06-15T14:14:44+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+2025-06-15T14:14:50+00:00 functions.php loaded
+2025-06-15T14:14:51+00:00 functions.php loaded
+2025-06-15T14:14:51+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-15T14:19:17+00:00 functions.php loaded
+2025-06-15T14:26:27+00:00 functions.php loaded
+2025-06-15T14:26:35+00:00 functions.php loaded
+2025-06-15T14:29:03+00:00 functions.php loaded
+2025-06-15T14:29:33+00:00 functions.php loaded
+2025-06-15T14:29:36+00:00 functions.php loaded
+2025-06-15T14:29:38+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => Add(Function('f')(Symbol('x')), Integer(5))
+            [hash] => 3e8046e2c7b689b9e149e0dc282dd966986661844239a8aec183ca2b51f090e0
+            [keywords] => Array
+                (
+                    [0] => Integer
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Integer(5))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => Add(Function('f')(Symbol('x')), Integer(5))
+            [hash] => 3e8046e2c7b689b9e149e0dc282dd966986661844239a8aec183ca2b51f090e0
+            [keywords] => Array
+                (
+                    [0] => Integer
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Integer(5))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => Add(Function('f')(Symbol('x')), Integer(5))
+            [hash] => 3e8046e2c7b689b9e149e0dc282dd966986661844239a8aec183ca2b51f090e0
+            [keywords] => Array
+                (
+                    [0] => Integer
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Integer(5))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-15T14:35:17+00:00 functions.php loaded
+2025-06-15T14:40:42+00:00 functions.php loaded
+2025-06-15T14:43:54+00:00 functions.php loaded
+2025-06-15T14:46:28+00:00 functions.php loaded
+2025-06-15T14:46:32+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+2025-06-15T14:46:34+00:00 functions.php loaded
+2025-06-15T14:46:35+00:00 functions.php loaded
+2025-06-15T14:46:37+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+2025-06-15T14:46:38+00:00 functions.php loaded
+2025-06-15T14:46:39+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+2025-06-15T14:46:39+00:00 functions.php loaded
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5001 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[mathpix_analyzer.php] API error: Operation timed out after 5000 milliseconds with 0 bytes received
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-15T14:56:45+00:00 functions.php loaded
+2025-06-15T14:56:57+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle f ( x) +5 \frac{3 {5}
+            [tree] => Add(Function('f')(Symbol('x')), Integer(5))
+            [hash] => 3e8046e2c7b689b9e149e0dc282dd966986661844239a8aec183ca2b51f090e0
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => Integer
+                )
+
+            [sympy_expr] => Add(Function('f')(Symbol('x')), Integer(5))
+        )
+
+    [1] => Array
+        (
+            [latex] => f ( x)=x-f ( f ( x))
+            [tree] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+            [hash] => e35e872414bd2ca11bb6c52c6fd79747dd5b2b9789b83b52b24c175169d77d9d
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                    [1] => NegativeOne
+                )
+
+            [sympy_expr] => Equality(Function('f')(Symbol('x')), Add(Symbol('x'), Mul(Integer(-1), Function('f')(Function('f')(Symbol('x'))))))
+        )
+
+    [2] => Array
+        (
+            [latex] => f ( 0)=0
+            [tree] => Equality(Function('f')(Integer(0)), Integer(0))
+            [hash] => 5482700c577e86e437cb1b23a312ee7ead871e1a558ecb116a0f213e343fc011
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Equality(Function('f')(Integer(0)), Integer(0))
+        )
+
+    [3] => Array
+        (
+            [latex] => f ( x)
+            [tree] => Function('f')(Symbol('x'))
+            [hash] => 66c827cb06b740231d03b20a5182fd8cb1a2b8aa5a771cb6f169a4ce7d44cb3f
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Function('f')(Symbol('x'))
+        )
+
+    [4] => Array
+        (
+            [latex] => f ' ( 0)
+            [tree] => Function("f'")(Integer(0))
+            [hash] => dbc264b558382475d499036e6bb7d8521a80eda7c52f93cb30cbac0affce4d2b
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f'")(Integer(0))
+        )
+
+    [5] => Array
+        (
+            [latex] => f '' ( 0)
+            [tree] => Function("f''")(Integer(0))
+            [hash] => 77b9d1a84c4ed4fa35697f71ac89cc4101065a550c5c6b39cb1522b84f71e3d0
+            [keywords] => Array
+                (
+                    [0] => Zero
+                )
+
+            [sympy_expr] => Function("f''")(Integer(0))
+        )
+
+    [6] => Array
+        (
+            [latex] => \displaystyle \int _{ } ^{5} {f ( x)dx}
+            [tree] => 
+            [hash] => 
+            [keywords] => Array
+                (
+                )
+
+            [sympy_expr] => 
+        )
+
+)
+
+2025-06-15T15:01:55+00:00 functions.php loaded
+2025-06-15T15:02:24+00:00 functions.php loaded
+2025-06-15T15:07:43+00:00 functions.php loaded
+2025-06-15T15:07:45+00:00 functions.php loaded
+2025-06-15T15:07:49+00:00 functions.php loaded
+2025-06-15T15:14:15+00:00 functions.php loaded
+2025-06-15T15:14:19+00:00 functions.php loaded
+2025-06-15T15:22:13+00:00 functions.php loaded
+2025-06-16T03:43:41+00:00 functions.php loaded
+2025-06-16T03:43:41+00:00 functions.php loaded
+2025-06-16T03:43:41+00:00 functions.php loaded
+2025-06-16T03:54:36+00:00 functions.php loaded
+2025-06-16T03:54:53+00:00 functions.php loaded
+2025-06-16T03:55:04+00:00 functions.php loaded
+2025-06-16T04:10:04+00:00 functions.php loaded
+2025-06-16T04:10:09+00:00 functions.php loaded
+2025-06-16T04:10:51+00:00 functions.php loaded
+2025-06-16T07:11:29+00:00 functions.php loaded
+2025-06-16T08:53:26+00:00 functions.php loaded
+2025-06-16T09:28:34+00:00 functions.php loaded
+2025-06-16T09:28:36+00:00 functions.php loaded
+2025-06-16T09:28:39+00:00 functions.php loaded
+2025-06-16T09:28:41+00:00 functions.php loaded
+2025-06-16T09:52:16+00:00 functions.php loaded
+2025-06-16T09:55:29+00:00 functions.php loaded
+2025-06-16T09:57:58+00:00 functions.php loaded
+2025-06-16T09:58:09+00:00 functions.php loaded
+2025-06-16T09:58:10+00:00 functions.php loaded
+2025-06-16T10:04:28+00:00 functions.php loaded
+2025-06-16T10:07:05+00:00 functions.php loaded
+2025-06-16T10:13:59+00:00 functions.php loaded
+2025-06-16T10:14:17+00:00 functions.php loaded
+2025-06-16T10:14:29+00:00 functions.php loaded
+2025-06-16T10:15:14+00:00 functions.php loaded
+2025-06-16T10:15:14+00:00 functions.php loaded
+2025-06-16T10:15:45+00:00 functions.php loaded
+2025-06-16T10:16:03+00:00 functions.php loaded
+2025-06-16T10:41:20+00:00 functions.php loaded
+2025-06-16T10:43:28+00:00 functions.php loaded
+2025-06-16T10:43:29+00:00 functions.php loaded
+2025-06-16T10:43:33+00:00 functions.php loaded
+2025-06-16T10:43:39+00:00 functions.php loaded
+2025-06-16T10:43:42+00:00 functions.php loaded
+2025-06-16T13:37:31+00:00 functions.php loaded
+2025-06-16T13:37:34+00:00 functions.php loaded
+2025-06-16T13:42:47+00:00 functions.php loaded
+2025-06-16T13:43:08+00:00 functions.php loaded
+2025-06-16T13:43:30+00:00 functions.php loaded
+2025-06-16T13:58:16+00:00 functions.php loaded
+2025-06-16T13:58:19+00:00 functions.php loaded
+2025-06-16T13:58:38+00:00 functions.php loaded
+2025-06-16T13:59:42+00:00 functions.php loaded
+2025-06-16T14:44:34+00:00 functions.php loaded
+2025-06-17T04:38:51+00:00 functions.php loaded
+2025-06-17T04:38:54+00:00 functions.php loaded
+2025-06-17T04:38:56+00:00 functions.php loaded
+2025-06-17T04:38:57+00:00 functions.php loaded

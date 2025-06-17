@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 개별 등록</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .path-group select {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📌 수학 문제 개별 등록</h2>
+  <form id="problemForm">
+    <label>제목</label>
+    <input type="text" name="title" required>
+
+    <label>경로 선택</label>
+    <div class="path-group">
+      <select id="path1"></select>
+      <select id="path2"></select>
+      <select id="path3"></select>
+      <select id="path4"></select>
+      <select id="path5"></select>
+      <select id="path6"></select>
+    </div>
+    <input type="hidden" name="path_text" id="path_text" required>
+
+    <label>문제</label>
+    <textarea name="question" rows="5" required></textarea>
+
+    <label>해설</label>
+    <textarea name="solution" rows="5"></textarea>
+
+    <label>정답</label>
+    <input type="text" name="answer">
+
+    <label>난이도 (1~5)</label>
+    <select name="difficulty">
+      <option value="">선택</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <label>유형 (선다형, 단답형, 서술형 등)</label>
+    <input type="text" name="type">
+
+    <label>평가 항목 (계산, 추론 등)</label>
+    <input type="text" name="category">
+
+    <label>힌트</label>
+    <textarea name="hint"></textarea>
+
+    <label>동영상 링크</label>
+    <input type="text" name="video">
+
+    <label>출처</label>
+    <input type="text" name="source">
+
+    <button type="submit">등록하기</button>
+    <p id="message"></p>
+  </form>
+
+  <script>
+    let pathData = {};
+
+    function loadDropdown(level, data) {
+      const select = document.getElementById('path' + level);
+      select.innerHTML = '<option value="">선택</option>';
+      if (data) {
+        Object.keys(data).forEach(key => {
+          const option = document.createElement('option');
+          option.value = key;
+          option.textContent = key;
+          select.appendChild(option);
+        });
+      }
+    }
+
+    function updatePathText() {
+      const parts = [];
+      for (let i = 1; i <= 6; i++) {
+        const val = document.getElementById('path' + i).value;
+        if (val) parts.push(val);
+      }
+      document.getElementById('path_text').value = parts.join('~');
+    }
+
+    function fetchPathTree() {
+      fetch('get_path_tree.php')
+        .then(res => res.json())
+        .then(data => {
+          pathData = data;
+          loadDropdown(1, pathData);
+        })
+        .catch(err => {
+          const msg = document.getElementById('message');
+          msg.textContent = '❌ 경로 불러오기 실패: ' + err;
+          msg.className = 'error';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPathTree();
+
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById('path' + i).addEventListener('change', function () {
+          let data = pathData;
+          for (let j = 1; j <= i; j++) {
+            const val = document.getElementById('path' + j).value;
+            if (!val || !data[val]) {
+              loadDropdown(j + 1, {});
+              return;
+            }
+            data = data[val];
+          }
+          loadDropdown(i + 1, data);
+          updatePathText();
+        });
+      }
+
+      document.getElementById('path6').addEventListener('change', updatePathText);
+    });
+
+    document.getElementById('problemForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      fetch('insert_problem.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        const msg = document.getElementById('message');
+        if (data.success) {
+          msg.textContent = '✅ 문제 등록 성공!';
+          msg.className = 'success';
+          document.getElementById('problemForm').reset();
+        } else {
+          msg.textContent = '❌ 등록 실패: ' + data.message;
+          msg.className = 'error';
+        }
+      })
+      .catch(err => {
+        const msg = document.getElementById('message');
+        msg.textContent = '❌ 오류 발생: ' + err;
+        msg.className = 'error';
+      });
+    });
+  </script>
+</body>
+</html>

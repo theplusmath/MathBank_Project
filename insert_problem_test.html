@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문제 등록 테스트</title>
+</head>
+<body> 
+    <h2>?? 문제 등록 테스트</h2>
+
+    <form method="POST" action="insert_problem.php">
+        <label>제목:</label><br>
+        <input type="text" name="title" value="테스트 문제 제목" style="width:400px;"><br><br>
+
+        <label>경로 이름 (path_text):</label><br>
+        <input type="text" name="path_text" value="2022개정/고등수학/미적분/정적분/삼각치환" style="width:400px;"><br><br>
+
+        <label>문제 (LaTeX 수식 포함):</label><br>
+        <textarea name="question" rows="5" cols="80">
+            \( \int_0^{\frac{\pi}{2}} \sin x \, dx \)
+        </textarea><br><br>
+
+        <label>해설:</label><br>
+        <textarea name="solution" rows="3" cols="80">
+            \[ -\cos x \Big|_0^{\frac{\pi}{2}} = 1 \]
+        </textarea><br><br>
+
+        <label>정답:</label><br>
+        <input type="text" name="answer" value="1"><br><br>
+
+        <label>난이도:</label>
+        <select name="difficulty">
+            <option value="상">상</option>
+            <option value="중" selected>중</option>
+            <option value="하">하</option>
+        </select><br><br>
+
+        <label>유형:</label>
+        <input type="text" name="type" value="정적분"><br><br>
+
+        <label>카테고리:</label>
+        <input type="text" name="category" value="개념응용"><br><br>
+
+        <label>힌트:</label><br>
+        <input type="text" name="hint" value="삼각함수 적분 공식을 떠올리세요"><br><br>
+
+        <label>풀이 영상 링크:</label><br>
+        <input type="text" name="video" value=""><br><br>
+
+        <label>출처:</label><br>
+        <input type="text" name="source" value="테스트용"><br><br>
+
+        <label>작성자 ID:</label><br>
+        <input type="text" name="created_by" value="1"><br><br>
+
+        <button type="submit">? 문제 등록</button>
+    </form>
+</body>
+</html>

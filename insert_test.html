@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 등록</title>
+</head>
+<body>
+  <h2>문제 등록 테스트</h2>
+
+  <form action="insert_problem.php" method="POST">
+    <label>제목: <input type="text" name="title" required></label><br><br>
+
+    <label>경로 이름(path_text): <input type="text" name="path_text" placeholder="예: 2022개정/고등수학/수1/다항식/곱셈공식"></label><br><br>
+
+    <label>문제: <br>
+      <textarea name="question" rows="4" cols="50" required>\(x^2 + 3x + 2\)</textarea>
+    </label><br><br>
+
+    <label>풀이: <br>
+      <textarea name="solution" rows="4" cols="50"></textarea>
+    </label><br><br>
+
+    <label>정답: <input type="text" name="answer"></label><br><br>
+
+    <label>난이도: <input type="number" name="difficulty" min="1" max="5"></label><br><br>
+
+    <label>문제 유형(type): <input type="text" name="type" placeholder="예: 객관식"></label><br><br>
+
+    <label>카테고리(category): <input type="text" name="category" placeholder="예: 정규시험"></label><br><br>
+
+    <label>힌트: <input type="text" name="hint"></label><br><br>
+
+    <label>풀이 영상 링크: <input type="text" name="video" placeholder="YouTube URL 등"></label><br><br>
+
+    <label>출처: <input type="text" name="source" placeholder="예: 수학의 정석, 프린트 등"></label><br><br>
+
+    <label>작성자 ID(created_by): <input type="number" name="created_by" placeholder="선택사항"></label><br><br>
+
+    <button type="submit">문제 등록</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+--- [START LOG] 2025-05-22 13:44:15 ---
+
+[TEST POST DATA]: Array
+(
+    [id] => 1
+    [question] => <p>이것은 테스트 문제입니다. &nbsp;ㅇㅁㄹㅇ<br><br>&lt;p&gt;이차함수의 일반형은 다음과 같다:&lt;/p&gt;<br>$y = ax^2 + bx + c$<br>&nbsp;</p>
+)
+[? DB 연결 성공]
+[?? 현재 연결된 데이터베이스] theplusmath
+[?? problems 테이블 컬럼 목록]
+id, title, question, answer, solution, hint, video, difficulty, type, category, source, created_by, tags, path_text, path_id, copied_by, origin_id, main_formula_latex, main_formula_tree, all_formulas_tree, formula_keywords, hash, sympy_expr, created_at
+
+[Analyzed Keywords]: Integer,Symbol
+[Problem ID to update]: 1
+
+[?? UPDATE 쿼리]: UPDATE problems SET formula_keywords = ? WHERE id = ?
+[?? UPDATE 쿼리 Hex Dump]: 5550444154452070726f626c656d732053455420666f726d756c615f6b6579776f726473203d203f205748455245206964203d203f
+[? UPDATE prepare 성공]
+[? UPDATE bind_param 성공]
+[? UPDATE 쿼리 성공적으로 실행됨]

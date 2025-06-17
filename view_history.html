@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 수정 이력</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🕒 문제 수정 이력 보기</h1>
+<div>
+  <label>문제 ID: <input type="number" id="problemIdInput" /></label>
+  <button onclick="loadHistory()">이력 불러오기</button>
+</div>
+
+<h2 id="historyTitle"></h2>
+
+<table id="historyTable">
+  <thead>
+    <tr>
+      <th>수정일</th>
+      <th>제목</th>
+      <th>질문</th>
+      <th>정답</th>
+      <th>해설</th>
+      <th>난이도</th>
+      <th>유형</th>
+      <th>비교</th> <!-- ✅ 추가 -->
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+
+<div id="diffResult" style="margin-top: 30px; padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; display: none;">
+  <h3>🔍 변경된 필드</h3>
+  <ul id="diffList"></ul>
+</div>
+
+
+
+<script>
+function loadHistory() {
+  const problemId = document.getElementById('problemIdInput').value;
+  if (!problemId) {
+    alert("문제 ID를 입력하세요.");
+    return;
+  }
+
+  fetch('get_history_by_id.php?id=' + problemId)
+    .then(res => res.json())
+    .then(data => {
+      const tbody = document.querySelector('#historyTable tbody');
+      tbody.innerHTML = '';
+      document.getElementById('historyTitle').textContent = `📝 문제 ID ${problemId}의 수정 이력 (${data.data.length}개)`;
+
+      if (!data.success || data.data.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7">이력이 없습니다.</td></tr>`;
+        return;
+      }
+
+      data.data.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.updated_at}</td>
+          <td>${row.title}</td>
+          <td>${row.question}</td>
+          <td>${row.answer}</td>
+          <td>${row.solution}</td>
+          <td>${row.difficulty}</td>
+          <td>${row.type}</td>
+          <td><button onclick="compareHistory(${row.id})">비교</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    })
+    .catch(err => {
+      alert("불러오는 중 오류 발생");
+      console.error(err);
+    });
+}
+</script>
+<script>
+function compareHistory(historyId) {
+  fetch('get_history_diff.php?history_id=' + historyId)
+    .then(res => res.json())
+    .then(data => {
+      const diffBox = document.getElementById('diffResult');
+      const list = document.getElementById('diffList');
+      list.innerHTML = '';
+
+      if (!data.success || data.diff.length === 0) {
+        list.innerHTML = '<li>차이가 없습니다. 동일한 내용입니다.</li>';
+      } else {
+        data.diff.forEach(d => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${d.field}</strong><br>
+            <span style="color: red;">이전:</span> ${d.old}<br>
+            <span style="color: green;">현재:</span> ${d.new}<br><br>`;
+          list.appendChild(li);
+        });
+      }
+      diffBox.style.display = 'block';
+      diffBox.scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(err => {
+      alert('비교 중 오류 발생: ' + err);
+    });
+}
+</script>
+
+</body>
+</html>

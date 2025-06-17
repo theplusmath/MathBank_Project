@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경로 트리 보기</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+
+    .folder {
+      cursor: pointer;
+      margin: 5px 0;
+    }
+
+    .folder-label {
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      padding: 3px 6px;
+    }
+
+    .folder-label.selected {
+      background-color: #d0ebff;
+      border-radius: 4px;
+    }
+
+    .children {
+      display: none;
+      margin-left: 15px;
+    }
+
+    .folder.open > .children {
+      display: block;
+    }
+
+    #selectedIdText {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #004080;
+      font-weight: bold;
+    }
+
+    #contextMenu {
+      position: absolute;
+      background: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 1000;
+    }
+
+    #contextMenu div {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    #contextMenu div:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 경로 트리 보기</h2>
+  <div id="pathTree"></div>
+  <div id="selectedIdText">선택된 경로 ID: 없음</div>
+  <div id="contextMenu">
+    <div id="addChildOption">➕ 하위 경로 추가</div>
+    <div id="renameOption">✏️ 이름 수정</div>
+    <div id="deleteOption">🗑 삭제</div>
+  </div>
+
+  <script>
+    let currentRightClickNode = null;
+    let lastDeletedNode = null;
+
+    async function fetchPaths() {
+      const res = await fetch('get_path_tree_flat_paths.php');
+      const flatPaths = await res.json();
+      console.log(flatPaths); // 디버깅용 출력
+
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, { ...p, children: [] }));
+
+      flatPaths.forEach(p => {
+        if (p.parent_id !== null && pathMap.has(p.parent_id)) {
+          pathMap.get(p.parent_id).children.push(pathMap.get(p.id));
+        }
+      });
+
+      const roots = flatPaths.filter(p => p.parent_id === null || p.parent_id === 0);
+      const treeContainer = document.getElementById('pathTree');
+      treeContainer.innerHTML = '';
+      roots.forEach(root => {
+        treeContainer.appendChild(createTreeElement(pathMap.get(root.id)));
+      });
+    }
+
+    function createTreeElement(node) {
+      const li = document.createElement("li");
+      li.classList.add("folder");
+
+      const span = document.createElement("span");
+      span.textContent = node.name;
+      span.classList.add("folder-label");
+      span.dataset.id = node.id;
+
+      span.addEventListener("click", (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.folder-label').forEach(s => s.classList.remove('selected'));
+        span.classList.add('selected');
+        document.getElementById("selectedIdText").textContent = `선택된 경로 ID: ${node.id}`;
+      });
+
+      span.addEventListener("dblclick", (e) => {
+        e.stopPropagation();
+        li.classList.toggle("open");
+      });
+
+      span.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        currentRightClickNode = node;
+        showContextMenu(e.pageX, e.pageY);
+      });
+
+      li.appendChild(span);
+
+      if (node.children.length > 0) {
+        const ul = document.createElement("ul");
+        ul.classList.add("children");
+        node.children.forEach(child => {
+          ul.appendChild(createTreeElement(child));
+        });
+        li.appendChild(ul);
+      }
+
+      return li;
+    }
+
+    function showContextMenu(x, y) {
+      const menu = document.getElementById("contextMenu");
+      menu.style.top = y + "px";
+      menu.style.left = x + "px";
+      menu.style.display = "block";
+    }
+
+    document.addEventListener("click", () => {
+      document.getElementById("contextMenu").style.display = "none";
+    });
+
+    document.addEventListener("DOMContentLoaded", fetchPaths);
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+Array
+(
+    [0] => \displaystyle x
+    [1] => \displaystyle f ( x)
+    [2] => \displaystyle g ( x)
+    [3] => \displaystyle \int   _{} ^{} {f ( x)dx}
+    [4] => \displaystyle \int   _{} ^{} {g ( x)dx}
+    [5] => \displaystyle f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}
+    [6] => \displaystyle f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}
+    [7] => f ( x)
+    [8] => g ( x)
+    [9] => 
+    [10] => f ''  ( x)+g ''  ( x)+g ( x)=e ^{x}
+    [11] => f ''  ( x)-f ( x)+g ''  ( x)=e ^{-x}
+)
+Array
+(
+    [0] => \displaystyle f ( x)
+    [1] => \displaystyle x
+    [2] => \displaystyle f ( x)=x-f ( f ( x))
+    [3] => \displaystyle f ( 0)=0
+    [4] => \displaystyle f '  ( 0)
+    [5] => \displaystyle f ''  ( 0)
+    [6] => \displaystyle \int   _{} ^{} {f ( x)dx}
+    [7] => f ( x)
+    [8] => f ( x)=x-f ( f ( x))
+    [9] => f ( 0)=0
+    [10] => f '  ( 0)
+    [11] => f ''  ( 0)
+    [12] => 
+)
+Array
+(
+    [0] => \displaystyle f ( x)
+    [1] => \displaystyle x
+    [2] => \displaystyle f ( x)=x-f ( f ( x))
+    [3] => \displaystyle f ( 0)=0
+    [4] => \displaystyle f '  ( 0)
+    [5] => \displaystyle f ''  ( 0)
+    [6] => \displaystyle \int   _{} ^{} {f ( x)dx}
+    [7] => f ( x)
+    [8] => f ( x)=x-f ( f ( x))
+    [9] => f ( 0)=0
+    [10] => f '  ( 0)
+    [11] => f ''  ( 0)
+    [12] => 
+)

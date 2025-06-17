@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경로 트리 보기</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    .folder {
+      cursor: pointer;
+      margin: 5px 0;
+    }
+    .folder-label {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .children {
+      display: none;
+      margin-left: 15px;
+    }
+    .folder.open > .children {
+      display: block;
+    }
+    #selectedIdText {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #004080;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 경로 트리 보기</h2>
+  <div id="pathTree"></div>
+  <div id="selectedIdText">선택된 경로 ID: 없음</div>
+
+  <script>
+    async function fetchPaths() {
+      const res = await fetch('get_path_tree_flat_paths.php');
+      const flatPaths = await res.json();
+
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, { ...p, children: [] }));
+
+      // 각 항목을 부모 아래에 추가
+      flatPaths.forEach(p => {
+        if (p.parent_id !== null && p.parent_id !== 0) {
+          const parent = pathMap.get(p.parent_id);
+          if (parent) parent.children.push(pathMap.get(p.id));
+        }
+      });
+
+      const roots = flatPaths.filter(p => p.parent_id === null || p.parent_id === 0);
+      const treeContainer = document.getElementById('pathTree');
+      roots.forEach(root => {
+        const node = pathMap.get(root.id);
+        treeContainer.appendChild(createTreeElement(node));
+      });
+    }
+
+    function createTreeElement(node) {
+      const li = document.createElement("li");
+      li.classList.add("folder");
+
+      const span = document.createElement("span");
+      span.textContent = node.name;
+      span.classList.add("folder-label");
+
+      span.addEventListener("click", (e) => {
+        e.stopPropagation();
+        document.getElementById("selectedIdText").textContent = `선택된 경로 ID: ${node.id}`;
+        li.classList.toggle("open");
+      });
+
+      li.appendChild(span);
+
+      if (node.children.length > 0) {
+        const ul = document.createElement("ul");
+        ul.classList.add("children");
+        node.children.forEach(child => {
+          ul.appendChild(createTreeElement(child));
+        });
+        li.appendChild(ul);
+      }
+
+      return li;
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchPaths);
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경로 선택기</title>
+  <style>
+    select { margin-bottom: 10px; }
+    input[type="text"] { margin-right: 5px; }
+  </style>
+</head>
+<body>
+  <h2>📚 경로 선택 (6단)</h2>
+
+  <div id="dropdowns">
+    <select id="depth-0"><option>-- 교육과정 선택 --</option></select><br>
+    <select id="depth-1"><option>-- 수학 구분 선택 --</option></select><br>
+    <select id="depth-2"><option>-- 교과서 선택 --</option></select><br>
+    <select id="depth-3"><option>-- 대단원 선택 --</option></select><br>
+    <select id="depth-4"><option>-- 중단원 선택 --</option></select><br>
+    <select id="depth-5"><option>-- 소단원 선택 --</option></select><br><br>
+  </div>
+
+  <div>
+    <input type="text" id="newPathName" placeholder="새 경로 이름 입력">
+    <button onclick="addPath()">➕ 하위 경로 등록</button>
+    <button onclick="deletePath()">🗑️ 현재 경로 삭제</button>
+  </div>
+
+  <div id="message" style="margin-top:20px;color:green;"></div>
+
+  <script>
+    const depthCount = 6;
+    const dropdowns = Array.from({ length: depthCount }, (_, i) => document.getElementById(`depth-${i}`));
+    const messageDiv = document.getElementById('message');
+
+    function clearDropdowns(start) {
+      for (let i = start; i < depthCount; i++) {
+        dropdowns[i].innerHTML = `<option value="">-- 선택 --</option>`;
+      }
+    }
+
+    function loadChildPaths(parentId, depth) {
+      fetch('select_path.php')
+        .then(res => res.json())
+        .then(json => {
+          const allPaths = json.data;
+          const children = allPaths.filter(p => String(p.parent_id) === String(parentId));
+          clearDropdowns(depth);
+          children.forEach(child => {
+            const option = document.createElement('option');
+            option.value = child.id;
+            option.textContent = child.name;
+            dropdowns[depth].appendChild(option);
+          });
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadChildPaths(null, 0);
+    });
+
+    dropdowns.forEach((dropdown, i) => {
+      dropdown.addEventListener('change', () => {
+        const selectedId = dropdown.value;
+        if (i < depthCount - 1) {
+          loadChildPaths(selectedId, i + 1);
+        }
+      });
+    });
+
+    function addPath() {
+      const name = document.getElementById('newPathName').value.trim();
+      if (!name) {
+        alert("경로 이름을 입력하세요.");
+        return;
+      }
+
+      let parentId = null;
+      let depth = 0;
+
+      for (let i = 0; i < depthCount; i++) {
+        const val = dropdowns[i].value;
+        if (val) {
+          parentId = val;
+          depth = i + 1;
+        }
+      }
+
+      const formData = new URLSearchParams();
+      formData.append('name', name);
+      formData.append('parent_id', parentId ?? '');
+      formData.append('depth', depth);
+
+      fetch('insert_path.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          alert("등록 성공! 새로고침 없이 반영됩니다.");
+          loadChildPaths(parentId, depth);
+          document.getElementById('newPathName').value = '';
+        } else {
+          alert("등록 실패: " + json.message);
+        }
+      });
+    }
+
+    function deletePath() {
+      let targetId = null;
+      for (let i = depthCount - 1; i >= 0; i--) {
+        const val = dropdowns[i].value;
+        if (val) {
+          targetId = val;
+          break;
+        }
+      }
+      if (!targetId) {
+        alert("삭제할 경로를 선택하세요.");
+        return;
+      }
+
+      if (!confirm("정말 삭제하시겠습니까? 하위 항목도 모두 삭제됩니다.")) return;
+
+      fetch(`delete_path.php?id=${targetId}`)
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            alert("삭제 완료!");
+            location.reload();
+          } else {
+            alert("삭제 실패: " + json.message);
+          }
+        });
+    }
+  </script>
+</body>
+</html>

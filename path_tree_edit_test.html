@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이름 수정 테스트</title>
+  <style>
+    body { font-family: 'Malgun Gothic'; padding: 20px; }
+    input { font-size: 16px; padding: 4px; width: 300px; }
+    button { padding: 5px 10px; font-size: 16px; margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h2>이름 수정 테스트</h2>
+  <label>
+    ID:
+    <input type="number" id="idInput" value="3">
+  </label><br><br>
+  <label>
+    새 이름:
+    <input type="text" id="nameInput" value="새 이름">
+  </label><br><br>
+  <button onclick="update()">이름 수정하기</button>
+
+  <p id="result"></p>
+
+  <script>
+    async function update() {
+      const id = document.getElementById('idInput').value;
+      const name = document.getElementById('nameInput').value;
+
+      const res = await fetch('update_path.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, name })
+      });
+
+      const result = await res.json();
+      document.getElementById('result').textContent = result.success
+        ? "✅ 이름 수정 성공!"
+        : "❌ 실패: " + (result.message || "알 수 없는 오류");
+    }
+  </script>
+</body>
+</html>

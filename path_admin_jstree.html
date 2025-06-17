@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>더플러스수학 경로 관리</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree@3.3.12/dist/themes/default/style.min.css">
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 20px;
+    }
+    #tree {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      background: #fdfdfd;
+    }
+    .jstree-anchor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .jstree-anchor .actions {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+    .actions button {
+      margin-left: 5px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 더플러스수학 경로 관리 시스템</h2>
+  <div id="tree"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jstree@3.3.12/dist/jstree.min.js"></script>
+  <script>
+    $(function() {
+      // 초기 경로 트리 불러오기
+      $('#tree').jstree({
+        core: {
+          check_callback: true,
+          data: function (obj, cb) {
+            $.getJSON('select_path.php', function(res) {
+              const nodes = res.data.map(item => ({
+                id: item.id,
+                parent: item.parent_id ? item.parent_id : '#',
+                text: item.name,
+                data: item,
+              }));
+              cb(nodes);
+            });
+          }
+        },
+        plugins: ["dnd", "contextmenu", "state", "types"],
+        contextmenu: {
+          items: function(node) {
+            return {
+              rename: {
+                label: "✏ 이름 수정",
+                action: function () {
+                  $('#tree').jstree('edit', node);
+                }
+              },
+              create: {
+                label: "➕ 하위 경로 추가",
+                action: function () {
+                  const name = prompt("하위 경로 이름은?");
+                  if (!name) return;
+                  $.post('insert_path.php', {
+                    parent_id: node.id,
+                    name: name,
+                    depth: parseInt(node.data.depth) + 1
+                  }, function(res) {
+                    if (res.success) location.reload();
+                    else alert('등록 실패');
+                  }, 'json');
+                }
+              },
+              remove: {
+                label: "🗑 삭제",
+                action: function () {
+                  if (!confirm("정말 삭제하시겠습니까?")) return;
+                  $.get('delete_path.php?id=' + node.id, function(res) {
+                    if (res.success) location.reload();
+                    else alert('삭제 실패');
+                  }, 'json');
+                }
+              }
+            };
+          }
+        }
+      }).on('rename_node.jstree', function(e, data) {
+        $.post('update_path.php', {
+          id: data.node.id,
+          name: data.text
+        }, function(res) {
+          if (!res.success) alert('수정 실패');
+        }, 'json');
+      }).on('move_node.jstree', function(e, data) {
+        const parent = data.parent === '#' ? null : data.parent;
+        const newOrder = $("#" + parent).children("ul").children("li").map(function() {
+          return this.id;
+        }).get();
+
+        $.post('move_path.php', {
+          ids: JSON.stringify(newOrder)
+        }, function(res) {
+          if (!res.success) alert('정렬 저장 실패');
+        }, 'json');
+      });
+    });
+  </script>
+</body>
+</html>

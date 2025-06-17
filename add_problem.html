@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 개별 등록</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- 필요 시 스타일 파일 따로 분리 -->
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .path-group select {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>📌 수학 문제 개별 등록</h2>
+  <form id="problemForm">
+    <label>제목</label>
+    <input type="text" name="title" required>
+
+    <label>경로 선택</label>
+    <div class="path-group">
+      <select id="path1"></select>
+      <select id="path2"></select>
+      <select id="path3"></select>
+      <select id="path4"></select>
+      <select id="path5"></select>
+      <select id="path6"></select>
+    </div>
+    <input type="hidden" name="path_text" id="path_text" required>
+    <label>경로 ID (선택 시 자동 적용)</label>
+    <input type="number" id="manual_path_id" placeholder="예: 67">
+
+
+    <label>문제</label>
+    <textarea name="question" rows="5" required></textarea>
+
+    <label>해설</label>
+    <textarea name="solution" rows="5"></textarea>
+
+    <label>정답</label>
+    <input type="text" name="answer">
+
+    <label>난이도 (1~5)</label>
+    <select name="difficulty">
+      <option value="">선택</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+
+    <!-- 이 부분은 그대로 유지하되 style="display:none;" 추가 -->
+    <div style="display: none;">
+      <label>대표 수식 (LaTeX)</label>
+      <input type="text" name="main_formula_latex" />
+    
+      <label>수식 키워드</label>
+      <input type="text" name="formula_keywords" />
+    </div>
+
+    <label>유형</label>
+    <select name="type">
+      <option value="">선택</option>
+      <option value="선다형">선다형</option>
+      <option value="단답형">단답형</option>
+      <option value="서술형">서술형</option>
+      <option value="OX">OX</option>
+      <option value="기타">기타</option>
+    </select>
+
+    <label>평가 항목</label>
+    <select name="category">
+      <option value="">선택</option>
+      <option value="계산능력">계산능력</option>
+      <option value="이해능력">이해능력</option>
+      <option value="추론능력">추론능력</option>
+      <option value="내적문제해결능력">내적문제해결능력</option>
+      <option value="외적문제해결능력">외적문제해결능력</option>
+    </select>
+
+    <label>힌트</label>
+    <textarea name="hint"></textarea>
+
+    <label>동영상 링크</label>
+    <input type="text" name="video">
+
+    <label>출처</label>
+    <select name="source">
+      <option value="">선택</option>
+      <option value="문제집">문제집</option>
+      <option value="중등기출">중등기출</option>
+      <option value="일반고기출">일반고기출</option>
+      <option value="과학고기출">과학고기출</option>
+      <option value="자사고기출">자사고기출</option>
+      <option value="수능모의고사기출">수능모의고사기출</option>
+      <option value="본고사기출">본고사기출</option>
+      <option value="수리논술심층면접">수리논술심층면접</option>
+      <option value="AP미적분">AP미적분</option>
+    </select>
+
+    <label>복사한 사람</label>
+    <select name="copied_by" id="copied_by_select">
+      <option value="">선택</option>
+    </select>
+
+    <button type="submit">등록하기</button>
+    <p id="message"></p>
+  </form>
+
+  <!-- 📎 외부 스크립트 로딩 -->
+  <script src="js/functions.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPathTreeFlat();
+      loadTeacherOptions();
+
+    document.getElementById('manual_path_id').addEventListener('change', function () {
+      const pathId = this.value.trim();
+      if (pathId) {
+        applyPathIdToDropdowns(pathId); // 드롭다운 자동 반영 함수 호출
+      }
+    });
+
+
+
+    });
+
+    document.getElementById('problemForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      formData.set('copied_by', document.getElementById('copied_by_select').value);
+
+      fetch('insert_problem.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          showMessage('✅ 문제 등록 성공!', 'success');
+          this.reset();
+        } else {
+          showMessage('❌ 등록 실패: ' + data.message, 'error');
+        }
+      })
+      .catch(err => {
+        showMessage('❌ 오류 발생: ' + err, 'error');
+      });
+    });
+  </script>
+
+<!-- HEAD 끝 또는 BODY 아래에 추가 -->
+<script src="/ckeditor/ckeditor.js"></script>
+<script>
+  ClassicEditor.create(document.querySelector('textarea[name="question"]')).catch(console.error);
+  ClassicEditor.create(document.querySelector('textarea[name="solution"]')).catch(console.error);
+  ClassicEditor.create(document.querySelector('textarea[name="hint"]')).catch(console.error);
+</script>
+
+
+</body>
+</html>

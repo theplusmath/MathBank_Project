@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>문제 목록</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>문제 목록</h1>
+
+<table id="problemsTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>제목</th>
+      <th>경로</th>
+      <th>유형</th>
+      <th>난이도</th>
+      <th>분류</th>
+      <th>출처</th>
+      <th>태그</th> <!-- ✅ 태그 추가 -->
+      <th>등록일</th>
+      <th>관리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 문제 목록이 여기에 채워짐 -->
+  </tbody>
+</table>
+
+<script>
+// 문제 목록 불러오기
+fetch('list_problems.php')
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      const problems = data.data;
+      const tbody = document.querySelector("#problemsTable tbody");
+
+      problems.forEach(problem => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${problem.id}</td>
+          <td>${problem.title}</td>
+          <td>${problem.path_text ?? 'null'}</td>
+          <td>${problem.type}</td>
+          <td>${problem.difficulty}</td>
+          <td>${problem.category}</td>
+          <td>${problem.source}</td>
+          <td>${problem.tags ?? ''}</td> <!-- ✅ 태그 표시 -->
+          <td>${problem.created_at}</td>
+          <td>
+            <button onclick="location.href='edit_problem.php?id=${problem.id}'">수정</button>
+            <button onclick="deleteProblem(${problem.id})">삭제</button>
+            <button onclick="location.href='view_problem.php?id=${problem.id}'">보기</button>
+            ${problem.origin_id ? `<button onclick="location.href='view_problem.php?id=${problem.origin_id}'">원본 보기</button>` : ''}
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    } else {
+      alert('문제 목록을 불러오지 못했습니다.');
+    }
+  })
+  .catch(error => {
+    console.error('에러 발생:', error);
+    alert('서버 오류가 발생했습니다.');
+  });
+
+// 문제 삭제 함수
+function deleteProblem(id) {
+  if (confirm("정말 삭제하시겠습니까?")) {
+    fetch(`delete_problem.php?id=${id}`, { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('삭제되었습니다.');
+          location.reload();
+        } else {
+          alert('삭제 실패: ' + data.message);
+        }
+      })
+      .catch(err => {
+        alert('서버 오류: ' + err);
+      });
+  }
+}
+</script>
+
+</body>
+</html>

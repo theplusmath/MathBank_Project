@@ -1,0 +1,84 @@
+[
+    {
+        "question": "$$x^2 = 4$$의 해는?",
+        "answer": "$$\\pm 2$$",
+        "solution": "양변에 루트를 취하면 $$x = \\pm 2$$입니다."
+    },
+    {
+        "question": "[02002][고][2017][1-1-b][경기의정부시][영석고]-1 \r\n*경로:2015개정~07. 일차,이차부등식\r\n\r\n*유형분류:\r\n\r\n*문제:부등식 \\\\(\\\\displaystyle \\\\left | x-a \\\\right | \\\\leq 3 \\\\)의 해가 \\\\(\\\\displaystyle -1 \\\\leq x \\\\leq 5 \\\\)일 때, 실수 \\\\(\\\\displaystyle a \\\\)의 값은? \r\n[\\\\(\\\\displaystyle 4 \\\\)점]\r\n\r\n① \\\\(\\\\displaystyle 1 \\\\)\t\t\r\n\r\n② \\\\(\\\\displaystyle 2 \\\\)\t\t\r\n\r\n③ \\\\(\\\\displaystyle 3 \\\\)\r\n\r\n④ \\\\(\\\\displaystyle 4 \\\\)\t\t\r\n\r\n⑤ \\\\(\\\\displaystyle 5 \\\\)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n*해설: [정답] ②\r\n\\\\(\\\\displaystyle -3 \\\\leq x-a \\\\leq 3 \\\\)\r\n\\\\(\\\\displaystyle a-3 \\\\leq x \\\\leq a+3 \\\\)\r\n\\\\(\\\\displaystyle a-3=-1 \\\\)\r\n\\\\(\\\\displaystyle a+3=5 \\\\) 에서 \\\\(\\\\displaystyle a=2 \\\\)\r\n\r\n*난이도:2\r\n\r\n*동영상링크:\r\n\r\n*정답: 2\r\n\r\n*힌트:",
+        "answer": "11",
+        "solution": "[02002][고][2017][1-1-b][경기의정부시][영석고]-1 \r\n*경로:2015개정~07. 일차,이차부등식\r\n\r\n*유형분류:\r\n\r\n*문제:부등식 \\\\(\\\\displaystyle \\\\left | x-a \\\\right | \\\\leq 3 \\\\)의 해가 \\\\(\\\\displaystyle -1 \\\\leq x \\\\leq 5 \\\\)일 때, 실수 \\\\(\\\\displaystyle a \\\\)의 값은? \r\n[\\\\(\\\\displaystyle 4 \\\\)점]\r\n\r\n① \\\\(\\\\displaystyle 1 \\\\)\t\t\r\n\r\n② \\\\(\\\\displaystyle 2 \\\\)\t\t\r\n\r\n③ \\\\(\\\\displaystyle 3 \\\\)\r\n\r\n④ \\\\(\\\\displaystyle 4 \\\\)\t\t\r\n\r\n⑤ \\\\(\\\\displaystyle 5 \\\\)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n*해설: [정답] ②\r\n\\\\(\\\\displaystyle -3 \\\\leq x-a \\\\leq 3 \\\\)\r\n\\\\(\\\\displaystyle a-3 \\\\leq x \\\\leq a+3 \\\\)\r\n\\\\(\\\\displaystyle a-3=-1 \\\\)\r\n\\\\(\\\\displaystyle a+3=5 \\\\) 에서 \\\\(\\\\displaystyle a=2 \\\\)\r\n\r\n*난이도:2\r\n\r\n*동영상링크:\r\n\r\n*정답: 2\r\n\r\n*힌트:"
+    },
+    {
+        "title": "[02002][고][2017][1-1-b][경기의정부시][영석고]-1",
+        "path": "*경로:2015개정~07. 일차,이차부등식",
+        "category": "계산능력",
+        "type": "선다형",
+        "question": "부등식 \\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle \\\\[\\\\displaystyle \\\\]\\\\displaystyle left | x-a \\\\[\\\\displaystyle \\\\])right | \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq 3 \\\\[\\\\displaystyle \\\\]))의 해가 \\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle -1 \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq x \\\\[\\\\displaystyle \\\\])leq 5 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )일 때, 실수 \\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle a \\\\[\\\\displaystyle \\\\]))의 값은? \r\n[\\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle 4 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )점]\r\n\r\n① \\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle 1 \\\\[\\\\displaystyle \\\\]))\t\t\r\n\r\n② \\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle 2 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )\t\t\r\n\r\n③ \\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle 3 \\\\[\\\\displaystyle \\\\]))\r\n\r\n④ \\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle 4 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )\t\t\r\n\r\n⑤ \\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle 5 \\\\[\\\\displaystyle \\\\]))",
+        "answer": "[정답] ②",
+        "solution": "[정답] ②\r\n\\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle -3 \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq x-a \\\\[\\\\displaystyle \\\\])leq 3 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )\r\n\\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle a-3 \\\\[\\\\displaystyle \\\\])leq x \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq a+3 \\\\[\\\\displaystyle \\\\]))\r\n\\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle a-3=-1 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )\r\n\\\\[\\\\displaystyle \\\\])(\\\\[\\\\displaystyle \\\\]\\\\displaystyle displaystyle a+3=5 \\\\[\\\\displaystyle \\\\])) 에서 \\\\[\\\\displaystyle \\\\]\\\\displaystyle (\\\\[\\\\displaystyle \\\\])displaystyle a=2 \\\\[\\\\displaystyle \\\\]",
+        "difficulty": "2",
+        "video": "",
+        "hint": ""
+    },
+    {
+        "title": "1",
+        "path": "",
+        "category": "",
+        "type": "서술형",
+        "question": "수식: \\\\[\\\\displaystyle \\\\]\\\\displaystyle ( \\\\[\\\\displaystyle \\\\])left| x-a \\\\[\\\\displaystyle \\\\]\\\\displaystyle right| \\\\[\\\\displaystyle \\\\])leq 3 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )의 해가 \\\\[\\\\displaystyle \\\\])( -1 \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq x \\\\[\\\\displaystyle \\\\])leq 5 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )일 때, \\\\[\\\\displaystyle \\\\])( a \\\\[\\\\displaystyle \\\\]의 값은?\r\n",
+        "answer": "1",
+        "solution": "1",
+        "difficulty": "",
+        "video": "",
+        "hint": ""
+    },
+    {
+        "title": "1",
+        "path": "*경로:2015개정~07. 일차,이차부등식",
+        "category": "계산능력",
+        "type": "선다형",
+        "question": "수식: \\\\[\\\\displaystyle \\\\]\\\\displaystyle ( \\\\[\\\\displaystyle \\\\])left| x-a \\\\[\\\\displaystyle \\\\]\\\\displaystyle right| \\\\[\\\\displaystyle \\\\])leq 3 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )의 해가 \\\\[\\\\displaystyle \\\\])( -1 \\\\[\\\\displaystyle \\\\]\\\\displaystyle leq x \\\\[\\\\displaystyle \\\\])leq 5 \\\\[\\\\displaystyle \\\\]\\\\displaystyle )일 때, \\\\[\\\\displaystyle \\\\])( a \\\\[\\\\displaystyle \\\\]의 값은?\r\n",
+        "answer": "2",
+        "solution": "4",
+        "difficulty": "2",
+        "video": "",
+        "hint": ""
+    },
+    {
+        "title": "[03001][고][2024][1-1][서울강남구][역삼고]-1",
+        "path": "2022개정~03. 함수의 극한",
+        "category": "이해능력",
+        "type": "선다형",
+        "question": "함수 \\\\(\\\\displaystyle \\\\)\\\\displaystyle ( f(x) = \\\\(\\\\displaystyle \\\\))frac{x^2 - 1}{x - 1} \\\\(\\\\displaystyle \\\\)\\\\displaystyle )의 극한 \\\\(\\\\displaystyle \\\\))( \\\\(\\\\displaystyle \\\\)\\\\displaystyle lim_{x \\\\(\\\\displaystyle \\\\))to 1} f(x) \\\\(\\\\displaystyle \\\\)을 구하시오.\r\n",
+        "answer": "2\r\n",
+        "solution": "함수 \\\\(\\\\displaystyle \\\\)\\\\displaystyle ( f(x) = \\\\(\\\\displaystyle \\\\))frac{x^2 - 1}{x - 1} \\\\(\\\\displaystyle \\\\)\\\\displaystyle )는 \\\\(\\\\displaystyle \\\\))( x \\\\(\\\\displaystyle \\\\)\\\\displaystyle neq 1 \\\\(\\\\displaystyle \\\\)))일 때,\r\n\\\\(\\\\displaystyle \\\\)\\\\displaystyle [\r\nf(x) = \\\\(\\\\displaystyle \\\\))frac{(x - 1)(x + 1)}{x - 1} = x + 1\r\n\\\\(\\\\displaystyle \\\\)\\\\displaystyle ]\r\n따라서, \\\\(\\\\displaystyle \\\\))( \\\\(\\\\displaystyle \\\\)\\\\displaystyle lim_{x \\\\(\\\\displaystyle \\\\))to 1} f(x) = \\\\(\\\\displaystyle \\\\)\\\\displaystyle lim_{x \\\\(\\\\displaystyle \\\\))to 1} (x + 1) = 2 \\\\(\\\\displaystyle \\\\)\r\n",
+        "difficulty": "2",
+        "video": "https:\/\/youtu.be\/dummy_link_for_example",
+        "hint": "분자 인수분해 후 약분해보세요.\r\n"
+    },
+    {
+        "title": "[03001][고][2024][1-1][서울강남구][역삼고]-1",
+        "path": "2022개정~03. 함수의 극한",
+        "category": "이해능력",
+        "type": "단답형",
+        "question": "부등식 $\\\\displaystyle \\\\displaystyle (\\\\$displaystyle $\\\\displaystyle \\\\displaystyle left | x-a \\\\$right | $\\\\displaystyle \\\\displaystyle leq 3 \\\\$)의 해가 $\\\\displaystyle \\\\displaystyle (\\\\$displaystyle -1 $\\\\displaystyle \\\\displaystyle leq x \\\\$leq 5 $\\\\displaystyle \\\\displaystyle )일 때, 실수 \\\\$($\\\\displaystyle \\\\displaystyle displaystyle a \\\\$)의 값은? \r\n[$\\\\displaystyle \\\\displaystyle (\\\\$displaystyle 4 $\\\\displaystyle \\\\displaystyle )점]\r\n\r\n① \\\\$($\\\\displaystyle \\\\displaystyle displaystyle 1 \\\\$)\t\t\r\n\r\n② $\\\\displaystyle \\\\displaystyle (\\\\$displaystyle 2 $\\\\displaystyle \\\\displaystyle )\t\t\r\n\r\n③ \\\\$($\\\\displaystyle \\\\displaystyle displaystyle 3 \\\\$)\r\n\r\n④ $\\\\displaystyle \\\\displaystyle (\\\\$displaystyle 4 $\\\\displaystyle \\\\displaystyle )\t\t\r\n\r\n⑤ \\\\$($\\\\displaystyle \\\\displaystyle displaystyle 5 \\\\$)",
+        "answer": "2",
+        "solution": "[정답] ②\r\n$\\\\displaystyle \\\\displaystyle (\\\\$displaystyle -3 $\\\\displaystyle \\\\displaystyle leq x-a \\\\$leq 3 $\\\\displaystyle \\\\displaystyle )\r\n\\\\$($\\\\displaystyle \\\\displaystyle displaystyle a-3 \\\\$leq x $\\\\displaystyle \\\\displaystyle leq a+3 \\\\$)\r\n$\\\\displaystyle \\\\displaystyle (\\\\$displaystyle a-3=-1 $\\\\displaystyle \\\\displaystyle )\r\n\\\\$($\\\\displaystyle \\\\displaystyle displaystyle a+3=5 \\\\$) 에서 $\\\\displaystyle \\\\displaystyle (\\\\$displaystyle a=2 $\\\\displaystyle \\\\displaystyle $",
+        "difficulty": "2",
+        "video": "https:\/\/youtu.be\/dummy_link_for_example",
+        "hint": ""
+    },
+    {
+        "title": "[03001][고][2024][1-1][서울강남구][역삼고]-1",
+        "path": "2022개정~03. 함수의 극한",
+        "category": "이해능력",
+        "type": "선다형",
+        "question": "부등식 \\(\\displaystyle \\left | x-a \\right | \\leq 3 \\)의 해가 \\(\\displaystyle -1 \\leq x \\leq 5 \\)일 때, 실수 \\(\\displaystyle a \\)의 값은? \r\n[\\(\\displaystyle 4 \\)점]\r\n\r\n① \\(\\displaystyle 1 \\)\t\t\r\n\r\n② \\(\\displaystyle 2 \\)\t\t\r\n\r\n③ \\(\\displaystyle 3 \\)\r\n\r\n④ \\(\\displaystyle 4 \\)\t\t\r\n\r\n⑤ \\(\\displaystyle 5 \\)",
+        "answer": "⑤ \\(\\displaystyle 5 \\)",
+        "solution": "[정답] ②\r\n\\(\\displaystyle -3 \\leq x-a \\leq 3 \\)\r\n\\(\\displaystyle a-3 \\leq x \\leq a+3 \\)\r\n\\(\\displaystyle a-3=-1 \\)\r\n\\(\\displaystyle a+3=5 \\) 에서 \\(\\displaystyle a=2 \\)",
+        "difficulty": "2",
+        "video": "https:\/\/youtu.be\/dummy_link_for_example",
+        "hint": "2"
+    }
+]
