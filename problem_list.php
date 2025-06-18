@@ -90,6 +90,7 @@ $result = $conn->query("SELECT id, title, path, difficulty, type, category, sour
           <td class="source"><?= htmlspecialchars($row['source']) ?></td>
           <td class="created"><?= date("Y-m-d", strtotime($row['created_at'])) ?></td>
           <td class="actions">
+            <a href="problem_solve.php?id=<?= $row['id'] ?>"><button>풀이</button></a>
             <a href="edit_problem.php?id=<?= $row['id'] ?>"><button>수정</button></a>
             <button onclick="alert('삭제 기능은 추후 제공됩니다.')">삭제</button>
           </td>
