@@ -18,3 +18,23 @@ After doing this, you may fix the identity used for this commit with:
  create mode 100644 problem_view.php
  create mode 100644 submit_answer.php
 fatal: could not read Username for 'https://github.com': No such device or address
+[main 8fb5489] 📦 자동 백업: 2025-06-19 03:00
+ Committer: root <root@web-01.cs97f1cloud.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 10 files changed, 569 insertions(+), 44 deletions(-)
+ delete mode 100644 db.php
+ create mode 100644 problem_result.php
+ create mode 100644 problem_solve.php
+ create mode 100644 problem_solve_result.php
+ create mode 100644 problem_solve_submit.php
+fatal: could not read Username for 'https://github.com': No such device or address

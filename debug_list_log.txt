@@ -1630,3 +1630,43 @@ FROM problems ORDER BY id DESC
 )
 DB: theplusmath
 📦 반환된 문제 수: 10
+✅ list_problems.php 실행됨: 2025-06-19 12:35:24
+🔍 SQL: SELECT 
+  id, title, path_text, difficulty, type, category, source, tags, created_at,
+  main_formula_latex, formula_keywords, copied_by, origin_id
+FROM problems ORDER BY id DESC
+🔍 Params: Array
+(
+)
+DB: theplusmath
+📦 반환된 문제 수: 10
+✅ list_problems.php 실행됨: 2025-06-19 13:32:59
+🔍 SQL: SELECT 
+  id, title, path_text, difficulty, type, category, source, tags, created_at,
+  main_formula_latex, formula_keywords, copied_by, origin_id
+FROM problems ORDER BY id DESC
+🔍 Params: Array
+(
+)
+DB: theplusmath
+📦 반환된 문제 수: 10
+✅ list_problems.php 실행됨: 2025-06-19 16:25:02
+🔍 SQL: SELECT 
+  id, title, path_text, difficulty, type, category, source, tags, created_at,
+  main_formula_latex, formula_keywords, copied_by, origin_id
+FROM problems ORDER BY id DESC
+🔍 Params: Array
+(
+)
+DB: theplusmath
+📦 반환된 문제 수: 10
+✅ list_problems.php 실행됨: 2025-06-19 16:29:05
+🔍 SQL: SELECT 
+  id, title, path_text, difficulty, type, category, source, tags, created_at,
+  main_formula_latex, formula_keywords, copied_by, origin_id
+FROM problems ORDER BY id DESC
+🔍 Params: Array
+(
+)
+DB: theplusmath
+📦 반환된 문제 수: 10

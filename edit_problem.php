@@ -248,7 +248,21 @@ math-field {
   <select id="depth6" onchange="updatePathTextAndId()"></select>
   <input type="hidden" name="path_text" id="path_text" value="<?= htmlspecialchars($problem['path_text'] ?? '') ?>">
   <input type="hidden" name="path_id" id="path_id" value="<?= (int)($problem['path_id'] ?? 0) ?>">
+  </div>
+
+<div class="form-group">
+  <label>출처 경로 선택:</label><br />
+  <select id="source_path1" onchange="loadSourceNextDepth(1)"></select>
+  <select id="source_path2" onchange="loadSourceNextDepth(2)"></select>
+  <select id="source_path3" onchange="loadSourceNextDepth(3)"></select>
+  <select id="source_path4" onchange="loadSourceNextDepth(4)"></select>
+  <select id="source_path5" onchange="loadSourceNextDepth(5)"></select>
+  <select id="source_path6" onchange="loadSourceNextDepth(6)"></select>
+  <input type="hidden" name="source_path_id" id="source_path_id" value="<?= (int)($problem['source_path_id'] ?? 0) ?>">
 </div>
+
+
+
     <button type="submit">수정 완료</button>
     <button type="button" onclick="confirmCopy()" style="background-color: orange;">복사 저장</button>
     <button type="button" onclick="previewProblem()">미리보기</button>
@@ -627,21 +641,6 @@ function updatePathTextAndId() {
   document.getElementById('path_id').value = lastId ?? '';
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-        const initialPathId = document.getElementById('path_id').value;
-        // 숫자 형태인지 한 번 체크(0, '', NaN 등도 방지)
-        if (initialPathId && !isNaN(parseInt(initialPathId))) {
-          setPathByIdFromValue(initialPathId);
-        } else {
-          loadDepthOptions(1, null);
-        }
-        // [return_url 자동 설정 추가]
-        var referrer = document.referrer;
-        var returnInput = document.getElementById('return_url');
-        if (returnInput && !returnInput.value && referrer) {
-            returnInput.value = referrer;
-        }
-});
 
 
 // path_id 값이 있으면 드롭다운을 세팅하는 함수
@@ -651,7 +650,103 @@ function setPathByIdFromValue(pathId) {
 }
 
 
+const SOURCE_DEPTH_COUNT = 6;
+function loadSourceNextDepth(depth) {
+  for (let i = depth + 1; i <= SOURCE_DEPTH_COUNT; i++) {
+    document.getElementById(`source_path${i}`).innerHTML = `<option value="">- ${i}단계 선택 -</option>`;
+  }
+  const selectedId = document.getElementById(`source_path${depth}`).value;
+  if (selectedId) loadSourcePathOptions(depth + 1, selectedId);
+  updateSourcePathTextAndId();
+}
+function loadSourcePathOptions(depth, parentId) {
+  fetch(`get_source_path.php?parent_id=${parentId ?? ''}`)
+    .then(res => res.json())
+    .then(data => {
+      const select = document.getElementById(`source_path${depth}`);
+      select.innerHTML = `<option value="">- ${depth}단계 선택 -</option>`;
+      data.forEach(row => {
+        const opt = document.createElement("option");
+        opt.value = row.id;
+        opt.textContent = row.name;
+        select.appendChild(opt);
+      });
+    });
+}
+function updateSourcePathTextAndId() {
+  let lastId = null;
+  for (let i = 1; i <= SOURCE_DEPTH_COUNT; i++) {
+    const sel = document.getElementById(`source_path${i}`);
+    if (sel && sel.value) lastId = sel.value;
+  }
+  document.getElementById('source_path_id').value = lastId ?? '';
+}
+// 최초 실행 시 최상위만 호출
 
+window.addEventListener('DOMContentLoaded', function() {
+  // 메인 경로
+  const initialPathId = document.getElementById('path_id').value;
+  if (initialPathId && !isNaN(parseInt(initialPathId))) {
+    setPathByIdFromValue(initialPathId);
+  } else {
+    loadDepthOptions(1, null);
+  }
+  // 출처 경로
+  const initialSourcePathId = document.getElementById('source_path_id').value;
+  if (initialSourcePathId && !isNaN(parseInt(initialSourcePathId))) {
+    setSourcePathByIdFromValue(initialSourcePathId);
+  } else {
+    loadSourcePathOptions(1, null);
+  }
+  // return_url 자동
+  var referrer = document.referrer;
+  var returnInput = document.getElementById('return_url');
+  if (returnInput && !returnInput.value && referrer) {
+      returnInput.value = referrer;
+  }
+});
+
+
+
+
+
+function setSourcePathByIdFromValue(pathId) {
+  fetch('get_source_path_tree_flat_paths.php')
+    .then(res => res.json())
+    .then(flatPaths => {
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, p));
+      let current = pathMap.get(Number(pathId));
+      if (!current) return;
+      const pathIds = [];
+      while (current) {
+        pathIds.unshift(current.id);
+        current = pathMap.get(current.parent_id);
+      }
+      let promise = Promise.resolve();
+      pathIds.forEach((id, index) => {
+        promise = promise.then(() => {
+          const parentId = index === 0 ? null : pathIds[index - 1];
+          return fetch(`get_source_path.php?parent_id=${parentId ?? ''}`)
+            .then(res => res.json())
+            .then(options => {
+              const sel = document.getElementById(`source_path${index + 1}`);
+              sel.innerHTML = `<option value="">- ${index + 1}단계 선택 -</option>`;
+              options.forEach(opt => {
+                const o = document.createElement('option');
+                o.value = opt.id;
+                o.textContent = opt.name;
+                if (opt.id == id) o.selected = true;
+                sel.appendChild(o);
+              });
+            });
+        });
+      });
+      promise.then(() => {
+        document.getElementById('source_path_id').value = pathId;
+      });
+    });
+}
 
 
 </script>

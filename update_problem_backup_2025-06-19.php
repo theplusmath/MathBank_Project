@@ -35,7 +35,6 @@ $created_by = (isset($_POST['created_by']) && $_POST['created_by'] !== '') ? (in
 $tags       = isset($_POST['tags']) ? $_POST['tags'] : '';
 $path_text  = isset($_POST['path_text']) ? $_POST['path_text'] : '';
 $path_id    = (isset($_POST['path_id']) && is_numeric($_POST['path_id'])) ? (int)$_POST['path_id'] : null;
-$source_path_id = isset($_POST['source_path_id']) && is_numeric($_POST['source_path_id']) ? (int)$_POST['source_path_id'] : null;
 $return_url  = isset($_POST['return_url']) ? $_POST['return_url'] : '';
 
 $tagsArray = parseTags($tags);
@@ -131,7 +130,7 @@ $sql = "UPDATE problems SET
     title = ?, question = ?, question_text = ?, question_text_only = ?,
     answer = ?, answer_text = ?, solution = ?, solution_text = ?,
     hint = ?, hint_text = ?, video = ?, difficulty = ?, type = ?, category = ?, source = ?,
-    created_by = ?, tags = ?, path_text = ?, path_id = ?, source_path_id = ?,  -- ← 추가!
+    created_by = ?, tags = ?, path_text = ?, path_id = ?,
     main_formula_latex = ?, main_formula_tree = ?, all_formulas_tree = ?,
     formula_keywords = ?, hash = ?, sympy_expr = ?, updated_at = NOW()
     WHERE id = ?";
@@ -140,7 +139,7 @@ $params = array(
     $title, $question, $question_text, $question_text_only,
     $answer, $answer_text, $solution, $solution_text,
     $hint, $hint_text, $video, $difficulty, $type, $category, $source,
-    $created_by, $tags, $path_text, $path_id, $source_path_id,
+    $created_by, $tags, $path_text, $path_id,
     $mainFormulaLatex, $mainFormulaTree, $allFormulasTree,
     $keywords, $mainHash, $mainSympy, $id
 );

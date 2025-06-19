@@ -55,7 +55,7 @@ $hint_text     = extractCleanText($hint);
 if ((!$path_id || $path_id === 0) && $path_text) {
     $path_id = getPathIdFromText($conn, $path_text);
     if (!$path_id) {
-        $stmt = $conn->prepare("SELECT id FROM paths WHERE name LIKE CONCAT('%', ?, '%')");
+        $stmt = $conn->prepare("SELECT id FROM source_path WHERE name LIKE CONCAT('%', ?, '%')");
         $stmt->bind_param("s", $path_text);
         $stmt->execute();
         $stmt->bind_result($matched_id);

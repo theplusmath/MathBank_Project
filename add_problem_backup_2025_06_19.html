@@ -61,7 +61,6 @@
       <select id="path6"></select>
     </div>
     <input type="hidden" name="path_text" id="path_text" required>
-    <input type="hidden" name="source_path_id" id="source_path_id">  <!-- ⬅⬅⬅ 이 한 줄 추가! -->
     <label>경로 ID (선택 시 자동 적용)</label>
     <input type="number" id="manual_path_id" placeholder="예: 67">
 
@@ -183,71 +182,6 @@
         showMessage('❌ 오류 발생: ' + err, 'error');
       });
     });
-
-$(function() {
-    // 드롭다운 ID 배열 (최대 6단계까지 사용 가능)
-    const pathSelectIds = ['#path1', '#path2', '#path3', '#path4', '#path5', '#path6'];
-
-    // 최상위(루트) 노드 불러오기
-    loadSourcePathDropdown(0, null);
-
-    // 각 드롭다운의 change 이벤트
-    pathSelectIds.forEach((selector, depth) => {
-        $(selector).on('change', function () {
-            const selectedId = $(this).val();
-            // 이후 드롭다운 초기화 및 숨김
-            for(let i=depth+1; i<pathSelectIds.length; i++){
-                $(pathSelectIds[i]).empty().hide();
-            }
-            if(selectedId) {
-                loadSourcePathDropdown(depth+1, selectedId);
-                // 선택된 경로명들 연결해서 path_text에 저장
-                updatePathText();
-            } else {
-                updatePathText();
-            }
-        });
-    });
-
-    // source_path 드롭다운 동적 로딩 함수
-    function loadSourcePathDropdown(depth, parent_id) {
-        $.get('get_source_path.php', {parent_id: parent_id}, function(data){
-            var list = JSON.parse(data);
-            const $sel = $(pathSelectIds[depth]);
-            $sel.empty().append('<option value="">'+(depth+1)+'단계 선택</option>');
-            if(list.length){
-                list.forEach(function(row){
-                    $sel.append('<option value="'+row.id+'">'+row.name+'</option>');
-                });
-                $sel.show();
-            }else{
-                $sel.hide();
-            }
-        });
-    }
-
-    // 선택한 경로명 텍스트, id 합치기 (최하위 id만 hidden에 저장)
-    function updatePathText() {
-        let names = [];
-        let lastId = '';
-        pathSelectIds.forEach(function(sel){
-            const v = $(sel).val();
-            const t = $(sel+' option:selected').text();
-            if(v) {
-                names.push(t);
-                lastId = v;
-            }
-        });
-        $('#path_text').val(names.join(' / '));
-        // 필요하다면 최하위 id도 같이 hidden에 저장
-        $('#source_path_id').val(lastId);
-    }
-});
-
-
-
-
-
   </script>
 
 <!-- HEAD 끝 또는 BODY 아래에 추가 -->

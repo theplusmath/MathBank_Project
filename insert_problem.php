@@ -24,6 +24,8 @@ $created_by = isset($_POST['created_by']) && is_numeric($_POST['created_by']) ? 
 $tags     = $_POST['tags']     ?? '';
 $path_text = $_POST['path_text'] ?? '';
 $path_id  = isset($_POST['path_id']) && is_numeric($_POST['path_id']) ? (int)$_POST['path_id'] : null;
+$source_path_id = isset($_POST['source_path_id']) && is_numeric($_POST['source_path_id']) ? (int)$_POST['source_path_id'] : null;
+
 
 // 태그 처리
 $tagsArray = array_filter(array_map('trim', explode(',', $tags)));
@@ -58,18 +60,18 @@ if (!empty($analyzed)) {
 // --- INSERT 쿼리 ---
 $stmt = $conn->prepare("INSERT INTO problems
     (title, question, question_text, answer, answer_text, solution, solution_text, hint, hint_text, video, difficulty, type, category, source,
-     created_by, tags, path_text, path_id,
+     created_by, tags, path_text, path_id, source_path_id,
      main_formula_latex, main_formula_tree, all_formulas_tree,
      formula_keywords, hash, sympy_expr, created_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
 
-$stmt->bind_param("ssssssssssisssississsss",
+$stmt->bind_param("ssssssssssisssissiisssss",
     $title, $question, $question_text,
     $answer, $answer_text,
     $solution, $solution_text,
     $hint, $hint_text,
     $video, $difficulty, $type, $category, $source,
-    $created_by, $tags, $path_text, $path_id,
+    $created_by, $tags, $path_text, $path_id, $source_path_id,
     $mainFormulaLatex, $mainFormulaTree, $allFormulasTree,
     $keywords, $mainHash, $mainSympy
 );
