@@ -17,12 +17,12 @@ try {
 
     if ($id) {
         // 복원용 삽입 (id 명시)
-        $stmt = $conn->prepare("INSERT INTO source_paths (id, parent_id, name, depth, sort_order) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO source_path (id, parent_id, name, depth, sort_order) VALUES (?, ?, ?, ?, ?)");
         $success = $stmt->bind_param('iisii', $id, $parent_id, $name, $depth, $sort_order)
             && $stmt->execute();
     } else {
         // 일반 삽입 (auto-increment id)
-        $stmt = $conn->prepare("INSERT INTO source_paths (parent_id, name, depth, sort_order) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO source_path (parent_id, name, depth, sort_order) VALUES (?, ?, ?, ?)");
         $success = $stmt->bind_param('isii', $parent_id, $name, $depth, $sort_order)
             && $stmt->execute();
         $id = $success ? $conn->insert_id : null;
