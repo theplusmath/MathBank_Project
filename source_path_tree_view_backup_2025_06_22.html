@@ -113,20 +113,9 @@
           parentEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
           lastInsertedParentId = null; // 한 번 쓰고 초기화
         }
-      } else if (lastInsertedNode && typeof lastInsertedNode.id !== "undefined" && lastInsertedNode.id !== null) {
+      } else if (lastInsertedNode && lastInsertedNode.id) {
         const last = document.querySelector(`.folder-label[data-id='${lastInsertedNode.id}']`);
-        if (last) {
-          let parentLi = last.closest('li.folder');
-          if (parentLi && !parentLi.classList.contains('open')) {
-            parentLi.classList.add('open');
-            const iconEl = parentLi.querySelector('span');
-            if (iconEl && parentLi.querySelector('ul.children')) {
-              iconEl.textContent = "▼";
-            }
-          }
-          last.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        lastInsertedNode = null;
+        if (last) last.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     }
 
@@ -171,8 +160,6 @@
       span.addEventListener("dragleave", (e) => {
         span.classList.remove("drag-over");
       });
-
-
       span.addEventListener("drop", (e) => {
         e.preventDefault();
         span.classList.remove("drag-over");
@@ -182,15 +169,13 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             dragged_id: draggedItem.id,
-            new_parent_id: node.parent_id, // 같은 부모라면 그대로
-            target_id: node.id // 형제 id
+            new_parent_id: node.id
           })
         })
         .then(res => res.json())
         .then(data => {
           if (data.success) {
-            lastInsertedNode = { id: draggedItem.id };  // ⭐️ 이동한 노드 저장!
-            fetchSourcePaths();  // ← 함수명을 fetchSourcePaths로!
+            fetchPaths();
           } else {
             alert("이동 실패: " + (data.message || ""));
           }

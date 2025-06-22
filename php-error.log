@@ -193,3 +193,348 @@
 2025-06-21T15:05:18+00:00 [delete] id=10
 2025-06-21T15:14:25+00:00 [delete_path] 파일 진입
 2025-06-21T15:14:25+00:00 [delete_path] id=10
+2025-06-22T00:57:19+00:00 [delete_path] 파일 진입
+2025-06-22T00:57:19+00:00 [delete_path] id=11
+2025-06-22T01:22:48+00:00 [reorder_path] 진입
+2025-06-22T01:24:53+00:00 [reorder_path] 진입
+2025-06-22T01:24:56+00:00 [reorder_path] 진입
+2025-06-22T01:29:56+00:00 [reorder_source_path] 진입
+2025-06-22T01:29:56+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 8
+)
+
+2025-06-22T01:29:56+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=8
+2025-06-22T01:30:02+00:00 [reorder_source_path] 진입
+2025-06-22T01:30:02+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 4
+)
+
+2025-06-22T01:30:02+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=4
+2025-06-22T01:33:43+00:00 [reorder_source_path] 진입
+2025-06-22T01:33:43+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 9
+)
+
+2025-06-22T01:33:43+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=9
+2025-06-22T01:33:49+00:00 [reorder_source_path] 진입
+2025-06-22T01:33:49+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 4
+)
+
+2025-06-22T01:33:49+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=4
+2025-06-22T01:33:56+00:00 [reorder_source_path] 진입
+2025-06-22T01:33:56+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 8
+)
+
+2025-06-22T01:33:56+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=8
+2025-06-22T01:37:50+00:00 [reorder_source_path] 진입
+2025-06-22T01:37:50+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 8
+)
+2025-06-22T01:37:50+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=8
+2025-06-22T01:37:53+00:00 [reorder_source_path] 진입
+2025-06-22T01:37:53+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 5
+)
+2025-06-22T01:37:53+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=5
+2025-06-22T01:45:32+00:00 [reorder_source_path] 진입
+2025-06-22T01:45:32+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 4
+)
+2025-06-22T01:45:32+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=4
+2025-06-22T02:02:18+00:00 [reorder_source_path] 진입
+2025-06-22T02:02:18+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 9
+)
+2025-06-22T02:02:18+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=9
+2025-06-22T02:02:20+00:00 [reorder_source_path] 진입
+2025-06-22T02:02:20+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 4
+)
+2025-06-22T02:02:20+00:00 [reorder_source_path] dragged_id=11, target_id=0, new_parent_id=4
+2025-06-22T02:10:11+00:00 [reorder_source_path] 진입
+2025-06-22T02:10:11+00:00 [reorder_source_path] input=Array
+(
+    [dragged_id] => 11
+    [new_parent_id] => 4
+)
+2025-06-22T02:12:36+00:00 [reorder_source_path] 진입
+2025-06-22T02:12:36+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 9,
+)
+2025-06-22T02:12:38+00:00 [reorder_source_path] 진입
+2025-06-22T02:12:38+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 8,
+)
+2025-06-22T02:16:32+00:00 [reorder_source_path] 진입
+2025-06-22T02:16:32+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 8,
+)
+2025-06-22T02:16:51+00:00 [reorder_source_path] 진입
+2025-06-22T02:16:51+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 4,
+)
+2025-06-22T02:16:59+00:00 [reorder_source_path] 진입
+2025-06-22T02:16:59+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 5,
+)
+2025-06-22T02:23:31+00:00 [reorder_source_path] 진입
+2025-06-22T02:23:31+00:00 [reorder_source_path] input=NULL
+2025-06-22T02:27:47+00:00 [reorder_source_path] 진입
+2025-06-22T02:27:47+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 4,
+)
+2025-06-22T02:30:29+00:00 [reorder_source_path] 진입
+2025-06-22T02:30:29+00:00 [reorder_source_path] input=NULL
+2025-06-22T02:30:55+00:00 [reorder_source_path] 진입
+2025-06-22T02:30:55+00:00 [reorder_source_path] input=NULL
+2025-06-22T02:33:06+00:00 [reorder_source_path] 진입
+2025-06-22T02:33:06+00:00 [reorder_source_path] input=NULL
+2025-06-22T02:38:42+00:00 [reorder_source_path] 진입
+2025-06-22T02:38:42+00:00 [start reorder_source_path] raw={"dragged_id":11,"new_parent_id":4}
+2025-06-22T02:38:42+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 4,
+)
+2025-06-22T02:44:21+00:00 [reorder_source_path] 진입
+2025-06-22T02:44:21+00:00 [start reorder_source_path] raw={"dragged_id":11,"new_parent_id":4}
+2025-06-22T02:44:21+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 4,
+)
+2025-06-22T02:46:55+00:00 [reorder_source_path] 진입
+2025-06-22T02:46:55+00:00 [start reorder_source_path] raw={"dragged_id":11,"new_parent_id":4}
+2025-06-22T02:46:55+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 4,
+)
+2025-06-22T02:58:41+00:00 [reorder_source_path] 진입
+2025-06-22T02:58:41+00:00 [start reorder_source_path] raw={"dragged_id":11,"new_parent_id":9}
+2025-06-22T02:58:41+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 9,
+)
+2025-06-22T03:04:52+00:00 [reorder_source_path] 진입
+2025-06-22T03:04:52+00:00 [start reorder_source_path] raw={"dragged_id":11,"new_parent_id":5}
+2025-06-22T03:04:52+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 11,
+  'new_parent_id' => 5,
+)
+2025-06-22T03:05:47+00:00 [delete_path] 파일 진입
+2025-06-22T03:05:47+00:00 [delete_path] id=11
+2025-06-22T03:31:38+00:00 [delete_path] 파일 진입
+2025-06-22T03:31:38+00:00 [delete_path] id=11
+2025-06-22T03:54:20+00:00 [delete_path] 파일 진입
+2025-06-22T03:54:20+00:00 [delete_path] id=11
+2025-06-22T03:54:20+00:00 [delete_path] SHUTDOWN ERROR: array (
+  'type' => 1,
+  'message' => 'Uncaught Error: Call to a member function prepare() on null in /var/www/html/delete_source_path.php:39
+Stack trace:
+#0 {main}
+  thrown',
+  'file' => '/var/www/html/delete_source_path.php',
+  'line' => 39,
+)
+2025-06-22T04:03:23+00:00 [delete_path] 파일 진입
+2025-06-22T04:03:23+00:00 [delete_path] id=11
+2025-06-22T04:03:23+00:00 [delete_path] 삭제 성공: 11
+2025-06-22T04:09:26+00:00 [reorder_source_path] 진입
+2025-06-22T04:09:26+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T04:09:26+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T04:09:26+00:00 [reorder_source_path] UPDATE depth 실패: depth=4, id=9
+2025-06-22T04:15:07+00:00 [reorder_source_path] 진입
+2025-06-22T04:15:07+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4}
+2025-06-22T04:15:07+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+)
+2025-06-22T04:27:50+00:00 [reorder_source_path] 진입
+2025-06-22T04:27:50+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T04:27:50+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T04:27:59+00:00 [reorder_source_path] 진입
+2025-06-22T04:27:59+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T04:27:59+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T04:30:11+00:00 [reorder_source_path] 진입
+2025-06-22T04:30:11+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4}
+2025-06-22T04:30:11+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+)
+2025-06-22T04:59:03+00:00 [reorder_source_path] 진입
+2025-06-22T04:59:03+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T04:59:03+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T04:59:28+00:00 [reorder_source_path] 진입
+2025-06-22T04:59:28+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4}
+2025-06-22T04:59:28+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+)
+2025-06-22T04:59:42+00:00 [reorder_source_path] 진입
+2025-06-22T04:59:42+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T04:59:42+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T04:59:56+00:00 [reorder_source_path] 진입
+2025-06-22T04:59:56+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":8}
+2025-06-22T04:59:56+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 8,
+)
+2025-06-22T05:00:04+00:00 [reorder_source_path] 진입
+2025-06-22T05:00:04+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":8}
+2025-06-22T05:00:04+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 8,
+)
+2025-06-22T05:00:13+00:00 [reorder_source_path] 진입
+2025-06-22T05:00:13+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":6}
+2025-06-22T05:00:13+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 6,
+)
+2025-06-22T05:00:19+00:00 [reorder_source_path] 진입
+2025-06-22T05:00:19+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4}
+2025-06-22T05:00:19+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:39:23+00:00 [reorder_source_path] 진입
+2025-06-22T05:39:23+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T05:39:23+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T05:39:46+00:00 [reorder_source_path] 진입
+2025-06-22T05:39:46+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":5}
+2025-06-22T05:39:46+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 5,
+)
+2025-06-22T05:44:27+00:00 [reorder_source_path] 진입
+2025-06-22T05:44:27+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4}
+2025-06-22T05:44:27+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:44:49+00:00 [reorder_source_path] 진입
+2025-06-22T05:44:49+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":5}
+2025-06-22T05:44:49+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 5,
+)
+2025-06-22T05:48:36+00:00 [reorder_source_path] 진입
+2025-06-22T05:48:36+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:48:36+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:48:57+00:00 [reorder_source_path] 진입
+2025-06-22T05:48:57+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:48:57+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:49:16+00:00 [reorder_source_path] 진입
+2025-06-22T05:49:16+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":7}
+2025-06-22T05:49:16+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 7,
+)
+2025-06-22T05:49:32+00:00 [reorder_source_path] 진입
+2025-06-22T05:49:32+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:49:32+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:49:53+00:00 [reorder_source_path] 진입
+2025-06-22T05:49:53+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:49:53+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:50:08+00:00 [reorder_source_path] 진입
+2025-06-22T05:50:08+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:50:08+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T05:50:20+00:00 [reorder_source_path] 진입
+2025-06-22T05:50:20+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":5}
+2025-06-22T05:50:20+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 5,
+)
+2025-06-22T05:50:30+00:00 [reorder_source_path] 진입
+2025-06-22T05:50:30+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4}
+2025-06-22T05:50:30+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+)
+2025-06-22T14:00:58+00:00 [reorder_source_path] 진입
+2025-06-22T14:00:58+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4,"target_id":7}
+2025-06-22T14:00:58+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+  'target_id' => 7,
+)
+2025-06-22T14:01:27+00:00 [reorder_source_path] 진입
+2025-06-22T14:01:27+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":3,"target_id":5}
+2025-06-22T14:01:27+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 3,
+  'target_id' => 5,
+)
+2025-06-22T14:01:52+00:00 [reorder_source_path] 진입
+2025-06-22T14:01:52+00:00 [start reorder_source_path] raw={"dragged_id":9,"new_parent_id":4,"target_id":8}
+2025-06-22T14:01:52+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 9,
+  'new_parent_id' => 4,
+  'target_id' => 8,
+)
+2025-06-22T14:02:01+00:00 [reorder_source_path] 진입
+2025-06-22T14:02:01+00:00 [start reorder_source_path] raw={"dragged_id":8,"new_parent_id":4,"target_id":9}
+2025-06-22T14:02:01+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 8,
+  'new_parent_id' => 4,
+  'target_id' => 9,
+)
