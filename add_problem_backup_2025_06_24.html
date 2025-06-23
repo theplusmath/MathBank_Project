@@ -146,31 +146,6 @@
   <!-- 📎 외부 스크립트 로딩 -->
   <script src="js/functions.js"></script>
   <script>
-  function applyPathIdToDropdowns(pathId) {
-    if (!pathId) return;
-    fetch(`get_path_full_info.php?id=${pathId}`)
-      .then(res => res.json())
-      .then(arr => {
-        // arr: [{id, name}, ...] (최상위→입력ID 순서)
-        const pathSelectIds = ['#path1', '#path2', '#path3', '#path4', '#path5', '#path6'];
-        arr.forEach(function(item, depth) {
-          const $sel = $(pathSelectIds[depth]);
-          if ($sel.length) {
-            $sel.val(item.id).show();
-            // 하위 드롭다운 비움(이후 자동으로 로딩)
-            for (let d = depth+1; d < pathSelectIds.length; d++) {
-              $(pathSelectIds[d]).empty().hide();
-            }
-          }
-        });
-      // 경로명, id 반영
-        setTimeout(updatePathText, 300); // 비동기 반영 후 값 세팅
-      });
-  }
-
-
-
-
     document.addEventListener('DOMContentLoaded', () => {
       fetchPathTreeFlat();
       loadTeacherOptions();

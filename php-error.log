@@ -538,3 +538,69 @@ Stack trace:
   'new_parent_id' => 4,
   'target_id' => 9,
 )
+2025-06-23T01:19:27+00:00 [reorder_source_path] 진입
+2025-06-23T01:19:27+00:00 [start reorder_source_path] raw={"dragged_id":6,"new_parent_id":4,"target_id":7}
+2025-06-23T01:19:27+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 6,
+  'new_parent_id' => 4,
+  'target_id' => 7,
+)
+2025-06-23T07:37:39+00:00 [reorder_source_path] 진입
+2025-06-23T07:37:39+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":5}
+2025-06-23T07:37:39+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 5,
+)
+2025-06-23T07:37:45+00:00 [reorder_source_path] 진입
+2025-06-23T07:37:45+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":5}
+2025-06-23T07:37:45+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 5,
+)
+2025-06-23T07:38:08+00:00 [reorder_source_path] 진입
+2025-06-23T07:38:08+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:38:08+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:38:23+00:00 [reorder_source_path] 진입
+2025-06-23T07:38:23+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:38:23+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:38:38+00:00 [reorder_source_path] 진입
+2025-06-23T07:38:38+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:38:38+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:38:49+00:00 [reorder_source_path] 진입
+2025-06-23T07:38:49+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:38:49+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:39:01+00:00 [reorder_source_path] 진입
+2025-06-23T07:39:01+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:39:01+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:39:08+00:00 [reorder_source_path] 진입
+2025-06-23T07:39:08+00:00 [start reorder_source_path] raw={"dragged_id":45,"new_parent_id":3,"target_id":4}
+2025-06-23T07:39:08+00:00 [reorder_source_path] input=array (
+  'dragged_id' => 45,
+  'new_parent_id' => 3,
+  'target_id' => 4,
+)
+2025-06-23T07:39:28+00:00 [delete_path] 파일 진입
+2025-06-23T07:39:28+00:00 [delete_path] id=45
+2025-06-23T07:39:28+00:00 [delete_path] 삭제 성공: 45

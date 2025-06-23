@@ -116,18 +116,23 @@
       } else if (lastInsertedNode && typeof lastInsertedNode.id !== "undefined" && lastInsertedNode.id !== null) {
         const last = document.querySelector(`.folder-label[data-id='${lastInsertedNode.id}']`);
         if (last) {
+          // 모든 상위 li.folder를 open 처리
           let parentLi = last.closest('li.folder');
-          if (parentLi && !parentLi.classList.contains('open')) {
+          while (parentLi) {
             parentLi.classList.add('open');
+            // 아이콘도 ▼로 바꿔줌
             const iconEl = parentLi.querySelector('span');
             if (iconEl && parentLi.querySelector('ul.children')) {
               iconEl.textContent = "▼";
             }
+            // 더 상위 부모로 이동
+            parentLi = parentLi.parentElement.closest('li.folder');
           }
           last.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         lastInsertedNode = null;
       }
+
     }
 
     function createSourceTreeElement(node) {
@@ -375,15 +380,18 @@
           sort_order: newSortOrder
         })
       })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          fetchSourcePaths();
-        } else {
-          alert("추가 실패: " + (data.message || ""));
+          .then(res => res.json())
+          .then(data => {
+      if (data.success) {
+        if (data.inserted && data.inserted.id) {
+          lastInsertedNode = { id: data.inserted.id };
         }
-      });
+        fetchSourcePaths();
+      } else {
+        alert("추가 실패: " + (data.message || ""));
+      }
     });
+  });
 
     document.addEventListener("DOMContentLoaded", fetchSourcePaths);
   </script>

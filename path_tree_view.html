@@ -54,10 +54,18 @@
       outline: 2px dashed #3399ff;
       background-color: #eaf4ff;
     }
+
+
+    .highlight {
+      background: #ffe063 !important;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
   <h2>📁 경로 트리 보기</h2>
+  <input type="text" id="treeSearchInput" placeholder="경로명 검색..." style="margin-bottom:10px; width:90%;">
   <div id="pathTree"></div>
   <div id="selectedIdText">선택된 경로 ID: 없음</div>
   <div id="contextMenu">
@@ -70,8 +78,46 @@
     let currentRightClickNode = null;
     let lastInsertedNode = null;
     let draggedItem = null;
+    let selectedNodeId = localStorage.getItem('selectedPathId') || null;	
     let lastMoved = null;
     let lastDeletedNode = null;
+
+    function highlightSelectedNode(id) {
+      // id가 없거나(초기화) 선택된 요소가 없으면 전체 해제
+      if (!id) {
+        document.querySelectorAll(".folder-label").forEach(s => s.classList.remove("selected"));
+        document.getElementById("selectedIdText").textContent = `선택된 경로 ID: 없음`;
+        return;
+      }
+      const selectedEl = document.querySelector(`.folder-label[data-id='${id}']`);
+
+      if (selectedEl) {
+        // 기존 선택 해제 및 현재 선택
+        document.querySelectorAll(".folder-label").forEach(s => s.classList.remove("selected"));
+        selectedEl.classList.add("selected");
+        selectedEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById("selectedIdText").textContent = `선택된 경로 ID: ${id}`;
+
+        // 1️⃣ 트리 자동 펼침: 부모 <li> 모두 open!
+        let li = selectedEl.parentElement;
+        while (li && li.tagName === 'LI') {
+          li.classList.add('open');
+          // 상위 <ul>
+          li = li.parentElement;
+          // 상위 <li> (트리 구조에 따라 ul → li → ul → li ...)
+          if (!li) break;
+          li = li.parentElement;
+        }
+      } else {
+        document.querySelectorAll(".folder-label").forEach(s => s.classList.remove("selected"));
+        document.getElementById("selectedIdText").textContent = `선택된 경로 ID: 없음`;
+      }
+    }
+
+
+
+
+
 
     async function fetchPaths() {
       const res = await fetch('get_path_tree_flat_paths.php');
@@ -97,10 +143,8 @@
       });
       container.appendChild(ulRoot);
 
-      if (lastInsertedNode && lastInsertedNode.id) {
-        const last = document.querySelector(`.folder-label[data-id='${lastInsertedNode.id}']`);
-        if (last) last.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      // 마지막으로 작업한 노드에 포커스/선택 표시 유지
+      if (selectedNodeId) highlightSelectedNode(selectedNodeId);
     }
 
     function createTreeElement(node) {
@@ -132,10 +176,10 @@
 
   // 클릭시 선택만
   span.addEventListener("click", (e) => {
-    e.stopPropagation();
-    document.querySelectorAll(".folder-label").forEach(s => s.classList.remove("selected"));
-    span.classList.add("selected");
-    document.getElementById("selectedIdText").textContent = `선택된 경로 ID: ${node.id}`;
+  e.stopPropagation();
+  selectedNodeId = node.id;
+  highlightSelectedNode(node.id);
+  localStorage.setItem('selectedPathId', node.id);
   });
 
   // 더블클릭시 트리 열고 닫기 (아이콘과 동일)
@@ -155,6 +199,56 @@
   // 드래그 등 기존 코드 동일...
   span.setAttribute("draggable", true);
   // ... 이하 동일
+
+  // ----- [드래그 기능 추가] -----
+  span.addEventListener("dragstart", (e) => {
+    draggedItem = node;
+    span.classList.add("drag-over");
+    e.dataTransfer.effectAllowed = "move";
+  });
+  span.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    span.classList.add("drag-over");
+  });
+  span.addEventListener("dragleave", (e) => {
+    span.classList.remove("drag-over");
+  });
+  span.addEventListener("drop", (e) => {
+    e.preventDefault();
+    span.classList.remove("drag-over");
+    if (!draggedItem || draggedItem.id === node.id) return;
+    fetch("reorder_path.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        dragged_id: draggedItem.id,
+        new_parent_id: node.parent_id, // 같은 부모라면 그대로
+        target_id: node.id // 형제 id
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        selectedNodeId = draggedItem.id;
+        highlightSelectedNode(draggedItem.id);
+        lastInsertedNode = { id: draggedItem.id };
+        fetchPaths();
+      } else {
+        alert("이동 실패: " + (data.message || ""));
+      }
+      draggedItem = null;
+    });
+  });
+  span.addEventListener("dragend", (e) => {
+    document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    draggedItem = null;
+  });
+  // ----- [드래그 기능 끝] -----
+
+
+
+
+
 
   // li에 아이콘과 경로명 span을 append
   li.appendChild(icon);
@@ -184,6 +278,10 @@
       document.getElementById("contextMenu").style.display = "none";
     });
 
+
+
+
+
     document.getElementById("deleteOption").addEventListener("click", () => {
       if (!currentRightClickNode) return;
       if (!confirm(`"${currentRightClickNode.name}" 경로를 삭제할까요?`)) return;
@@ -204,6 +302,38 @@
         }
       });
     });
+
+
+    document.getElementById("renameOption").addEventListener("click", () => {
+      if (!currentRightClickNode) return;
+      const newName = prompt("새 이름을 입력하세요", currentRightClickNode.name);
+      if (!newName || newName.trim() === "" || newName === currentRightClickNode.name) return;
+
+      fetch("update_path.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: currentRightClickNode.id,
+          name: newName,
+          parent_id: currentRightClickNode.parent_id    // ✅ 이 부분 반드시 포함!
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          selectedNodeId = currentRightClickNode.id;  // ← 이 줄 추가!
+          highlightSelectedNode(currentRightClickNode.id);
+          lastInsertedNode = { id: currentRightClickNode.id }; // ⭐️ 이름 바꾼 후 해당 노드로 포커스
+          fetchPaths();
+        } else {
+          alert("이름 수정 실패: " + (data.message || ""));
+        }
+      });
+    });
+
+
+
+
 
     document.addEventListener("keydown", (e) => {
       if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'z') {
@@ -252,7 +382,89 @@
       }
     });
 
+    document.getElementById("addChildOption").addEventListener("click", () => {
+      if (!currentRightClickNode) return;
+      const childName = prompt("추가할 하위 경로 이름을 입력하세요");
+      if (!childName) return;
+    
+      // 현재 부모의 하위 경로 개수 + 1로 sort_order 계산
+      const newSortOrder =
+        Array.isArray(currentRightClickNode.children)
+          ? currentRightClickNode.children.length + 1
+          : 1;
+
+      fetch("insert_path.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          parent_id: currentRightClickNode.id,
+          name: childName,
+          depth: (parseInt(currentRightClickNode.depth, 10) || 0) + 1,
+          sort_order: newSortOrder
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          if (data.inserted && data.inserted.id) {
+            selectedNodeId = data.inserted.id; // ← 이 줄 추가!
+            highlightSelectedNode(data.inserted.id);
+            lastInsertedNode = { id: data.inserted.id };
+          }
+          fetchPaths();
+        } else {
+          alert("추가 실패: " + (data.message || ""));
+        }
+      });
+    });
+
+
+
     document.addEventListener("DOMContentLoaded", fetchPaths);
+
+    // ② 검색 이벤트 바인딩 및 필터링 함수 추가
+    document.getElementById('treeSearchInput').addEventListener('input', function() {
+      const keyword = this.value.trim();
+      filterTreeNodes(keyword);
+    });
+
+    function filterTreeNodes(keyword) {
+      const nodes = document.querySelectorAll('.folder-label');
+      keyword = keyword.toLowerCase();
+      // 먼저 전체 트리 닫기
+      document.querySelectorAll('li.folder.open').forEach(li => li.classList.remove('open'));
+  
+      let firstHighlighted = null;
+      nodes.forEach(node => {
+        const text = node.textContent.toLowerCase();
+        const isHit = keyword && text.includes(keyword);
+        node.classList.toggle('highlight', isHit);
+
+        if (isHit && !firstHighlighted) firstHighlighted = node;
+
+        // 트리 전체는 항상 보이고, display는 변경하지 않는다!
+      });
+
+      // 하이라이트된 노드의 부모 폴더 자동 open
+      if (firstHighlighted) {
+        let li = firstHighlighted.parentElement;
+        while (li && li.tagName === 'LI') {
+          li.classList.add('open');
+          // li.parentElement: ul → li 반복 구조
+          li = li.parentElement;
+          if (!li) break;
+          li = li.parentElement;
+        }
+        // 하이라이트된 노드로 스크롤도 추가 (선택)
+        firstHighlighted.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+
+
+
+
+
   </script>
 </body>
 </html>

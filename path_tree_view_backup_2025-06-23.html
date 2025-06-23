@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>경로 트리 보기</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    ul { list-style-type: none; padding-left: 20px; }
+    .folder { margin: 5px 0; cursor: pointer; }
+    .folder-label {
+      font-weight: bold;
+      padding: 3px 6px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .folder-label.selected {
+      background-color: #d0ebff;
+      border-radius: 4px;
+    }
+    .children {
+      margin-left: 15px;
+      display: none;
+    }
+    .folder.open > .children {
+      display: block;
+    }
+    #contextMenu {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 1000;
+    }
+    #contextMenu div {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    #contextMenu div:hover {
+      background-color: #f0f0f0;
+    }
+    #selectedIdText {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #004080;
+    }
+    .drag-over {
+      outline: 2px dashed #3399ff;
+      background-color: #eaf4ff;
+    }
+  </style>
+</head>
+<body>
+  <h2>📁 경로 트리 보기</h2>
+  <div id="pathTree"></div>
+  <div id="selectedIdText">선택된 경로 ID: 없음</div>
+  <div id="contextMenu">
+    <div id="addChildOption">➕ 하위 경로 추가</div>
+    <div id="renameOption">✏️ 이름 수정</div>
+    <div id="deleteOption">🗑 삭제</div>
+  </div>
+
+  <script>
+    let currentRightClickNode = null;
+    let lastInsertedNode = null;
+    let draggedItem = null;
+    let lastMoved = null;
+    let lastDeletedNode = null;
+
+    async function fetchPaths() {
+      const res = await fetch('get_path_tree_flat_paths.php');
+      const flatPaths = await res.json();
+
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, { ...p, children: [] }));
+
+      flatPaths.forEach(p => {
+        if (p.parent_id !== null && p.parent_id !== 0) {
+          const parent = pathMap.get(p.parent_id);
+          if (parent) parent.children.push(pathMap.get(p.id));
+        }
+      });
+
+      const roots = flatPaths.filter(p => p.parent_id === 0 || p.parent_id === null || p.parent_id === "null");
+      const container = document.getElementById("pathTree");
+      container.innerHTML = '';
+
+      const ulRoot = document.createElement("ul");
+      roots.forEach(root => {
+        ulRoot.appendChild(createTreeElement(pathMap.get(root.id)));
+      });
+      container.appendChild(ulRoot);
+
+      if (lastInsertedNode && lastInsertedNode.id) {
+        const last = document.querySelector(`.folder-label[data-id='${lastInsertedNode.id}']`);
+        if (last) last.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function createTreeElement(node) {
+  const li = document.createElement("li");
+  li.classList.add("folder");
+
+  // 삼각형 아이콘
+  const icon = document.createElement("span");
+  icon.style.display = "inline-block";
+  icon.style.width = "20px";
+  icon.style.cursor = "pointer";
+  icon.style.userSelect = "none";
+  icon.textContent = node.children.length > 0 ? "▶" : "　"; // 자식 있으면 ▶, 없으면 공백
+
+  // 아이콘 클릭 시 하위 트리 열고 닫기
+  icon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    li.classList.toggle("open");
+    // 아이콘 모양 업데이트
+    icon.textContent = (li.classList.contains("open") && node.children.length > 0) ? "▼" :
+      (node.children.length > 0 ? "▶" : "　");
+  });
+
+  // 경로명
+  const span = document.createElement("span");
+  span.textContent = node.name;
+  span.className = "folder-label";
+  span.dataset.id = node.id;
+
+  // 클릭시 선택만
+  span.addEventListener("click", (e) => {
+    e.stopPropagation();
+    document.querySelectorAll(".folder-label").forEach(s => s.classList.remove("selected"));
+    span.classList.add("selected");
+    document.getElementById("selectedIdText").textContent = `선택된 경로 ID: ${node.id}`;
+  });
+
+  // 더블클릭시 트리 열고 닫기 (아이콘과 동일)
+  span.addEventListener("dblclick", (e) => {
+    e.stopPropagation();
+    li.classList.toggle("open");
+    icon.textContent = (li.classList.contains("open") && node.children.length > 0) ? "▼" :
+      (node.children.length > 0 ? "▶" : "　");
+  });
+
+  span.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    currentRightClickNode = node;
+    showContextMenu(e.pageX, e.pageY);
+  });
+
+  // 드래그 등 기존 코드 동일...
+  span.setAttribute("draggable", true);
+  // ... 이하 동일
+
+  // li에 아이콘과 경로명 span을 append
+  li.appendChild(icon);
+  li.appendChild(span);
+
+  if (node.children.length > 0) {
+    const ul = document.createElement("ul");
+    ul.classList.add("children");
+    node.children.forEach(child => {
+      ul.appendChild(createTreeElement(child));
+    });
+    li.appendChild(ul);
+  }
+
+  return li;
+}
+
+
+    function showContextMenu(x, y) {
+      const menu = document.getElementById("contextMenu");
+      menu.style.left = `${x}px`;
+      menu.style.top = `${y}px`;
+      menu.style.display = "block";
+    }
+
+    document.addEventListener("click", () => {
+      document.getElementById("contextMenu").style.display = "none";
+    });
+
+    document.getElementById("deleteOption").addEventListener("click", () => {
+      if (!currentRightClickNode) return;
+      if (!confirm(`"${currentRightClickNode.name}" 경로를 삭제할까요?`)) return;
+
+      lastDeletedNode = { ...currentRightClickNode };
+
+      fetch("delete_path.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `id=${encodeURIComponent(currentRightClickNode.id)}`
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          fetchPaths();
+        } else {
+          alert("삭제 실패: " + (data.message || ""));
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'z') {
+        if (lastMoved) {
+          fetch("reorder_path.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              dragged_id: lastMoved.dragged_id,
+              target_id: null,
+              new_parent_id: lastMoved.original_parent_id
+            })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success) {
+              fetchPaths();
+              lastMoved = null;
+            } else {
+              alert("실행취소 실패: " + (data.message || ""));
+            }
+          });
+        } else if (lastDeletedNode) {
+          fetch("insert_path.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              id: lastDeletedNode.id,
+              parent_id: lastDeletedNode.parent_id,
+              name: lastDeletedNode.name,
+              depth: lastDeletedNode.depth,
+              sort_order: lastDeletedNode.sort_order
+            })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success) {
+              lastInsertedNode = { id: lastDeletedNode.id };
+              fetchPaths();
+              lastDeletedNode = null;
+            } else {
+              alert("삭제 복원 실패: " + (data.message || ""));
+            }
+          });
+        }
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", fetchPaths);
+  </script>
+</body>
+</html>
