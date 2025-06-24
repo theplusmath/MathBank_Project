@@ -154,10 +154,7 @@ math-field {
   <!-- MathLive (수식 편집기) -->
   <script src="https://cdn.jsdelivr.net/npm/mathlive/dist/mathlive.min.js"></script>
 </head>
-
 <body>
-<script>window.problem_id = <?= (int)$problem['id'] ?>;</script>
-
 <h1>문제 수정</h1>
 <!-- 🔁 수정 이력 보기 버튼 -->
 <div style="margin-bottom: 15px;">
@@ -345,6 +342,8 @@ math-field {
 
 
 
+
+
 <!-- ================================ -->
 <!-- [수식 오류 검사 및 수정 모달] -->
 <!-- ================================ -->
@@ -366,9 +365,391 @@ math-field {
   </div>
 </div>
 <!-- ================================ -->
+<script>
+
+const DEPTH_COUNT = 6;   // 필요하면 7, 8로 변경
+let questionEditor, solutionEditor;
+ClassicEditor.create(document.querySelector('textarea[name="question"]')).then(editor => questionEditor = editor);
+ClassicEditor.create(document.querySelector('textarea[name="solution"]')).then(editor => solutionEditor = editor);
 
 
 
+// -------------------------------------------------
+// [이하 기존의 경로/이력/복원/미리보기/저장 등 JS 유지]
+// -------------------------------------------------
+function confirmCopy() {
+  if (confirm('수정한 내용을 복사하여 새 문제로 저장하시겠습니까?')) {
+    document.querySelector('textarea[name="question"]').value = questionEditor.getData();
+    document.querySelector('textarea[name="solution"]').value = solutionEditor.getData();
+    document.getElementById('copyMode').value = '1';
+    document.getElementById('problemForm').submit();
+  }
+}
+function previewProblem() {
+  const id = <?= (int)$problem['id'] ?>;
+  window.open('view_problem.php?id=' + id, '_blank');
+}
+function handleSubmit() {
+  document.querySelector('textarea[name="question"]').value = questionEditor.getData();
+  document.querySelector('textarea[name="solution"]').value = solutionEditor.getData();
+  document.getElementById('copyMode').value = '0';
+  return confirm('정말 수정하시겠습니까? (원본이 변경됩니다.)');
+}
+// [이하 경로 드롭다운 및 이력 복원 로직 기존대로 복사, 그대로 사용]
+
+
+let formulaPanelOpen = {};
+
+function toggleFormulaPanel(field) {
+    // 열려있으면 닫기
+    if (formulaPanelOpen[field]) {
+        document.getElementById('formulaPanel_' + field).innerHTML = '';
+        formulaPanelOpen[field] = false;
+        return;
+    }
+
+    // 문제 본문 데이터 읽기
+    let text;
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        text = questionEditor.getData();
+    } else {
+        text = document.getElementById(field + 'Area') ? document.getElementById(field + 'Area').value : '';
+    }
+    // HTML 태그 제거
+    let htmlTagRegex = /(<([^>]+)>)/gi;
+    text = text.replace(htmlTagRegex, '');
+
+    // $...$ 수식 추출
+    let regex = /\$([^\$]+)\$/g, m, arr = [];
+    let idx = 0;
+    while ((m = regex.exec(text)) !== null) {
+        arr.push({
+            index: idx,
+            formula: m[1],
+            raw: m[0],
+            pos: m.index
+        });
+        idx++;
+    }
+    let edits = arr.map(f => ({ ...f, edited: f.formula }));
+
+    // 그리드 HTML 만들기
+    let grid = `<div class="math-grid" style="grid-template-columns: 1fr 1fr 1fr 0.7fr;">`;
+    edits.forEach((item, i) => {
+        // 정리된 LaTeX
+        let cleanedLatex = item.edited.replace(/\s+/g, ' ').trim();
+        grid += `
+        <div class="math-block" style="display:flex;align-items:center;">
+            <math-field id="mf_${field}_${i}" virtual-keyboard-mode="manual" style="margin-right:8px;">${item.edited}</math-field>
+            <input type="text" value="${cleanedLatex.replace(/"/g,"&quot;")}" class="latex-input" readonly style="background:#eef;margin:0 8px;width:99%;">
+            <input type="text" id="latex_${field}_${i}" class="latex-input" value="${item.edited.replace(/"/g,"&quot;")}" style="margin:0 8px;width:99%;">
+            <button type="button" class="apply-btn" onclick="applyFormulaEditPanel('${field}', ${i})">확인/적용</button>
+        </div>
+        `;
+    });
+    grid += '</div>';
+    grid += `<button type="button" class="btn btn-success" onclick="applyAllFormulaEditsPanel('${field}', ${edits.length})">모든 적용</button>`;
+
+    // **렌더 먼저!**
+    document.getElementById('formulaPanel_' + field).innerHTML = grid;
+    formulaPanelOpen[field] = true;
+
+    // **이벤트 바인딩은 렌더 이후에!!**
+    edits.forEach((item, i) => {
+        let mf = document.getElementById('mf_' + field + '_' + i);
+        let latex = document.getElementById('latex_' + field + '_' + i);
+        if (!mf || !latex) return;
+        let cleaned = mf.parentElement ? mf.parentElement.querySelector('input[readonly]') : null;
+        mf.addEventListener('input', () => {
+            latex.value = mf.value;
+            if (cleaned) cleaned.value = mf.value.replace(/\s+/g, ' ').trim();
+        });
+        latex.addEventListener('input', () => {
+            mf.value = latex.value;
+            if (cleaned) cleaned.value = latex.value.replace(/\s+/g, ' ').trim();
+        });
+    });
+
+    // 상태 전역 저장
+    window['formulaEdits_' + field] = edits;
+}
+
+
+// 수식별 적용
+function applyFormulaEditPanel(field, idx) {
+    let edits = window['formulaEdits_' + field];
+    let mf = document.getElementById('mf_' + field + '_' + idx);
+    let latex = document.getElementById('latex_' + field + '_' + idx).value;
+    edits[idx].edited = latex;
+
+    // 1. 본문 데이터 읽기
+    let text;
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        text = questionEditor.getData();
+    } else {
+        text = document.getElementById(field + 'Area') ? document.getElementById(field + 'Area').value : '';
+    }
+    // 2. 해당 수식만 원본 → 수정본으로 치환
+    let plain = text.replace(edits[idx].raw, '$' + latex + '$');
+    // 3. 본문 반영
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        questionEditor.setData(plain);
+    }
+    if (document.getElementById(field + 'Area')) {
+        document.getElementById(field + 'Area').value = plain;
+    }
+
+    // 4. 해당 math-block만 삭제
+    const block = mf.closest('.math-block');
+    if (block) block.remove();
+
+    // 5. edits 배열의 해당 인덱스는 undefined 처리
+    edits[idx] = null;
+
+    // 6. math-block이 더 이상 없으면 패널 전체 닫기
+    const remainingBlocks = document.querySelectorAll('#formulaPanel_' + field + ' .math-block');
+    if (remainingBlocks.length === 0) {
+        document.getElementById('formulaPanel_' + field).innerHTML = '';
+        formulaPanelOpen[field] = false;
+    }
+}
+
+
+// 모두 적용
+function applyAllFormulaEditsPanel(field, total) {
+    let edits = window['formulaEdits_' + field];
+    let text;
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        text = questionEditor.getData();
+    } else {
+        text = document.getElementById(field + 'Area') ? document.getElementById(field + 'Area').value : '';
+    }
+    let htmlTagRegex = /(<([^>]+)>)/gi;
+    let plain = text.replace(htmlTagRegex, '');
+    // 순서대로 원본 → 수정
+    edits.forEach(f => {
+    if (!f) return;
+    plain = plain.replace(f.raw, '$' + f.edited + '$');
+    });    // 적용
+    if (field === 'question' && typeof questionEditor !== 'undefined') {
+        questionEditor.setData(plain);
+    }
+    if (document.getElementById(field + 'Area')) {
+        document.getElementById(field + 'Area').value = plain;
+    }
+    // 패널 닫기
+    document.getElementById('formulaPanel_' + field).innerHTML = '';
+    formulaPanelOpen[field] = false;
+}
+
+
+function setPathById() {
+  const targetId = parseInt(document.getElementById('manual_path_id').value);
+  if (!targetId) {
+    alert('경로 ID를 입력하세요.');
+    return;
+  }
+  // 모든 드롭다운 먼저 초기화
+  for (let i = 1; i <= DEPTH_COUNT; i++) {
+  document.getElementById(`depth${i}`).innerHTML = `<option value="">- ${i}단계 선택 -</option>`;
+  }
+
+
+
+  fetch('get_path_tree_flat_paths.php')
+    .then(res => res.json())
+    .then(flatPaths => {
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, p));
+      let current = pathMap.get(targetId);
+      if (!current) {
+        alert('해당 경로 ID를 찾을 수 없습니다.');
+        return;
+      }
+      const pathIds = [];
+      while (current) {
+        pathIds.unshift(current.id);
+        current = pathMap.get(current.parent_id);
+      }
+      let promise = Promise.resolve();
+      pathIds.forEach((id, index) => {
+        promise = promise.then(() => {
+          const parentId = index === 0 ? null : pathIds[index - 1];
+          return fetch(`get_paths_by_parent.php?parent_id=${parentId ?? ''}`)
+            .then(res => res.json())
+            .then(options => {
+              const sel = document.getElementById(`depth${index + 1}`);
+              sel.innerHTML = `<option value="">- ${index + 1}단계 선택 -</option>`;
+              options.forEach(opt => {
+                const o = document.createElement('option');
+                o.value = opt.id;
+                o.textContent = opt.name;
+                if (opt.id == id) o.selected = true;
+                sel.appendChild(o);
+              });
+            });
+        });
+      });
+      // 마지막에 path_id, path_text 동기화!
+      promise.then(() => {
+        document.getElementById('path_id').value = targetId;
+        updatePathTextAndId(); // 동기화!
+      });
+    });
+}
+
+function loadDepthOptions(depth, parentId) {
+  fetch(`get_paths_by_parent.php?parent_id=${parentId ?? ''}`)
+    .then(res => res.json())
+    .then(data => {
+      const select = document.getElementById(`depth${depth}`);
+      select.innerHTML = `<option value="">- ${depth}단계 선택 -</option>`;
+      data.forEach(row => {
+        const opt = document.createElement("option");
+        opt.value = row.id;
+        opt.textContent = row.name;
+        select.appendChild(opt);
+      });
+    });
+}
+
+// 반드시 아래 코드를 추가하세요!
+function loadNextDepth(depth) {
+  // 1. 선택된 단계(depth) 아래의 모든 드롭다운 초기화
+  for (let i = depth + 1; i <= DEPTH_COUNT; i++) {
+  document.getElementById(`depth${i}`).innerHTML = `<option value="">- ${i}단계 선택 -</option>`;
+  }
+
+  // 2. 선택된 값이 있으면 하위 옵션 로드
+  const selectedId = document.getElementById(`depth${depth}`).value;
+  if (selectedId) loadDepthOptions(depth + 1, selectedId);
+  // 3. path_text, path_id 동기화
+  updatePathTextAndId();
+}
+
+function updatePathTextAndId() {
+  const names = [];
+  let lastId = null;
+  for (let i = 1; i <= DEPTH_COUNT; i++) {
+  const sel = document.getElementById(`depth${i}`);
+  if (sel && sel.value) {
+    names.push(sel.options[sel.selectedIndex].text);
+    lastId = sel.value;
+    }
+  }
+  document.getElementById('path_text').value = names.join('/');
+  document.getElementById('path_id').value = lastId ?? '';
+}
+
+
+
+// path_id 값이 있으면 드롭다운을 세팅하는 함수
+function setPathByIdFromValue(pathId) {
+  document.getElementById('manual_path_id').value = pathId;
+  setPathById();
+}
+
+
+const SOURCE_DEPTH_COUNT = 6;
+function loadSourceNextDepth(depth) {
+  for (let i = depth + 1; i <= SOURCE_DEPTH_COUNT; i++) {
+    document.getElementById(`source_path${i}`).innerHTML = `<option value="">- ${i}단계 선택 -</option>`;
+  }
+  const selectedId = document.getElementById(`source_path${depth}`).value;
+  if (selectedId) loadSourcePathOptions(depth + 1, selectedId);
+  updateSourcePathTextAndId();
+}
+function loadSourcePathOptions(depth, parentId) {
+  fetch(`get_source_path.php?parent_id=${parentId ?? ''}`)
+    .then(res => res.json())
+    .then(data => {
+      const select = document.getElementById(`source_path${depth}`);
+      select.innerHTML = `<option value="">- ${depth}단계 선택 -</option>`;
+      data.forEach(row => {
+        const opt = document.createElement("option");
+        opt.value = row.id;
+        opt.textContent = row.name;
+        select.appendChild(opt);
+      });
+    });
+}
+function updateSourcePathTextAndId() {
+  let lastId = null;
+  for (let i = 1; i <= SOURCE_DEPTH_COUNT; i++) {
+    const sel = document.getElementById(`source_path${i}`);
+    if (sel && sel.value) lastId = sel.value;
+  }
+  document.getElementById('source_path_id').value = lastId ?? '';
+}
+// 최초 실행 시 최상위만 호출
+
+window.addEventListener('DOMContentLoaded', function() {
+  // 메인 경로
+  const initialPathId = document.getElementById('path_id').value;
+  if (initialPathId && !isNaN(parseInt(initialPathId))) {
+    setPathByIdFromValue(initialPathId);
+  } else {
+    loadDepthOptions(1, null);
+  }
+  // 출처 경로
+  const initialSourcePathId = document.getElementById('source_path_id').value;
+  if (initialSourcePathId && !isNaN(parseInt(initialSourcePathId))) {
+    setSourcePathByIdFromValue(initialSourcePathId);
+  } else {
+    loadSourcePathOptions(1, null);
+  }
+  // return_url 자동
+  var referrer = document.referrer;
+  var returnInput = document.getElementById('return_url');
+  if (returnInput && !returnInput.value && referrer) {
+      returnInput.value = referrer;
+  }
+});
+
+
+
+
+
+function setSourcePathByIdFromValue(pathId) {
+  fetch('get_source_path_tree_flat_paths.php')
+    .then(res => res.json())
+    .then(flatPaths => {
+      const pathMap = new Map();
+      flatPaths.forEach(p => pathMap.set(p.id, p));
+      let current = pathMap.get(Number(pathId));
+      if (!current) return;
+      const pathIds = [];
+      while (current) {
+        pathIds.unshift(current.id);
+        current = pathMap.get(current.parent_id);
+      }
+      let promise = Promise.resolve();
+      pathIds.forEach((id, index) => {
+        promise = promise.then(() => {
+          const parentId = index === 0 ? null : pathIds[index - 1];
+          return fetch(`get_source_path.php?parent_id=${parentId ?? ''}`)
+            .then(res => res.json())
+            .then(options => {
+              const sel = document.getElementById(`source_path${index + 1}`);
+              sel.innerHTML = `<option value="">- ${index + 1}단계 선택 -</option>`;
+              options.forEach(opt => {
+                const o = document.createElement('option');
+                o.value = opt.id;
+                o.textContent = opt.name;
+                if (opt.id == id) o.selected = true;
+                sel.appendChild(o);
+              });
+            });
+        });
+      });
+      promise.then(() => {
+        document.getElementById('source_path_id').value = pathId;
+      });
+    });
+}
+
+
+</script>
 <!-- 이하 이력/복원 표 및 기타 UI 코드 (생략, 위의 너의 코드와 동일하게 두면 됨) -->
 
 <!-- ================================ -->
@@ -391,11 +772,7 @@ math-field {
     </div>
   </div>
 </div>
-<script>
-  window.problem_id = <?= (int)$problem['id'] ?>;
-</script>
 
-<script>window.problem_id = <?= (int)$problem['id'] ?>;</script>
-<script src="/js/edit_problem.js?v=202406"></script>
+
 </body>
 </html>

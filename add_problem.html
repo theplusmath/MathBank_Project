@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>문제 개별 등록</title>
+  <!-- 반드시 functions.js, 그 외 JS 위에 위치해야 함 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <link rel="stylesheet" href="css/style.css"> <!-- 필요 시 스타일 파일 따로 분리 -->
   <style>
     body {
@@ -59,11 +62,32 @@
       <select id="path4"></select>
       <select id="path5"></select>
       <select id="path6"></select>
+
     </div>
+
     <input type="hidden" name="path_text" id="path_text" required>
     <input type="hidden" name="source_path_id" id="source_path_id">  <!-- ⬅⬅⬅ 이 한 줄 추가! -->
+
     <label>경로 ID (선택 시 자동 적용)</label>
     <input type="number" id="manual_path_id" placeholder="예: 67">
+    <button type="button" id="apply_manual_path_id_btn">적용</button>
+
+
+
+    <!-- 🔽 여기 추가! -->
+    <label>source_path 선택 (복사/참조 경로)</label>
+    <div class="path-group">
+      <select id="source_path1"></select>
+      <select id="source_path2"></select>
+      <select id="source_path3"></select>
+      <select id="source_path4"></select>
+      <select id="source_path5"></select>
+      <select id="source_path6"></select>
+    </div>
+    <input type="hidden" name="source_path_id" id="source_path_id">
+    <input type="hidden" name="source_path_text" id="source_path_text">
+
+
 
 
     <label>문제</label>
@@ -146,142 +170,46 @@
   <!-- 📎 외부 스크립트 로딩 -->
   <script src="js/functions.js"></script>
   <script>
-  function applyPathIdToDropdowns(pathId) {
-    if (!pathId) return;
-    fetch(`get_path_full_info.php?id=${pathId}`)
-      .then(res => res.json())
-      .then(arr => {
-        // arr: [{id, name}, ...] (최상위→입력ID 순서)
-        const pathSelectIds = ['#path1', '#path2', '#path3', '#path4', '#path5', '#path6'];
-        arr.forEach(function(item, depth) {
-          const $sel = $(pathSelectIds[depth]);
-          if ($sel.length) {
-            $sel.val(item.id).show();
-            // 하위 드롭다운 비움(이후 자동으로 로딩)
-            for (let d = depth+1; d < pathSelectIds.length; d++) {
-              $(pathSelectIds[d]).empty().hide();
-            }
-          }
-        });
-      // 경로명, id 반영
-        setTimeout(updatePathText, 300); // 비동기 반영 후 값 세팅
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchPathTreeFlat().then(() => {
+      populateSourceDropdowns();  // ← flatPaths가 준비된 뒤 source_path도 드롭다운 준비!
+    });
+    loadTeacherOptions();
+
+    // 드롭다운 변경 시 manual_path_id, path_text 자동 동기화
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById('path' + i).addEventListener('change', function () {
+        updateManualPathId();
+        updatePathText();
       });
-  }
+    }
 
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-      fetchPathTreeFlat();
-      loadTeacherOptions();
-
+    // manual_path_id 값 변경 시 드롭다운 동기화
     document.getElementById('manual_path_id').addEventListener('change', function () {
       const pathId = this.value.trim();
-      if (pathId) {
-        applyPathIdToDropdowns(pathId); // 드롭다운 자동 반영 함수 호출
-      }
+      if (pathId) applyPathIdToDropdowns(pathId);
     });
 
-
-
+    // "적용" 버튼 클릭 시만 적용
+    document.getElementById('apply_manual_path_id_btn').addEventListener('click', function () {
+      const pathId = document.getElementById('manual_path_id').value.trim();
+      if (pathId) applyPathIdToDropdowns(pathId);
     });
 
-    document.getElementById('problemForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      formData.set('copied_by', document.getElementById('copied_by_select').value);
-
-      fetch('insert_problem.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          showMessage('✅ 문제 등록 성공!', 'success');
-          this.reset();
-        } else {
-          showMessage('❌ 등록 실패: ' + data.message, 'error');
-        }
-      })
-      .catch(err => {
-        showMessage('❌ 오류 발생: ' + err, 'error');
-      });
+    // 엔터 입력 시 폼 제출 방지
+    document.getElementById('manual_path_id').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.keyCode === 13) e.preventDefault();
     });
-
-$(function() {
-    // 드롭다운 ID 배열 (최대 6단계까지 사용 가능)
-    const pathSelectIds = ['#path1', '#path2', '#path3', '#path4', '#path5', '#path6'];
-
-    // 최상위(루트) 노드 불러오기
-    loadSourcePathDropdown(0, null);
-
-    // 각 드롭다운의 change 이벤트
-    pathSelectIds.forEach((selector, depth) => {
-        $(selector).on('change', function () {
-            const selectedId = $(this).val();
-            // 이후 드롭다운 초기화 및 숨김
-            for(let i=depth+1; i<pathSelectIds.length; i++){
-                $(pathSelectIds[i]).empty().hide();
-            }
-            if(selectedId) {
-                loadSourcePathDropdown(depth+1, selectedId);
-                // 선택된 경로명들 연결해서 path_text에 저장
-                updatePathText();
-            } else {
-                updatePathText();
-            }
-        });
-    });
-
-    // source_path 드롭다운 동적 로딩 함수
-    function loadSourcePathDropdown(depth, parent_id) {
-        $.get('get_source_path.php', {parent_id: parent_id}, function(data){
-            var list = JSON.parse(data);
-            const $sel = $(pathSelectIds[depth]);
-            $sel.empty().append('<option value="">'+(depth+1)+'단계 선택</option>');
-            if(list.length){
-                list.forEach(function(row){
-                    $sel.append('<option value="'+row.id+'">'+row.name+'</option>');
-                });
-                $sel.show();
-            }else{
-                $sel.hide();
-            }
-        });
-    }
-
-    // 선택한 경로명 텍스트, id 합치기 (최하위 id만 hidden에 저장)
-    function updatePathText() {
-        let names = [];
-        let lastId = '';
-        pathSelectIds.forEach(function(sel){
-            const v = $(sel).val();
-            const t = $(sel+' option:selected').text();
-            if(v) {
-                names.push(t);
-                lastId = v;
-            }
-        });
-        $('#path_text').val(names.join(' / '));
-        // 필요하다면 최하위 id도 같이 hidden에 저장
-        $('#source_path_id').val(lastId);
-    }
-});
-
-
-
-
-
-  </script>
-
-<!-- HEAD 끝 또는 BODY 아래에 추가 -->
-<script src="/ckeditor/ckeditor.js"></script>
-<script>
-  ClassicEditor.create(document.querySelector('textarea[name="question"]')).catch(console.error);
-  ClassicEditor.create(document.querySelector('textarea[name="solution"]')).catch(console.error);
-  ClassicEditor.create(document.querySelector('textarea[name="hint"]')).catch(console.error);
+  });
 </script>
+
+  <!-- HEAD 끝 또는 BODY 아래에 추가 -->
+  <script src="/ckeditor/ckeditor.js"></script>
+  <script>
+    ClassicEditor.create(document.querySelector('textarea[name="question"]')).catch(console.error);
+    ClassicEditor.create(document.querySelector('textarea[name="solution"]')).catch(console.error);
+    ClassicEditor.create(document.querySelector('textarea[name="hint"]')).catch(console.error);
+  </script>
 
 
 </body>
