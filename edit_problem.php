@@ -397,5 +397,18 @@ math-field {
 
 <script>window.problem_id = <?= (int)$problem['id'] ?>;</script>
 <script src="/js/edit_problem.js?v=202406"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    console.log("[진단] source_path1 select 존재?:", document.getElementById("source_path1"));
+    if (!document.getElementById("source_path1")) {
+      alert("source_path1 엘리먼트가 DOM에 없습니다!");
+    }
+  }, 800);
+});
+</script>
+
+
 </body>
 </html>

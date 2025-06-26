@@ -12,6 +12,7 @@ function previewProblem() {
 
 
 window.addEventListener('DOMContentLoaded', function () {
+   console.log('DOMContentLoaded 진입!');  // ← 추가
   // 1. 에디터 초기화
   ClassicEditor.create(document.querySelector('textarea[name="question"]'))
     .then(editor => { questionEditor = editor; });
@@ -28,11 +29,12 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   // 3. 출처 경로 드롭다운 초기화
+   console.log("출처 경로 드롭다운 초기화");  // ← 이 줄 추가
   const initialSourcePathId = document.getElementById('source_path_id').value;
   if (initialSourcePathId && !isNaN(parseInt(initialSourcePathId))) {
     setSourcePathByIdFromValue(initialSourcePathId);
   } else {
-    loadSourcePathOptions(1, null);
+    setTimeout(() => loadSourcePathOptions(1, null), 300);
   }
 
   // 4. return_url 자동 세팅
@@ -348,10 +350,12 @@ function loadSourceNextDepth(depth) {
 
 
 function loadSourcePathOptions(depth, parentId) {
+  console.log('[디버그] loadSourcePathOptions 실행:', depth, parentId);
   fetch(`get_source_path.php?parent_id=${parentId ?? ''}`)
     .then(res => res.json())
     .then(data => {
       const select = document.getElementById(`source_path${depth}`);
+      console.log('select:', select, data);  // 이 줄 추가!
       select.innerHTML = `<option value="">- ${depth}단계 선택 -</option>`;
       data.forEach(row => {
         const opt = document.createElement("option");
@@ -361,6 +365,7 @@ function loadSourcePathOptions(depth, parentId) {
       });
     });
 }
+
 
 
 
