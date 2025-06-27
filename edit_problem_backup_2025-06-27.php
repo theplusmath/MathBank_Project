@@ -253,32 +253,15 @@ math-field {
   <input type="hidden" name="path_id" id="path_id" value="<?= (int)($problem['path_id'] ?? 0) ?>">
   </div>
 
-<!-- source_id 직접 이동 영역 (OK) -->
-<div style="margin:10px 0;">
-  <label>source_id로 직접 이동:&nbsp;</label>
-  <input type="number" id="manual_source_id" placeholder="출처 경로 ID 입력" style="width: 120px;">
-  <button type="button" onclick="setSourcePathById()">이동</button>
-</div>
-
-<!-- 출처 경로 드롭다운 토글 버튼 -->
-<div style="margin:10px 0;">
-  <button type="button" onclick="toggleSourceDropdown()" id="toggleSourceDropdownBtn">
-    출처 경로 드롭다운으로 선택 ▼
-  </button>
-</div>
-
-<!-- 출처 경로 드롭다운 영역: 기본은 display:none -->
-<div id="sourceDropdownArea" style="display:none;">
-  <div class="form-group">
-    <label>출처 경로 선택:</label><br />
-    <select id="source_path1" onchange="loadSourceNextDepth(1)"></select>
-    <select id="source_path2" onchange="loadSourceNextDepth(2)"></select>
-    <select id="source_path3" onchange="loadSourceNextDepth(3)"></select>
-    <select id="source_path4" onchange="loadSourceNextDepth(4)"></select>
-    <select id="source_path5" onchange="loadSourceNextDepth(5)"></select>
-    <select id="source_path6" onchange="loadSourceNextDepth(6)"></select>
-    <input type="hidden" name="source_path_id" id="source_path_id" value="<?= (int)($problem['source_path_id'] ?? 0) ?>">
-  </div>
+<div class="form-group">
+  <label>출처 경로 선택:</label><br />
+  <select id="source_path1" onchange="loadSourceNextDepth(1)"></select>
+  <select id="source_path2" onchange="loadSourceNextDepth(2)"></select>
+  <select id="source_path3" onchange="loadSourceNextDepth(3)"></select>
+  <select id="source_path4" onchange="loadSourceNextDepth(4)"></select>
+  <select id="source_path5" onchange="loadSourceNextDepth(5)"></select>
+  <select id="source_path6" onchange="loadSourceNextDepth(6)"></select>
+  <input type="hidden" name="source_path_id" id="source_path_id" value="<?= (int)($problem['source_path_id'] ?? 0) ?>">
 </div>
 
 

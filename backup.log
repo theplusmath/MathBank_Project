@@ -161,3 +161,18 @@ After doing this, you may fix the identity used for this commit with:
 
  1 file changed, 17 insertions(+)
 fatal: could not read Username for 'https://github.com': No such device or address
+[main b6d30c1] 📦 자동 백업: 2025-06-27 03:00
+ Committer: root <root@web-01.cs97f1cloud.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 118 insertions(+), 12 deletions(-)
+fatal: could not read Username for 'https://github.com': No such device or address

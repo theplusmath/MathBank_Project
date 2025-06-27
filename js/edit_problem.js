@@ -419,3 +419,66 @@ function setSourcePathByIdFromValue(pathId) {
     });
 }
 
+function setSourcePathById() {
+    const sourceId = document.getElementById('manual_source_id').value;
+    if (!sourceId || isNaN(parseInt(sourceId))) {
+        alert('출처 경로 ID를 올바르게 입력하세요!');
+        return;
+    }
+    // 서버에서 sourceId로부터 전체 경로 배열을 AJAX로 받아서 각 드롭다운 select에 적용하는 함수가 필요
+    fetch('/api/get_source_path_by_id.php?id=' + sourceId)
+      .then(res => res.json())
+      .then(pathArr => {
+          for (let i = 0; i < 6; i++) {
+              const sel = document.getElementById('source_path' + (i + 1));
+              if (sel) sel.value = pathArr[i] ?? '';
+          }
+          document.getElementById('source_path_id').value = sourceId;
+      });
+}
+
+// 실제 트리 자동 세팅 함수(이미 구현되어 있다면 이름만 맞추면 됨)
+function setSourcePathByIdFromValue(sourceId) {
+    // 이미 구현된 로직을 재사용: 
+    // 1. source_id로부터 전체 트리 경로를 조회 (API/fetch로 배열 반환)
+    // 2. 각 단계별 <select> value를 자동 세팅
+    fetch('/api/get_source_path_tree.php?id=' + sourceId)
+      .then(res => res.json())
+      .then(treeArr => {
+        // treeArr: [1, 12, 35, 52] 등
+        for (let d = 0; d < treeArr.length; d++) {
+          const sel = document.getElementById('source_path' + (d + 1));
+          if (sel) sel.value = treeArr[d];
+          // 하위 옵션 자동 로드 등 필요한 부분 구현
+        }
+        // 마지막 단계 세팅 후, hidden 값도 동기화
+        document.getElementById('source_path_id').value = sourceId;
+      });
+}
+
+
+function toggleSourceDropdown() {
+    const area = document.getElementById('sourceDropdownArea');
+    const btn = document.getElementById('toggleSourceDropdownBtn');
+    if (area.style.display === 'none') {
+        area.style.display = 'block';
+        btn.innerText = '출처 경로 드롭다운 닫기 ▲';
+    } else {
+        area.style.display = 'none';
+        btn.innerText = '출처 경로 드롭다운으로 선택 ▼';
+    }
+}
+
+
+function toggleSourceDropdown() {
+    const area = document.getElementById('sourceDropdownArea');
+    const btn = document.getElementById('toggleSourceDropdownBtn');
+    if (area.style.display === 'none' || area.style.display === '') {
+        area.style.display = 'block';
+        btn.innerText = '출처 경로 드롭다운 닫기 ▲';
+    } else {
+        area.style.display = 'none';
+        btn.innerText = '출처 경로 드롭다운으로 선택 ▼';
+    }
+}
+
