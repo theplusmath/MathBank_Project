@@ -3639,3 +3639,116 @@
 2025-06-27T05:19:28+00:00 functions.php loaded
 2025-06-27T05:47:15+00:00 functions.php loaded
 2025-06-27T05:48:56+00:00 functions.php loaded
+2025-06-28T00:19:54+00:00 functions.php loaded
+2025-06-28T00:32:27+00:00 functions.php loaded
+2025-06-28T00:47:44+00:00 functions.php loaded
+2025-06-28T05:33:24+00:00 functions.php loaded
+2025-06-28T05:40:47+00:00 functions.php loaded
+2025-06-28T05:45:38+00:00 functions.php loaded
+2025-06-28T05:48:57+00:00 functions.php loaded
+2025-06-28T06:01:39+00:00 functions.php loaded
+2025-06-28T06:04:26+00:00 functions.php loaded
+2025-06-28T14:37:36+00:00 functions.php loaded
+2025-06-28T14:51:25+00:00 functions.php loaded
+2025-06-28T14:53:14+00:00 functions.php loaded
+2025-06-28T14:54:36+00:00 functions.php loaded
+2025-06-28T15:00:55+00:00 functions.php loaded
+2025-06-28T15:01:00+00:00 functions.php loaded
+2025-06-28T15:01:03+00:00 functions.php loaded
+2025-06-28T15:02:31+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle \int g ( x)dx
+            [tree] => Integral(Function('g')(Symbol('x')), Tuple(Symbol('x')))
+            [hash] => 13c2330e69707800ec2420abf393c24940ab7f9d4608c881a5f92e01613b9413
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Integral(Function('g')(Symbol('x')), Tuple(Symbol('x')))
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle f '' ( x)+g '' ( x)+g ( x)=e ^{x}
+            [tree] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+            [hash] => ec315f6f08cf456eef0fc28bc1a7288ded03df6175e4dfde1da800e755378c12
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle f '' ( x)-f ( x)+g '' ( x)=e ^{-x}
+            [tree] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+            [hash] => fc2965ffb9c3c9af11891d122af02018294a448acfc2859d42c584ed38ad7cf4
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+        )
+
+)
+
+2025-06-28T15:03:33+00:00 functions.php loaded
+2025-06-28T15:08:50+00:00 functions.php loaded
+2025-06-28T15:08:54+00:00 functions.php loaded
+2025-06-28T15:15:44+00:00 functions.php loaded
+2025-06-28T15:22:20+00:00 functions.php loaded
+2025-06-28T15:22:41+00:00 functions.php loaded
+2025-06-28T15:26:58+00:00 functions.php loaded
+[analyzeFormulasFromQuestion 결과] Array
+(
+    [0] => Array
+        (
+            [latex] => \displaystyle \int g ( x)dx
+            [tree] => Integral(Function('g')(Symbol('x')), Tuple(Symbol('x')))
+            [hash] => 13c2330e69707800ec2420abf393c24940ab7f9d4608c881a5f92e01613b9413
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Integral(Function('g')(Symbol('x')), Tuple(Symbol('x')))
+        )
+
+    [1] => Array
+        (
+            [latex] => \displaystyle f '' ( x)+g '' ( x)+g ( x)=e ^{x}
+            [tree] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+            [hash] => ec315f6f08cf456eef0fc28bc1a7288ded03df6175e4dfde1da800e755378c12
+            [keywords] => Array
+                (
+                    [0] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Function("f''")(Symbol('x')), Function("g''")(Symbol('x'))), Function('g')(Symbol('x'))), Pow(Symbol('e'), Symbol('x')))
+        )
+
+    [2] => Array
+        (
+            [latex] => \displaystyle f '' ( x)-f ( x)+g '' ( x)=e ^{-x}
+            [tree] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+            [hash] => fc2965ffb9c3c9af11891d122af02018294a448acfc2859d42c584ed38ad7cf4
+            [keywords] => Array
+                (
+                    [0] => NegativeOne
+                    [1] => Symbol
+                )
+
+            [sympy_expr] => Equality(Add(Add(Mul(Integer(-1), Function('f')(Symbol('x'))), Function("f''")(Symbol('x'))), Function("g''")(Symbol('x'))), Pow(Symbol('e'), Mul(Integer(-1), Symbol('x'))))
+        )
+
+)
+
+2025-06-28T15:27:50+00:00 functions.php loaded

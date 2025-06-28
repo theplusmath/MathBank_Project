@@ -5,41 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>문제 보기</title>
   <style>
-    body {
-      font-family: 'Malgun Gothic', sans-serif;
-      margin: 20px;
-      line-height: 1.8;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      word-break: break-word;
-    }
-    .problem-box {
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-top: 20px;
-      background-color: #fafafa;
-    }
-    .problem-box h3 {
-      margin-top: 0;
-    }
-    .problem-box p {
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    details {
-      background: #f9f9f9;
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-top: 15px;
-    }
+  body {
+    font-family: 'Malgun Gothic', sans-serif;
+    margin: 20px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-word;
+  }
+  .problem-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #fafafa;
+  }
+  .problem-box h3 {
+    margin-top: 0;
+  }
+  /* 🔥 문제! p 태그는 줄바꿈 허용 & 스크롤X */
+  .problem-box p {
+    overflow-x: visible;
+    white-space: normal;
+  }
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  details {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 15px;
+  }
+  /* 수식 display(블록)/inline 모두 가로 스크롤X */
+  .mjx-container, .katex-display, .math-display, .math-block {
+    overflow-x: visible !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
   </style>
 
   <!-- MathJax -->

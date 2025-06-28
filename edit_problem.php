@@ -241,18 +241,33 @@ math-field {
   <input type="number" id="manual_path_id" placeholder="경로 ID 입력" style="width: 120px;">
   <button type="button" onclick="setPathById()">이동</button>
 </div>
-<div class="form-group">
-  <label>경로 선택 (교육과정 ~ 소단원):</label><br />
-  <select id="depth1" onchange="loadNextDepth(1)"></select>
-  <select id="depth2" onchange="loadNextDepth(2)"></select>
-  <select id="depth3" onchange="loadNextDepth(3)"></select>
-  <select id="depth4" onchange="loadNextDepth(4)"></select>
-  <select id="depth5" onchange="loadNextDepth(5)"></select>
-  <select id="depth6" onchange="updatePathTextAndId()"></select>
-  <input type="hidden" name="path_text" id="path_text" value="<?= htmlspecialchars($problem['path_text'] ?? '') ?>">
-  <input type="hidden" name="path_id" id="path_id" value="<?= (int)($problem['path_id'] ?? 0) ?>">
-  </div>
 
+<div style="margin:10px 0;">
+  <button type="button" onclick="togglePathDropdown()" id="togglePathDropdownBtn">
+    경로 드롭다운으로 선택 ▼
+  </button>
+</div>
+
+<!-- 경로 드롭다운 영역: 기본은 display:none -->
+<div id="pathDropdownArea" style="display:none;">
+  <div class="form-group">
+    <label>경로 선택 (교육과정 ~ 소단원):</label><br />
+    <select id="depth1" onchange="loadNextDepth(1); showPathId(1);"></select>
+    <span id="depth1_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="depth2" onchange="loadNextDepth(2); showPathId(2);"></select>
+    <span id="depth2_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="depth3" onchange="loadNextDepth(3); showPathId(3);"></select>
+    <span id="depth3_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="depth4" onchange="loadNextDepth(4); showPathId(4);"></select>
+    <span id="depth4_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="depth5" onchange="loadNextDepth(5); showPathId(5);"></select>
+    <span id="depth5_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="depth6" onchange="loadNextDepth(6); showPathId(6);"></select>
+    <span id="depth6_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <input type="hidden" name="path_text" id="path_text" value="<?= htmlspecialchars($problem['path_text'] ?? '') ?>">
+    <input type="hidden" name="path_id" id="path_id" value="<?= (int)($problem['path_id'] ?? 0) ?>">
+  </div>
+</div>
 <!-- source_id 직접 이동 영역 (OK) -->
 <div style="margin:10px 0;">
   <label>source_id로 직접 이동:&nbsp;</label>
@@ -271,12 +286,18 @@ math-field {
 <div id="sourceDropdownArea" style="display:none;">
   <div class="form-group">
     <label>출처 경로 선택:</label><br />
-    <select id="source_path1" onchange="loadSourceNextDepth(1)"></select>
-    <select id="source_path2" onchange="loadSourceNextDepth(2)"></select>
-    <select id="source_path3" onchange="loadSourceNextDepth(3)"></select>
-    <select id="source_path4" onchange="loadSourceNextDepth(4)"></select>
-    <select id="source_path5" onchange="loadSourceNextDepth(5)"></select>
-    <select id="source_path6" onchange="loadSourceNextDepth(6)"></select>
+    <select id="source_path1" onchange="loadSourceNextDepth(1); showSourcePathId(1);"></select>
+    <span id="source_path1_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="source_path2" onchange="loadSourceNextDepth(2); showSourcePathId(2);"></select>
+    <span id="source_path2_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="source_path3" onchange="loadSourceNextDepth(3); showSourcePathId(3);"></select>
+    <span id="source_path3_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="source_path4" onchange="loadSourceNextDepth(4); showSourcePathId(4);"></select>
+    <span id="source_path4_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="source_path5" onchange="loadSourceNextDepth(5); showSourcePathId(5);"></select>
+    <span id="source_path5_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
+    <select id="source_path6" onchange="loadSourceNextDepth(6); showSourcePathId(6);"></select>
+    <span id="source_path6_id" style="min-width:45px;display:inline-block;color:#4977d1;"></span>
     <input type="hidden" name="source_path_id" id="source_path_id" value="<?= (int)($problem['source_path_id'] ?? 0) ?>">
   </div>
 </div>
