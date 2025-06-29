@@ -555,3 +555,13 @@ function showSourcePathId(depth) {
         span.textContent = val ? 'ID: ' + val : '';
     }
 }
+
+// edit_problem.js의 제일 아래나 적당한 위치에 추가
+document.addEventListener('DOMContentLoaded', function() {
+  const editors = ['#questionArea', '#answerArea', '#solutionArea'];
+  editors.forEach(function(selector) {
+    const el = document.querySelector(selector);
+    if (el) ClassicEditor.create(el).catch(console.error);
+  });
+});
+

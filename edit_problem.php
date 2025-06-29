@@ -150,9 +150,21 @@ math-field {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- CKEditor 5 (문제/정답 입력란) -->
+  <!-- 기존 것을 주석처리 -->
+  <!-- <script src="/ckeditor/ckeditor5/ckeditor5.js"></script> -->
+  <!-- <script src="/ckeditor5/ckeditor5/ckeditor5.js"></script> -->
+  <!-- <script src="/ckeditor5/ckeditor5/ckeditor5.umd.js"></script>  -->
   <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+
+
+
   <!-- MathLive (수식 편집기) -->
   <script src="https://cdn.jsdelivr.net/npm/mathlive/dist/mathlive.min.js"></script>
+
+
+<link rel="stylesheet" href="/ckeditor/ckeditor5/ckeditor5.css">
+
 </head>
 
 <body>
