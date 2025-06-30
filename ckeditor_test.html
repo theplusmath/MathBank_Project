@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CKEditor5 테스트</title>
+  <!-- CKEditor5 연결 (ckeditor.js 위치에 맞게 수정) -->
+  <script src="/ckeditor/ckeditor5/ckeditor5.js"></script>
+</head>
+<body>
+  <h2>CKEditor5 적용 테스트</h2>
+  <textarea name="editor" id="editor">여기에 내용을 입력하세요.</textarea>
+
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+</body>
+</html>

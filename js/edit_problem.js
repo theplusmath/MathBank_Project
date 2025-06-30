@@ -565,3 +565,67 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const editors = document.querySelectorAll(".ckeditor");
+
+  editors.forEach((textarea, index) => {
+    ClassicEditor
+      .create(textarea, {
+        toolbar: {
+          items: [
+            'undo', 'redo', '|',
+            'heading', '|',
+            'bold', 'italic', 'underline', '|',
+            'horizontalLine', 'link', 'insertImage', 'mediaEmbed',
+            'insertTable', 'blockQuote', '|',
+            'bulletedList', 'numberedList', 'todoList',
+            'outdent', 'indent'
+          ]
+        },
+        plugins: [
+          Essentials, Paragraph, Bold, Italic, Underline, Heading,
+          HorizontalLine, Link, Image, ImageInsert, ImageUpload, ImageToolbar,
+          Table, TableToolbar, MediaEmbed, List, TodoList, Indent, BlockQuote,
+          SimpleUploadAdapter
+        ],
+        image: {
+          toolbar: [
+            'imageTextAlternative', 'toggleImageCaption',
+            '|', 'imageStyle:inline', 'imageStyle:wrapText', 'imageStyle:breakText'
+          ]
+        },
+        simpleUpload: {
+          uploadUrl: '/upload/image.php'
+        }
+      })
+      .then(editor => {
+        textarea.editorInstance = editor;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
+
+  // 저장 시 각 에디터 내용 textarea에 다시 넣기
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", () => {
+      editors.forEach(textarea => {
+        if (textarea.editorInstance) {
+          textarea.value = textarea.editorInstance.getData();
+        }
+      });
+    });
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("textarea.ckeditor").forEach(textarea => {
+    ClassicEditor
+      .create(textarea)
+      .catch(error => console.error(error));
+  });
+});
+

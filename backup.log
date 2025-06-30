@@ -209,3 +209,545 @@ After doing this, you may fix the identity used for this commit with:
  9 files changed, 428 insertions(+), 70 deletions(-)
  create mode 100644 get_source_path_tree.php
 fatal: could not read Username for 'https://github.com': No such device or address
+[main 77a09d8] 📦 자동 백업: 2025-06-30 03:00
+ Committer: root <root@web-01.cs97f1cloud.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 532 files changed, 6023 insertions(+)
+ create mode 100644 ckeditor2/README.md
+ rename {ckeditor => ckeditor2/ckeditor}/ckeditor.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/ckeditor.js.map (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/af.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ar.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ast.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/az.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/bg.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ca.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/cs.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/da.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/de-ch.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/de.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/el.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/en-au.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/en-gb.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/eo.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/es.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/et.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/eu.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/fa.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/fi.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/fr.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/gl.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/gu.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/he.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/hr.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/hu.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/id.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/it.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ja.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/km.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/kn.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ko.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ku.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/lt.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/lv.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ms.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/nb.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ne.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/nl.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/no.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/oc.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/pl.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/pt-br.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/pt.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ro.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ru.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/si.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sk.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sl.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sq.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sr-latn.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sr.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/sv.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/th.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/tr.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/tt.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/ug.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/uk.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/vi.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/zh-cn.js (100%)
+ rename {ckeditor => ckeditor2/ckeditor}/translations/zh.js (100%)
+ create mode 100644 ckeditor2/ckeditor5/LICENSE-ckeditor5.md
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5-content.css
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5-editor.css
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.css
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.css.map
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.js
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.js.map
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.umd.js
+ create mode 100644 ckeditor2/ckeditor5/ckeditor5.umd.js.map
+ create mode 100644 ckeditor2/ckeditor5/translations/af.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/af.js
+ create mode 100644 ckeditor2/ckeditor5/translations/af.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ar.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ar.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ar.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ast.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ast.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ast.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/az.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/az.js
+ create mode 100644 ckeditor2/ckeditor5/translations/az.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/be.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/be.js
+ create mode 100644 ckeditor2/ckeditor5/translations/be.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bg.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/bg.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bg.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bn.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/bn.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bn.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bs.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/bs.js
+ create mode 100644 ckeditor2/ckeditor5/translations/bs.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ca.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ca.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ca.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/cs.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/cs.js
+ create mode 100644 ckeditor2/ckeditor5/translations/cs.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/da.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/da.js
+ create mode 100644 ckeditor2/ckeditor5/translations/da.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/de-ch.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/de-ch.js
+ create mode 100644 ckeditor2/ckeditor5/translations/de-ch.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/de.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/de.js
+ create mode 100644 ckeditor2/ckeditor5/translations/de.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/el.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/el.js
+ create mode 100644 ckeditor2/ckeditor5/translations/el.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en-au.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/en-au.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en-au.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en-gb.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/en-gb.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en-gb.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/en.js
+ create mode 100644 ckeditor2/ckeditor5/translations/en.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/eo.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/eo.js
+ create mode 100644 ckeditor2/ckeditor5/translations/eo.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/es-co.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/es-co.js
+ create mode 100644 ckeditor2/ckeditor5/translations/es-co.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/es.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/es.js
+ create mode 100644 ckeditor2/ckeditor5/translations/es.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/et.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/et.js
+ create mode 100644 ckeditor2/ckeditor5/translations/et.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/eu.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/eu.js
+ create mode 100644 ckeditor2/ckeditor5/translations/eu.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fa.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/fa.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fa.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fi.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/fi.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fi.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fr.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/fr.js
+ create mode 100644 ckeditor2/ckeditor5/translations/fr.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/gl.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/gl.js
+ create mode 100644 ckeditor2/ckeditor5/translations/gl.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/gu.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/gu.js
+ create mode 100644 ckeditor2/ckeditor5/translations/gu.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/he.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/he.js
+ create mode 100644 ckeditor2/ckeditor5/translations/he.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hi.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/hi.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hi.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hr.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/hr.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hr.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hu.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/hu.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hu.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hy.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/hy.js
+ create mode 100644 ckeditor2/ckeditor5/translations/hy.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/id.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/id.js
+ create mode 100644 ckeditor2/ckeditor5/translations/id.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/it.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/it.js
+ create mode 100644 ckeditor2/ckeditor5/translations/it.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ja.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ja.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ja.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/jv.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/jv.js
+ create mode 100644 ckeditor2/ckeditor5/translations/jv.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/kk.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/kk.js
+ create mode 100644 ckeditor2/ckeditor5/translations/kk.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/km.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/km.js
+ create mode 100644 ckeditor2/ckeditor5/translations/km.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/kn.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/kn.js
+ create mode 100644 ckeditor2/ckeditor5/translations/kn.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ko.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ko.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ko.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ku.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ku.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ku.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/lt.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/lt.js
+ create mode 100644 ckeditor2/ckeditor5/translations/lt.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/lv.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/lv.js
+ create mode 100644 ckeditor2/ckeditor5/translations/lv.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ms.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ms.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ms.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/nb.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/nb.js
+ create mode 100644 ckeditor2/ckeditor5/translations/nb.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ne.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ne.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ne.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/nl.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/nl.js
+ create mode 100644 ckeditor2/ckeditor5/translations/nl.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/no.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/no.js
+ create mode 100644 ckeditor2/ckeditor5/translations/no.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/oc.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/oc.js
+ create mode 100644 ckeditor2/ckeditor5/translations/oc.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pl.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/pl.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pl.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pt-br.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/pt-br.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pt-br.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pt.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/pt.js
+ create mode 100644 ckeditor2/ckeditor5/translations/pt.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ro.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ro.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ro.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ru.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ru.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ru.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/si.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/si.js
+ create mode 100644 ckeditor2/ckeditor5/translations/si.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sk.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sk.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sk.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sl.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sl.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sl.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sq.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sq.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sq.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sr-latn.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sr-latn.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sr-latn.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sr.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sr.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sr.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sv.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/sv.js
+ create mode 100644 ckeditor2/ckeditor5/translations/sv.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/th.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/th.js
+ create mode 100644 ckeditor2/ckeditor5/translations/th.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ti.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ti.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ti.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tk.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/tk.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tk.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tr.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/tr.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tr.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tt.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/tt.js
+ create mode 100644 ckeditor2/ckeditor5/translations/tt.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ug.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ug.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ug.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/uk.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/uk.js
+ create mode 100644 ckeditor2/ckeditor5/translations/uk.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ur.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/ur.js
+ create mode 100644 ckeditor2/ckeditor5/translations/ur.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/uz.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/uz.js
+ create mode 100644 ckeditor2/ckeditor5/translations/uz.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/vi.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/vi.js
+ create mode 100644 ckeditor2/ckeditor5/translations/vi.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/zh-cn.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/zh-cn.js
+ create mode 100644 ckeditor2/ckeditor5/translations/zh-cn.umd.js
+ create mode 100644 ckeditor2/ckeditor5/translations/zh.d.ts
+ create mode 100644 ckeditor2/ckeditor5/translations/zh.js
+ create mode 100644 ckeditor2/ckeditor5/translations/zh.umd.js
+ create mode 100644 ckeditor2/index.html
+ create mode 100644 ckeditor2/main.js
+ create mode 100644 ckeditor2/style.css
+ create mode 100644 ckeditor5/README.md
+ create mode 100644 ckeditor5/ckeditor5.js
+ create mode 100644 ckeditor5/ckeditor5/LICENSE-ckeditor5.md
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5-content.css
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5-editor.css
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.css
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.css.map
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.js
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.js.map
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.umd.js
+ create mode 100644 ckeditor5/ckeditor5/ckeditor5.umd.js.map
+ create mode 100644 ckeditor5/ckeditor5/translations/af.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/af.js
+ create mode 100644 ckeditor5/ckeditor5/translations/af.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ar.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ar.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ar.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ast.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ast.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ast.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/az.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/az.js
+ create mode 100644 ckeditor5/ckeditor5/translations/az.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/be.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/be.js
+ create mode 100644 ckeditor5/ckeditor5/translations/be.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bg.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/bg.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bg.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bn.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/bn.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bn.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bs.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/bs.js
+ create mode 100644 ckeditor5/ckeditor5/translations/bs.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ca.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ca.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ca.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/cs.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/cs.js
+ create mode 100644 ckeditor5/ckeditor5/translations/cs.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/da.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/da.js
+ create mode 100644 ckeditor5/ckeditor5/translations/da.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/de-ch.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/de-ch.js
+ create mode 100644 ckeditor5/ckeditor5/translations/de-ch.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/de.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/de.js
+ create mode 100644 ckeditor5/ckeditor5/translations/de.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/el.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/el.js
+ create mode 100644 ckeditor5/ckeditor5/translations/el.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en-au.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/en-au.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en-au.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en-gb.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/en-gb.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en-gb.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/en.js
+ create mode 100644 ckeditor5/ckeditor5/translations/en.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/eo.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/eo.js
+ create mode 100644 ckeditor5/ckeditor5/translations/eo.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/es-co.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/es-co.js
+ create mode 100644 ckeditor5/ckeditor5/translations/es-co.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/es.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/es.js
+ create mode 100644 ckeditor5/ckeditor5/translations/es.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/et.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/et.js
+ create mode 100644 ckeditor5/ckeditor5/translations/et.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/eu.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/eu.js
+ create mode 100644 ckeditor5/ckeditor5/translations/eu.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fa.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/fa.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fa.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fi.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/fi.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fi.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fr.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/fr.js
+ create mode 100644 ckeditor5/ckeditor5/translations/fr.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/gl.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/gl.js
+ create mode 100644 ckeditor5/ckeditor5/translations/gl.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/gu.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/gu.js
+ create mode 100644 ckeditor5/ckeditor5/translations/gu.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/he.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/he.js
+ create mode 100644 ckeditor5/ckeditor5/translations/he.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hi.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/hi.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hi.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hr.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/hr.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hr.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hu.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/hu.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hu.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hy.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/hy.js
+ create mode 100644 ckeditor5/ckeditor5/translations/hy.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/id.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/id.js
+ create mode 100644 ckeditor5/ckeditor5/translations/id.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/it.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/it.js
+ create mode 100644 ckeditor5/ckeditor5/translations/it.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ja.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ja.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ja.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/jv.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/jv.js
+ create mode 100644 ckeditor5/ckeditor5/translations/jv.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/kk.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/kk.js
+ create mode 100644 ckeditor5/ckeditor5/translations/kk.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/km.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/km.js
+ create mode 100644 ckeditor5/ckeditor5/translations/km.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/kn.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/kn.js
+ create mode 100644 ckeditor5/ckeditor5/translations/kn.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ko.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ko.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ko.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ku.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ku.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ku.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/lt.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/lt.js
+ create mode 100644 ckeditor5/ckeditor5/translations/lt.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/lv.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/lv.js
+ create mode 100644 ckeditor5/ckeditor5/translations/lv.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ms.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ms.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ms.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/nb.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/nb.js
+ create mode 100644 ckeditor5/ckeditor5/translations/nb.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ne.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ne.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ne.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/nl.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/nl.js
+ create mode 100644 ckeditor5/ckeditor5/translations/nl.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/no.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/no.js
+ create mode 100644 ckeditor5/ckeditor5/translations/no.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/oc.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/oc.js
+ create mode 100644 ckeditor5/ckeditor5/translations/oc.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pl.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/pl.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pl.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pt-br.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/pt-br.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pt-br.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pt.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/pt.js
+ create mode 100644 ckeditor5/ckeditor5/translations/pt.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ro.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ro.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ro.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ru.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ru.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ru.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/si.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/si.js
+ create mode 100644 ckeditor5/ckeditor5/translations/si.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sk.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sk.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sk.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sl.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sl.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sl.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sq.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sq.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sq.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sr-latn.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sr-latn.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sr-latn.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sr.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sr.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sr.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sv.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/sv.js
+ create mode 100644 ckeditor5/ckeditor5/translations/sv.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/th.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/th.js
+ create mode 100644 ckeditor5/ckeditor5/translations/th.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ti.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ti.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ti.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tk.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/tk.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tk.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tr.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/tr.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tr.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tt.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/tt.js
+ create mode 100644 ckeditor5/ckeditor5/translations/tt.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ug.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ug.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ug.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/uk.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/uk.js
+ create mode 100644 ckeditor5/ckeditor5/translations/uk.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ur.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/ur.js
+ create mode 100644 ckeditor5/ckeditor5/translations/ur.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/uz.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/uz.js
+ create mode 100644 ckeditor5/ckeditor5/translations/uz.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/vi.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/vi.js
+ create mode 100644 ckeditor5/ckeditor5/translations/vi.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/zh-cn.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/zh-cn.js
+ create mode 100644 ckeditor5/ckeditor5/translations/zh-cn.umd.js
+ create mode 100644 ckeditor5/ckeditor5/translations/zh.d.ts
+ create mode 100644 ckeditor5/ckeditor5/translations/zh.js
+ create mode 100644 ckeditor5/ckeditor5/translations/zh.umd.js
+ create mode 100644 ckeditor5/index.html
+ create mode 100644 ckeditor5/main.js
+ create mode 100644 ckeditor5/style.css
+fatal: could not read Username for 'https://github.com': No such device or address

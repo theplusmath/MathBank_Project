@@ -162,11 +162,8 @@ math-field {
   <!-- MathLive (수식 편집기) -->
   <script src="https://cdn.jsdelivr.net/npm/mathlive/dist/mathlive.min.js"></script>
 
-<script src="/ckeditor/ckeditor5/ckeditor5.js"></script>
+
 <link rel="stylesheet" href="/ckeditor/ckeditor5/ckeditor5.css">
-
-<script src="/js/edit_problem.js"></script>
-
 
 </head>
 
@@ -190,7 +187,7 @@ math-field {
 
     <!-- 문제 -->
     문제:
-    <textarea name="question" class="ckeditor"><?= htmlspecialchars($problem['question']) ?></textarea>    
+    <textarea name="question" id="questionArea"><?= htmlspecialchars($problem['question']) ?></textarea>
     <button type="button" class="btn btn-outline-danger" onclick="toggleFormulaPanel('question')">[문제] 수식 오류 검사 및 수정</button>
     <div id="formulaPanel_question"></div>
 
@@ -200,7 +197,7 @@ math-field {
     </button>
     <div id="formulaPanel_answer"></div>
 
-    해설: <textarea name="solution" id="solutionArea"><?= htmlspecialchars($problem['solution']) ?></textarea>        
+    해설: <textarea name="solution" id="solutionArea"><?= htmlspecialchars($problem['solution']) ?></textarea>
     <button type="button" class="btn btn-outline-danger" onclick="toggleFormulaPanel('solution')">
         [해설] 수식 오류 검사 및 수정
     </button>
