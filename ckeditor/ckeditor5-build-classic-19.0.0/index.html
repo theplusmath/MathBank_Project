@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CKEditor5 테스트</title>
+  <script src="build/ckeditor.js"></script>
+</head>
+<body>
+  <h2>CKEditor5 작동 테스트</h2>
+  <div id="editor">
+    <p>여기에 내용을 입력하세요...</p>
+  </div>
+
+  <script>
+    ClassicEditor
+      .create(document.querySelector('#editor'))
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+</body>
+</html>

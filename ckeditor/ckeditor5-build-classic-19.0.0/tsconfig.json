@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ckeditor/ckeditor5-core": [
+        "./node_modules/@ckeditor/ckeditor5-core/src/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "src/plugins/**/*.ts",
+    "src/**/*.d.ts"
+      "src/custom-ckeditor-typings.d.ts"
+  ]
+}
