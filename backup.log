@@ -1297,3 +1297,300 @@ After doing this, you may fix the identity used for this commit with:
  create mode 100644 style.css
  create mode 100644 upload/image.php
 fatal: could not read Username for 'https://github.com': No such device or address
+warning: in the working copy of 'ckeditor/ckeditor5-build-classic-19.0.0/index.html', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'ckeditor/ckeditor5-build-classic-19.0.0/src/icons/horizontalline.svg', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'ckeditor/ckeditor5-build-classic-19.0.0/test.html', CRLF will be replaced by LF the next time Git touches it
+[main e75a2a9] 📦 자동 백업: 2025-07-02 03:00
+ Committer: root <root@web-01.cs97f1cloud.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 280 files changed, 3211 insertions(+), 200 deletions(-)
+ delete mode 100644 backup/restore_20250417_163437.php
+ delete mode 100644 backup/restore_20250417_163813.php
+ create mode 100644 ckeditor/.github/PULL_REQUEST_TEMPLATE.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.editorconfig
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.eslintrc.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.gitattributes
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.github/PULL_REQUEST_TEMPLATE.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.gitignore
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.stylelintrc
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/.travis.yml
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/CHANGELOG.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/CONTRIBUTING.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/LICENSE.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/README.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/build/ckeditor.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/build/ckeditor.js.map
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/index.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/package.json
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/sample/index.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/ckeditor.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/custom-ckeditor-typings.d.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/custom.d.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/icons/horizontalline.svg
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontalline.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontalline.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallinecommand.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallinecommand.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallineediting.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallineediting.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallineui.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/horizontallineui.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/index.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/src/plugins/horizontalline/index.ts
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/test.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/ckeditor.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor-amd-version.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor-cjs-version.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor-cjs-version.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor-cjs-version.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor-global-version.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor.html
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor.js
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/ckeditor.md
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tests/manual/sample.jpg
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/tsconfig.json
+ create mode 100644 ckeditor/ckeditor5-build-classic-19.0.0/webpack.config.js
+ rename {ckeditor => ckeditor2}/README.md (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/LICENSE-ckeditor5.md (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5-content.css (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5-editor.css (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.css (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.css.map (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.js.map (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/ckeditor5.umd.js.map (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/af.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/af.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/af.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ar.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ar.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ar.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ast.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ast.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ast.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/az.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/az.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/az.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/be.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/be.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/be.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bg.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bg.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bg.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bn.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bn.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bn.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bs.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bs.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/bs.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ca.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ca.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ca.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/cs.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/cs.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/cs.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/da.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/da.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/da.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de-ch.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de-ch.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de-ch.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/de.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/el.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/el.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/el.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-au.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-au.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-au.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-gb.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-gb.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en-gb.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/en.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eo.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eo.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eo.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es-co.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es-co.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es-co.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/es.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/et.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/et.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/et.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eu.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eu.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/eu.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fa.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fa.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fa.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fi.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fi.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fi.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fr.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fr.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/fr.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gl.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gl.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gl.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gu.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gu.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/gu.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/he.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/he.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/he.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hi.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hi.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hi.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hr.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hr.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hr.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hu.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hu.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hu.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hy.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hy.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/hy.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/id.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/id.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/id.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/it.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/it.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/it.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ja.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ja.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ja.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/jv.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/jv.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/jv.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kk.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kk.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kk.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/km.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/km.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/km.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kn.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kn.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/kn.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ko.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ko.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ko.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ku.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ku.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ku.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lt.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lt.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lt.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lv.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lv.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/lv.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ms.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ms.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ms.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nb.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nb.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nb.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ne.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ne.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ne.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nl.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nl.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/nl.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/no.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/no.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/no.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/oc.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/oc.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/oc.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pl.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pl.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pl.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt-br.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt-br.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt-br.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/pt.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ro.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ro.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ro.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ru.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ru.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ru.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/si.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/si.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/si.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sk.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sk.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sk.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sl.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sl.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sl.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sq.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sq.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sq.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr-latn.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr-latn.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr-latn.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sr.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sv.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sv.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/sv.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/th.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/th.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/th.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ti.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ti.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ti.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tk.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tk.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tk.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tr.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tr.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tr.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tt.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tt.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/tt.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ug.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ug.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ug.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uk.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uk.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uk.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ur.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ur.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/ur.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uz.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uz.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/uz.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/vi.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/vi.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/vi.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh-cn.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh-cn.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh-cn.umd.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh.d.ts (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh.js (100%)
+ rename {ckeditor => ckeditor2}/ckeditor5/translations/zh.umd.js (100%)
+ rename {ckeditor => ckeditor2}/index.html (100%)
+ rename {ckeditor => ckeditor2}/main.js (100%)
+ rename {ckeditor => ckeditor2}/style.css (100%)
+To https://github.com/theplusmath/MathBank_Project.git
+   ce24698..e75a2a9  main -> main
